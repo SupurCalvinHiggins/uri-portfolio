@@ -1,0 +1,119 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{bloom1970}{article}{}
+      \name{author}{1}{}{%
+        {{hash=3124dcc7c1c1643c091687ec4b0dcd3e}{%
+           family={Bloom},
+           familyi={B\bibinitperiod},
+           given={Burton\bibnamedelima H.},
+           giveni={B\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{3124dcc7c1c1643c091687ec4b0dcd3e}
+      \strng{fullhash}{3124dcc7c1c1643c091687ec4b0dcd3e}
+      \strng{bibnamehash}{3124dcc7c1c1643c091687ec4b0dcd3e}
+      \strng{authorbibnamehash}{3124dcc7c1c1643c091687ec4b0dcd3e}
+      \strng{authornamehash}{3124dcc7c1c1643c091687ec4b0dcd3e}
+      \strng{authorfullhash}{3124dcc7c1c1643c091687ec4b0dcd3e}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0001-0782}
+      \field{journaltitle}{Commun. ACM}
+      \field{month}{7}
+      \field{number}{7}
+      \field{title}{Space/Time Trade-Offs in Hash Coding with Allowable Errors}
+      \field{volume}{13}
+      \field{year}{1970}
+      \field{pages}{422\bibrangedash 426}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1145/362686.362692
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/362686.362692
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/362686.362692
+      \endverb
+      \keyw{retrieval trade-offs,searching,scatter storage,hash coding,storage efficiency,storage layout,retrieval efficiency,hash addressing}
+    \endentry
+    \entry{maggs2015}{article}{}
+      \name{author}{2}{}{%
+        {{hash=282503e008a7beeb468fa43547beebb2}{%
+           family={Maggs},
+           familyi={M\bibinitperiod},
+           given={Bruce\bibnamedelima M.},
+           giveni={B\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=afc4a934616206758d29034a8e1319eb}{%
+           family={Sitaraman},
+           familyi={S\bibinitperiod},
+           given={Ramesh\bibnamedelima K.},
+           giveni={R\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{02337a0a4e9ca79cdc3abbe90a264dd2}
+      \strng{fullhash}{02337a0a4e9ca79cdc3abbe90a264dd2}
+      \strng{bibnamehash}{02337a0a4e9ca79cdc3abbe90a264dd2}
+      \strng{authorbibnamehash}{02337a0a4e9ca79cdc3abbe90a264dd2}
+      \strng{authornamehash}{02337a0a4e9ca79cdc3abbe90a264dd2}
+      \strng{authorfullhash}{02337a0a4e9ca79cdc3abbe90a264dd2}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper "peeks under the covers" at the subsystems that provide the basic functionality of a leading content delivery network. Based on our experiences in building one of the largest distributed systems in the world, we illustrate how sophisticated algorithmic research has been adapted to balance the load between and within server clusters, manage the caches on servers, select paths through an overlay routing network, and elect leaders in various contexts. In each instance, we first explain the theory underlying the algorithms, then introduce practical considerations not captured by the theoretical models, and finally describe what is implemented in practice. Through these examples, we highlight the role of algorithmic research in the design of complex networked systems. The paper also illustrates the close synergy that exists between research and industry where research ideas cross over into products and product requirements drive future research.}
+      \field{issn}{0146-4833}
+      \field{journaltitle}{SIGCOMM Comput. Commun. Rev.}
+      \field{month}{7}
+      \field{number}{3}
+      \field{title}{Algorithmic Nuggets in Content Delivery}
+      \field{volume}{45}
+      \field{year}{2015}
+      \field{pages}{52\bibrangedash 66}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1145/2805789.2805800
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/2805789.2805800
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/2805789.2805800
+      \endverb
+      \keyw{bloom filter,stable marriage,leader election,algorithms,overlay routing,internet services,akamai,content delivery network,load balancing}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

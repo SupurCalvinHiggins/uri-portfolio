@@ -1,6 +1,30 @@
 \documentclass{article}
-\usepackage[backend=biber]{biblatex}
 \usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage[backend=biber]{biblatex}
+
+\usetikzlibrary{arrows.meta, positioning, bending, fit, calc}
+
+\definecolor{lightyellow}{RGB}{255, 255, 224}
+\colorlet{lightorange}{orange!30}
+\colorlet{lightred}{red!30}
+\colorlet{lightpink}{pink!30}
+\colorlet{lightpurple}{purple!30}
+
+\newcommand{\gradientmathbox}[3]{%
+\tikz[baseline=(X.base)] 
+\node[rectangle,
+shade,
+left color=#1,
+right color=#2,
+rounded corners=2pt,
+inner sep=2pt] (X) {$\displaystyle #3$};%
+}
+
+\newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
 
 \addbibresource{ref.bib}
 
