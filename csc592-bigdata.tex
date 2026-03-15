@@ -10,215 +10,57 @@ permitting false positive results with some probability $\epsilon$, the lower bo
 is, \textit{approximate} membership queries can be much more memory efficient than exact membership queries. \\
 
 \noindent
-A binary fuse filter~\cite{graf2022} is a recent probabilistic data structure for approximate membership queries. Membership information is stored in an array 
-of $k$-bit values partitioned into disjoint segments. To query the filter, a key is hashed to a fingerprint value and three array entries located in consecutive 
-segments (see Figure~\ref{csc592_bigdata:binaryfusefilter}). If the bitwise-XOR of the entries is equal to the fingerprint, then the query \emph{might} be in 
+A binary fuse filter~\cite{graf2022} is a recent static probabilistic data structure for approximate membership queries. Membership information is stored in an 
+array of $m$-bit values partitioned into disjoint segments. To query the filter, a key is hashed to a fingerprint value and three array entries located in 
+consecutive segments (see Figure~\ref{fig:csc592_bigdata_bff}). If the bitwise-XOR of the entries is equal to the fingerprint, then the query \emph{might} be in 
 the set. Otherwise, the query \emph{definitely} is not in the set.
 
-\begin{figure}[H]
-    \centering
-    \begin{tikzpicture}[>=Stealth, arraynode/.style={draw, minimum width=7mm, minimum height=6mm, outer sep=0, inner sep=0}]
+\input{figures/csc592-bigdata-bff.tex}
 
-        \node[arraynode, fill=lightyellow] (a1) {000};
-        \node[arraynode, fill=lightorange, right=0 of a1] (a2) {011};
-        \node[arraynode, fill=lightorange, right=0 of a2] (a3) {100};
-        \node[arraynode, fill=lightyellow, right=0 of a3] (a4) {000};
-        \node[arraynode, fill=lightyellow, right=0 of a4] (a5) {000};
-        \node[arraynode, right=0 of a5, path picture={
-        \shade[left color=lightorange, right color=lightred]
-                (path picture bounding box.south west)
-                rectangle (path picture bounding box.north east);
-        }] (a6) {011};
-        \node[arraynode, right=0 of a6, path picture={
-        \shade[left color=lightred, right color=lightpink]
-                (path picture bounding box.south west)
-                rectangle (path picture bounding box.north east);
-        }] (a7) {001};
-        \node[arraynode, fill=lightyellow, right=0 of a7] (a8) {000};
-        \node[arraynode, fill=lightyellow, right=0 of a8, path picture={
-        \shade[left color=lightred, right color=lightpink]
-                (path picture bounding box.south west)
-                rectangle (path picture bounding box.north east);
-        }] (a9) {001};
-        \node[arraynode, fill=lightyellow, right=0 of a9] (a10) {000};
-        \node[arraynode, fill=lightyellow, right=0 of a10, path picture={
-        \shade[left color=lightpink, right color=lightpurple]
-                (path picture bounding box.south west)
-                rectangle (path picture bounding box.north east);
-        }] (a11) {110};
-        \node[arraynode, fill=lightyellow, right=0 of a11] (a12) {000};
-        \node[arraynode, fill=lightpurple, right=0 of a12] (a13) {110};
-        \node[arraynode, fill=lightyellow, right=0 of a13] (a14) {000};
-        \node[arraynode, fill=lightyellow, right=0 of a14] (a15) {000};
-        \node[arraynode, fill=lightpurple, right=0 of a15] (a16) {111};
-
-        \draw[thick] 
-            ([yshift=4pt]a1.north west) -- 
-            ([yshift=-4pt]a1.south west);
-        
-        \foreach \i in {2,4,6,8,10,12,14,16} {
-            \draw[thick] 
-                ([yshift=4pt]a\i.north east) -- 
-                ([yshift=-4pt]a\i.south east);
-        }
-
-        \node[circle, draw, above=12mm of a4, fill=lightorange] (x) {$x$};
-        \draw[->] (x) to (a2.north);
-        \draw[->] (x) to (a3.north);
-        \draw[->] (x) to (a6.north);
-        
-        \node[circle, draw, above=12mm of a7, fill=lightred] (y) {$y$};
-        \draw[->] (y) to (a6.north);
-        \draw[->] (y) to (a7.north);
-        \draw[->] (y) to (a9.north);
-
-        \node[circle, draw, above=12mm of a10, fill=lightpink] (w) {$w$};
-        \draw[->] (w) to (a7.north);
-        \draw[->] (w) to (a9.north);
-        \draw[->] (w) to (a11.north);
-        
-        \node[circle, draw, above=12mm of a13, fill=lightpurple] (z) {$z$};
-        \draw[->] (z) to (a11.north);
-        \draw[->] (z) to (a13.north);
-        \draw[->] (z) to (a16.north);
-        
-    \end{tikzpicture}
-    \caption{Binary fuse filter with 16-entry array, 2-entry segments, and 3-bit fingerprints. Vertical bars mark segment boundaries. The filter contains keys 
-    $\mathcolorbox{lightorange}{x}$, $\mathcolorbox{lightred}{y}$, $\mathcolorbox{lightpink}{w}$ and $\mathcolorbox{lightpurple}{z}$, with fingerprints 
-    $\mathcolorbox{lightorange}{100}$, $\mathcolorbox{lightred}{011}$, $\mathcolorbox{lightpink}{110}$ and $\mathcolorbox{lightpurple}{111}$, respectively. 
-    Entries hashed to by keys are marked with arrows and the keys' colors. Each key hashes to three consecutive segments.}
-    \label{csc592_bigdata:binaryfusefilter}
-\end{figure}
-
-
-\begin{figure}
-\centering
-\begin{tikzpicture}[scale=1.2]
-
-\node (v1) at (0, 2) {};
-\node (v2) at (0, 1) {};
-\node (v3) at (2, 1.5) {};
-\node (v4) at (4, 2) {};
-\node (v5) at (4, 1) {};
-\node (v6) at (6, 1.5) {};
-\node (v7) at (8, 2) {};
-\node (v8) at (8, 1) {};
-
-\begin{scope}[fill opacity = 0.7]
-
-\filldraw [fill=lightorange] 
-    ($(v1) + (-1,0)$)
-    to [out=90, in=180] ($(v1) + (0,1)$)
-    to [out=0, in=90] ($(v3) + (1,0)$)
-    to [out=270, in=0] ($(v2) + (0,-1)$)
-    to [out=180, in=270] ($(v1) + (-1,0)$);
-
-\filldraw [fill=lightred] 
-    ($(v4) + (1,0)$)
-    to [out=90, in=0] ($(v4) + (0,1)$)
-    to [out=180, in=90] ($(v3) + (-1,0)$)
-    to [out=270, in=180] ($(v5) + (0,-1)$)
-    to [out=0, in=270] ($(v4) + (1,0)$);
-
-\filldraw [fill=lightpink] 
-    ($(v4) + (-1,0)$)
-    to [out=90, in=180] ($(v4) + (0,1)$)
-    to [out=0, in=90] ($(v6) + (1,0)$)
-    to [out=270, in=0] ($(v5) + (0,-1)$)
-    to [out=180, in=270] ($(v4) + (-1,0)$);
-
-\filldraw [fill=lightpurple] 
-    ($(v7) + (1,0)$)
-    to [out=90, in=0] ($(v7) + (0,1)$)
-    to [out=180, in=90] ($(v6) + (-1,0)$)
-    to [out=270, in=180] ($(v8) + (0,-1)$)
-    to [out=0, in=270] ($(v7) + (1,0)$);
-
-\end{scope}
-
-\foreach \i in {1,...,8}
-    \fill (v\i) circle (0.1);
-
-\foreach \i/\name in {1/A[1],2/A[2],3/A[5],4/A[6],5/A[8],6/A[10],7/A[12],8/A[15]}
-    \node[right] at (v\i) {$\name$};
-
-\end{tikzpicture}
-
-\caption{Hypergraph induced by hash functions and keys from Figure~\ref{csc592_bigdata:binaryfusefilter}. Yellow hyperedge is induced by $x$, blue hyperedge
-is induced by $y$, green hyperedge is induced by $w$, and red hyperedge is induced by $z$. Vertices with degree zero not shown.}
-
-\end{figure}
-
-
-\begin{figure}
-\centering  
-\[
-\setlength{\arraycolsep}{2pt}
-\begin{array}{cccccccccccccc}
-
-\mathcolorbox{lightorange}{A[1]} 
-&\oplus& \mathcolorbox{lightorange}{A[2]} 
-&\oplus& \gradientmathbox{lightorange}{lightred}{A[5]} 
-&=& \mathcolorbox{lightorange}{100} &\qquad
-
-\gradientmathbox{lightorange}{lightred}{A[5]} 
-&\oplus& \gradientmathbox{lightred}{lightpink}{A[6]} 
-&\oplus& \gradientmathbox{lightred}{lightpink}{A[8]} 
-&=& \mathcolorbox{lightred}{011}\\[1em]
-
-\gradientmathbox{lightred}{lightpink}{A[6]} 
-&\oplus& \gradientmathbox{lightred}{lightpink}{A[8]} 
-&\oplus& \gradientmathbox{lightpink}{lightpurple}{A[10]} 
-&=& \mathcolorbox{lightpink}{110} &\qquad
-
-\gradientmathbox{lightpink}{lightpurple}{A[10]} 
-&\oplus& \mathcolorbox{lightpurple}{A[12]} 
-&\oplus& \mathcolorbox{lightpurple}{A[15]} 
-&=& \mathcolorbox{lightpurple}{111}
-\end{array}
-\]
-
-\caption{System of equations.}
-
-\end{figure}
-
-% TODO: binary fuse filter construction
-% find assignment of values to array such that queries are correct for all elements in the filter.
-
-% induces a system of linear equations in a finite field
-% diagram?
-
-% vertex == array location
-% edge == key hashed to array locations
-
-% induces random hypergraph family
-% 2-peelablity: remove any vertex with degree 0 or 1, as well as incident edges
-% peelable if iterating produces empty hypergraph
-% phase transition, 2-peelablity threshold
-% greedy algorithm
-
-% spatial coupling ->
-% bff construction is optimal for k-uniform families of hypergraphs (in limit of # of keys)
-% no theorical improvements possible 
-
-
-
-% 9% theory overhead, 13% practical overhead
-% Optimality
-Binary fuse filters 
-
-
-\subsection{Research Questions}
-
-% optimality of binary fuse for uniform, results with non-uniform
-
-% TODO: revise for clarity, maybe parallel structure with filters not hypergraphs
 \noindent
-While fuse graph families saturate the uniform hypergraph peelability threshold, we are not aware of any constructions that saturate the 
-peelability threshold for non-uniform hypergraph families. Therefore, we ask: 
+To construct a binary fuse filter, choose each array entry such that, for each key, the bitwise-XOR of the three corresponding array entries is equal to
+the fingerprint. This requires solving a system of linear equations in $\mathbb{F}^{m}_2$. Let $h_1$, $h_2$ and $h_3$ be the hash functions, $f$ be the 
+fingerprint function, and $A$ be the array. Each key $k$ yields a linear equation $A[h_1(k)] \oplus A[h_2(k)] \oplus A[h_3(k)] = f(k)$ that must be satisfied 
+(see Figure~\ref{fig:csc592_bigdata_soe}). If some equation is not satisfied, the filter will incorrectly report the corresponding key is \emph{definitely} not 
+in the set. Since false negatives are not permitted, the choice of array entries must satisfy every key's equation.
+
+\input{figures/csc592-bigdata-soe.tex}
+
+\noindent
+To solve the system, model it as a hypergraph. A hypergraph is a graph where edges may contain any subset of vertices. For each entry, create a vertex. For each 
+equation, create an edge containing entries (vertices) in the equation (see Figure~\ref{fig:csc592_bigdata_hg}). Then, 2-peel the hypergraph, that is:
+\begin{enumerate}
+    \item Remove vertices of degree zero, then set their entries to $0^m$.
+    \item Remove vertices of degree one and their incident edges. Then, set their entries to the bitwise-XOR of the fingerprint and the two other entries in the
+    edge. If the other entries are not yet set, defer until they are set.
+    \item Repeat until there are no vertices of degree less than two, or until the empty hypergraph is reached (i.e. all entries set).
+\end{enumerate}
+If the empty hypergraph is reached, the hypergraph is called 2-peelable. The system is solved if and only if its hypergraph is 2-peelable. \\
+
+\input{figures/csc592-bigdata-hg.tex}
+
+% phase transition, optimality of binary fuse (theory vs empirical) vs xor, problem is finding peelable families
+% 
+
+% If we could generate peelable graphs more reliably at higher densities, we could reduce memory overhead.
+
+\noindent
+Many families of random hypergraphs exhibit phase transitions in peelability. When the edge density is below a critical value, called the 2-peelability 
+threshold, sampled hypergraphs are almost surely 2-peelable. When the density exceeds this threshold, they are almost surely not. \\
+
+\noindent
+In the filter setting, edges correspond to keys and vertices correspond to array entries. Thus, higher edge density corresponds to lower space usage (i.e. more 
+keys per array entry). The family of hypergraphs induced by binary fuse filters saturates the 2-peelability threshold for 3-uniform hypergraphs (hypergraphs in 
+which each edge contains exactly three vertices). This threshold occurs at an edge density of TODO, or roughly TODO bits per key. In other words, no family of 
+3-uniform hypergraphs has higher 2-peelability threshold. This result holds for all $m \geq 3$: a binary fuse filter with $m$ hash functions saturates the 
+2-peelability threshold for $m$-uniform hypergraphs. Beyond 4 hash functions, there is no practical improvement. \\
+
+\noindent
+However, there may exist families of non-uniform hypergraphs with higher 2-peelability thresholds. If such families also have a low average edge size (i.e. few
+array accesses per query), filter based on them could potentially reduce memory overhead without degrading query throughput. Therefore, we ask: 
 
 \begin{enumerate}
-    \item How can we systematically construct non-uniform hypergraph families with peelablity thresholds comparable to or surpassing those of fuse graph families?
+    \item How can we systematically construct non-uniform hypergraph families with peelability thresholds comparable to or surpassing those of fuse graph families?
     \item How can we design efficient approximate membership query data structures by exploiting peelable non-uniform hypergraph families?
 \end{enumerate}
 
@@ -228,7 +70,7 @@ peelability threshold for non-uniform hypergraph families. Therefore, we ask:
 % correspondance between random hypergraph families and fuse filters
 % binary fuse filters use uniform hypergraph families
 % we considered non-uniform
-% empirical peelablity thresholds for 10403 non-uniform fuse graph families
+% empirical peelability thresholds for 10403 non-uniform fuse graph families
 % mean edge size between 3 and 4
 
 % can interpolate via sharding to attain any threshold

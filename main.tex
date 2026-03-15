@@ -3,7 +3,9 @@
 \usepackage{tikz}
 \usepackage{float}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{xcolor}
+\usepackage{caption}
 \usepackage[backend=biber]{biblatex}
 
 \usetikzlibrary{arrows.meta, positioning, bending, fit, calc}
@@ -25,6 +27,14 @@ inner sep=2pt] (X) {$\displaystyle #3$};%
 }
 
 \newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
+
+\captionsetup{
+    font=small,
+    labelfont=bf,
+    textfont=it,
+    labelsep=colon,
+}
+
 
 \addbibresource{ref.bib}
 

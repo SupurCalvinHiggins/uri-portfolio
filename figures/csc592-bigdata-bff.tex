@@ -1,0 +1,74 @@
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[>=Stealth, arraynode/.style={draw, minimum width=7mm, minimum height=6mm, outer sep=0, inner sep=0}]
+
+        \node[arraynode, fill=lightyellow] (a1) {000};
+        \node[arraynode, fill=lightorange, right=0 of a1] (a2) {011};
+        \node[arraynode, fill=lightorange, right=0 of a2] (a3) {100};
+        \node[arraynode, fill=lightyellow, right=0 of a3] (a4) {000};
+        \node[arraynode, fill=lightyellow, right=0 of a4] (a5) {000};
+        \node[arraynode, right=0 of a5, path picture={
+        \shade[left color=lightorange, right color=lightred]
+                (path picture bounding box.south west)
+                rectangle (path picture bounding box.north east);
+        }] (a6) {011};
+        \node[arraynode, right=0 of a6, path picture={
+        \shade[left color=lightred, right color=lightpink]
+                (path picture bounding box.south west)
+                rectangle (path picture bounding box.north east);
+        }] (a7) {001};
+        \node[arraynode, fill=lightyellow, right=0 of a7] (a8) {000};
+        \node[arraynode, fill=lightyellow, right=0 of a8, path picture={
+        \shade[left color=lightred, right color=lightpink]
+                (path picture bounding box.south west)
+                rectangle (path picture bounding box.north east);
+        }] (a9) {001};
+        \node[arraynode, fill=lightyellow, right=0 of a9] (a10) {000};
+        \node[arraynode, fill=lightyellow, right=0 of a10, path picture={
+        \shade[left color=lightpink, right color=lightpurple]
+                (path picture bounding box.south west)
+                rectangle (path picture bounding box.north east);
+        }] (a11) {110};
+        \node[arraynode, fill=lightyellow, right=0 of a11] (a12) {000};
+        \node[arraynode, fill=lightpurple, right=0 of a12] (a13) {110};
+        \node[arraynode, fill=lightyellow, right=0 of a13] (a14) {000};
+        \node[arraynode, fill=lightyellow, right=0 of a14] (a15) {000};
+        \node[arraynode, fill=lightpurple, right=0 of a15] (a16) {111};
+
+        \draw[thick] 
+            ([yshift=4pt]a1.north west) -- 
+            ([yshift=-4pt]a1.south west);
+        
+        \foreach \i in {2,4,6,8,10,12,14,16} {
+            \draw[thick] 
+                ([yshift=4pt]a\i.north east) -- 
+                ([yshift=-4pt]a\i.south east);
+        }
+
+        \node[circle, draw, above=12mm of a4, fill=lightorange] (x) {$x$};
+        \draw[->] (x) to (a2.north);
+        \draw[->] (x) to (a3.north);
+        \draw[->] (x) to (a6.north);
+        
+        \node[circle, draw, above=12mm of a7, fill=lightred] (y) {$y$};
+        \draw[->] (y) to (a6.north);
+        \draw[->] (y) to (a7.north);
+        \draw[->] (y) to (a9.north);
+
+        \node[circle, draw, above=12mm of a10, fill=lightpink] (w) {$w$};
+        \draw[->] (w) to (a7.north);
+        \draw[->] (w) to (a9.north);
+        \draw[->] (w) to (a11.north);
+        
+        \node[circle, draw, above=12mm of a13, fill=lightpurple] (z) {$z$};
+        \draw[->] (z) to (a11.north);
+        \draw[->] (z) to (a13.north);
+        \draw[->] (z) to (a16.north);
+        
+    \end{tikzpicture}
+    \caption{Binary fuse filter with 16-entry array, 2-entry segments, and 3-bit fingerprints. Vertical bars mark segment boundaries. The filter contains keys 
+    $\mathcolorbox{lightorange}{x}$, $\mathcolorbox{lightred}{y}$, $\mathcolorbox{lightpink}{w}$ and $\mathcolorbox{lightpurple}{z}$, with fingerprints 
+    $\mathcolorbox{lightorange}{100}$, $\mathcolorbox{lightred}{011}$, $\mathcolorbox{lightpink}{110}$ and $\mathcolorbox{lightpurple}{111}$, respectively. 
+    Entries hashed to by keys are marked with arrows and the keys' colors. Each key hashes to three consecutive segments.}
+    \label{fig:csc592_bigdata_bff}
+\end{figure}

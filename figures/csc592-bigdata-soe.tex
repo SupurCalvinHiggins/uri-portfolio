@@ -1,0 +1,33 @@
+\begin{figure}[H]
+\centering  
+\[
+\setlength{\arraycolsep}{2pt}
+\begin{array}{cccccccccccccc}
+
+\mathcolorbox{lightorange}{A[1]} 
+&\oplus& \mathcolorbox{lightorange}{A[2]} 
+&\oplus& \gradientmathbox{lightorange}{lightred}{A[5]} 
+&=& \mathcolorbox{lightorange}{100} &\qquad
+
+\gradientmathbox{lightorange}{lightred}{A[5]} 
+&\oplus& \gradientmathbox{lightred}{lightpink}{A[6]} 
+&\oplus& \gradientmathbox{lightred}{lightpink}{A[8]} 
+&=& \mathcolorbox{lightred}{011}\\[1em]
+
+\gradientmathbox{lightred}{lightpink}{A[6]} 
+&\oplus& \gradientmathbox{lightred}{lightpink}{A[8]} 
+&\oplus& \gradientmathbox{lightpink}{lightpurple}{A[10]} 
+&=& \mathcolorbox{lightpink}{110} &\qquad
+
+\gradientmathbox{lightpink}{lightpurple}{A[10]} 
+&\oplus& \mathcolorbox{lightpurple}{A[12]} 
+&\oplus& \mathcolorbox{lightpurple}{A[15]} 
+&=& \mathcolorbox{lightpurple}{111}
+\end{array}
+\]
+\caption{System of linear equations in $\mathbb{F}^3_2$ induced by Figure~\ref{fig:csc592_bigdata_bff}. Each $A[i]$ is the $i$-th entry in the backing array $A$
+(zero-indexed). The keys are $\mathcolorbox{lightorange}{x}$, $\mathcolorbox{lightred}{y}$, $\mathcolorbox{lightpink}{w}$ and $\mathcolorbox{lightpurple}{z}$ 
+with fingerprints $\mathcolorbox{lightorange}{100}$, $\mathcolorbox{lightred}{011}$, $\mathcolorbox{lightpink}{110}$ and $\mathcolorbox{lightpurple}{111}$, 
+respectively. Array entries and fingerprints are marked with corresponding key color(s). There is one equation for each key.}
+\label{fig:csc592_bigdata_soe}
+\end{figure}
