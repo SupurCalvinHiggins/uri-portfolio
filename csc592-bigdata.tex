@@ -6,12 +6,12 @@ This project was completed for CSC 592: Algorithms for Big Data.
 
 Distributed systems often require fast and small set data structures. For example, content delivery networks avoid caching one-hit wonders by querying a visited
 set~\cite{maggs2015}. Assuming $n \ll |U|$, such exact membership queries take $\Omega(\lg |U|)$ bits per key, which is impractical for large $U$. By 
-permitting false positive results with some probability $\epsilon$, the lower bound is reduced to $\lg \frac{1}{\epsilon}$ bits per key~\cite{carter1978}. That 
-is, \textit{approximate} membership queries can be much more memory efficient than exact membership queries. \\
+permitting false positive results with some probability $\epsilon$, the lower bound is reduced to $\lg \frac{1}{\epsilon}$ bits per key~\cite{carter1978}. In 
+other words, \textit{approximate} membership queries can be much more memory efficient than exact membership queries. \\
 
 \noindent
 A binary fuse filter~\cite{graf2022} is a recent static probabilistic data structure for approximate membership queries. Membership information is stored in an 
-array of $m$-bit values partitioned into disjoint segments. To query the filter, a key is hashed to a fingerprint value and three array entries located in 
+array of $m$-bit values partitioned into disjoint segments. To query the filter, a key is hashed to a fingerprint value and to three array entries located in 
 consecutive segments (see Figure~\ref{fig:csc592_bigdata_bff}). If the bitwise-XOR of the entries is equal to the fingerprint, then the query \emph{might} be in 
 the set. Otherwise, the query \emph{definitely} is not in the set.
 
@@ -39,25 +39,23 @@ If the empty hypergraph is reached, the hypergraph is called 2-peelable. The sys
 
 \input{figures/csc592-bigdata-hg.tex}
 
-% phase transition, optimality of binary fuse (theory vs empirical) vs xor, problem is finding peelable families
-% 
-
-% If we could generate peelable graphs more reliably at higher densities, we could reduce memory overhead.
+\noindent
+In the filter setting, edges represent keys and vertices represent array entries. Higher edge density means lower space usage, since there are more keys (edges)
+per array entry (vertex). Many families of random hypergraphs exhibit sharp phase transitions in peelability. When the edge density is below a critical value, 
+called the 2-peelability threshold, sampled hypergraphs are almost surely 2-peelable. When the density exceeds this threshold, they are almost surely not. The 
+threshold is therefore a direct measure of space efficiency. A higher threshold means more keys can be stored per array entry. \\
 
 \noindent
-Many families of random hypergraphs exhibit phase transitions in peelability. When the edge density is below a critical value, called the 2-peelability 
-threshold, sampled hypergraphs are almost surely 2-peelable. When the density exceeds this threshold, they are almost surely not. \\
+Binary fuse filters induce the fuse graph family, which achieves the maximum 2-peelability threshold among 3-uniform hypergraph (hypergraphs where each edge 
+contains exactly three vertices) families. This threshold occurs at an edge density of $0.918$, or roughly $1.089 \lg \frac{1}{\epsilon}$ bits per key. No 
+family of 3-uniform hypergraphs has higher 2-peelability threshold. More generally, a binary fuse filter with $m \geq 3$ hash functions saturates the 
+2-peelability threshold for $m$-uniform hypergraphs.\footnote{In practice, only binary fuse filters with three or four hash functions are relevant. With four 
+hash functions, the 2-peelability threshold is already $0.977$, yielding about $1.023 \lg \frac{1}{\epsilon}$ bits per key or within $2.3\%$ of optimal.} \\
 
 \noindent
-In the filter setting, edges correspond to keys and vertices correspond to array entries. Thus, higher edge density corresponds to lower space usage (i.e. more 
-keys per array entry). The family of hypergraphs induced by binary fuse filters saturates the 2-peelability threshold for 3-uniform hypergraphs (hypergraphs in 
-which each edge contains exactly three vertices). This threshold occurs at an edge density of TODO, or roughly TODO bits per key. In other words, no family of 
-3-uniform hypergraphs has higher 2-peelability threshold. This result holds for all $m \geq 3$: a binary fuse filter with $m$ hash functions saturates the 
-2-peelability threshold for $m$-uniform hypergraphs. Beyond 4 hash functions, there is no practical improvement. \\
-
-\noindent
-However, there may exist families of non-uniform hypergraphs with higher 2-peelability thresholds. If such families also have a low average edge size (i.e. few
-array accesses per query), filter based on them could potentially reduce memory overhead without degrading query throughput. Therefore, we ask: 
+However, this optimality result is confined to uniform hypergraphs. There may exist families of non-uniform hypergraphs with higher 2-peelability thresholds. If
+such families also have a low average edge size (i.e. few array accesses per query), filters based on them could potentially reduce memory overhead without 
+degrading query throughput. Therefore, we ask:
 
 \begin{enumerate}
     \item How can we systematically construct non-uniform hypergraph families with peelability thresholds comparable to or surpassing those of fuse graph families?
@@ -67,8 +65,30 @@ array accesses per query), filter based on them could potentially reduce memory 
 \subsection{Summary}
 
 
-% correspondance between random hypergraph families and fuse filters
-% binary fuse filters use uniform hypergraph families
+\input{figures/csc592-bigdata-nubff.tex}
+
+\input{figures/csc592-bigdata-nusoe.tex}
+
+\input{figures/csc592-bigdata-nuhg.tex}
+
+
+% Inspired by random hyperparameter sweeps in deep learning, we computed em-
+% pirical peelablity thresholds for 10403 non-uniform fuse graph families (see Table
+% 1) with mean edge size between three and four. As probability of being pee-
+% lable is a monotonic function of the edge density, we binary searched for the
+% empirical thresholds. At each candidate threshold, three hypergraphs (1000000
+% edges, 8192 window size) were sampled from the family. If the majority of the
+% hypergraphs were peelable, the family was considered peelable at the threshold
+% value. Otherwise, the family was considered not peelable at the threshold value.
+
+% While k-uniform fuse graphs have integer mean edge sizes, they can be extended
+% to any mean edge size through sharding [8]. For example, edges can be evenly
+% split between a 3-uniform fuse subgraph and a 4-uniform fuse subgraph to form
+% a hypergraph with mean edge size of 3.5. We found that many non-uniform fuse
+% graph families have higher thresholds than sharded k-uniform fuse graphs.
+
+
+
 % we considered non-uniform
 % empirical peelability thresholds for 10403 non-uniform fuse graph families
 % mean edge size between 3 and 4

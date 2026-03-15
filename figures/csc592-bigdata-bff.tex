@@ -3,15 +3,15 @@
     \begin{tikzpicture}[>=Stealth, arraynode/.style={draw, minimum width=7mm, minimum height=6mm, outer sep=0, inner sep=0}]
 
         \node[arraynode, fill=lightyellow] (a1) {000};
-        \node[arraynode, fill=lightorange, right=0 of a1] (a2) {011};
-        \node[arraynode, fill=lightorange, right=0 of a2] (a3) {100};
+        \node[arraynode, fill=lightorange, right=0 of a1] (a2) {110};
+        \node[arraynode, fill=lightorange, right=0 of a2] (a3) {000};
         \node[arraynode, fill=lightyellow, right=0 of a3] (a4) {000};
         \node[arraynode, fill=lightyellow, right=0 of a4] (a5) {000};
         \node[arraynode, right=0 of a5, path picture={
         \shade[left color=lightorange, right color=lightred]
                 (path picture bounding box.south west)
                 rectangle (path picture bounding box.north east);
-        }] (a6) {011};
+        }] (a6) {010};
         \node[arraynode, right=0 of a6, path picture={
         \shade[left color=lightred, right color=lightpink]
                 (path picture bounding box.south west)
@@ -22,18 +22,18 @@
         \shade[left color=lightred, right color=lightpink]
                 (path picture bounding box.south west)
                 rectangle (path picture bounding box.north east);
-        }] (a9) {001};
+        }] (a9) {000};
         \node[arraynode, fill=lightyellow, right=0 of a9] (a10) {000};
         \node[arraynode, fill=lightyellow, right=0 of a10, path picture={
         \shade[left color=lightpink, right color=lightpurple]
                 (path picture bounding box.south west)
                 rectangle (path picture bounding box.north east);
-        }] (a11) {110};
+        }] (a11) {111};
         \node[arraynode, fill=lightyellow, right=0 of a11] (a12) {000};
-        \node[arraynode, fill=lightpurple, right=0 of a12] (a13) {110};
+        \node[arraynode, fill=lightpurple, right=0 of a12] (a13) {000};
         \node[arraynode, fill=lightyellow, right=0 of a13] (a14) {000};
         \node[arraynode, fill=lightyellow, right=0 of a14] (a15) {000};
-        \node[arraynode, fill=lightpurple, right=0 of a15] (a16) {111};
+        \node[arraynode, fill=lightpurple, right=0 of a15] (a16) {000};
 
         \draw[thick] 
             ([yshift=4pt]a1.north west) -- 
