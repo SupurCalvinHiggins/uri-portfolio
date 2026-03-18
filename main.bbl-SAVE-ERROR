@@ -19,49 +19,111 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
-    \entry{bloom1970}{article}{}
-      \name{author}{1}{}{%
-        {{hash=3124dcc7c1c1643c091687ec4b0dcd3e}{%
-           family={Bloom},
-           familyi={B\bibinitperiod},
-           given={Burton\bibnamedelima H.},
-           giveni={B\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+    \entry{carter1978}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=70dbe6278823ea63300f2ef53add9f07}{%
+           family={Carter},
+           familyi={C\bibinitperiod},
+           given={Larry},
+           giveni={L\bibinitperiod}}}%
+        {{hash=643084f11e3e7451a92f1929467de8d9}{%
+           family={Floyd},
+           familyi={F\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=69fc3648695bdb0cfbba6903ec76dae2}{%
+           family={Gill},
+           familyi={G\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=76fe5aa89489a62e63c07ee4d63976be}{%
+           family={Markowsky},
+           familyi={M\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+        {{hash=1a43e075cd5e2a7b5277d03fa18dc017}{%
+           family={Wegman},
+           familyi={W\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
       }
       \list{location}{1}{%
-        {New York, NY, USA}%
+        {San Diego, California, USA}%
       }
       \list{publisher}{1}{%
         {Association for Computing Machinery}%
       }
-      \strng{namehash}{3124dcc7c1c1643c091687ec4b0dcd3e}
-      \strng{fullhash}{3124dcc7c1c1643c091687ec4b0dcd3e}
-      \strng{bibnamehash}{3124dcc7c1c1643c091687ec4b0dcd3e}
-      \strng{authorbibnamehash}{3124dcc7c1c1643c091687ec4b0dcd3e}
-      \strng{authornamehash}{3124dcc7c1c1643c091687ec4b0dcd3e}
-      \strng{authorfullhash}{3124dcc7c1c1643c091687ec4b0dcd3e}
-      \field{sortinit}{B}
-      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \strng{namehash}{ec61bcdcf993a0055d0ca1c7203cc0ea}
+      \strng{fullhash}{50d9d7e99535c733e994a615815dc50a}
+      \strng{bibnamehash}{ec61bcdcf993a0055d0ca1c7203cc0ea}
+      \strng{authorbibnamehash}{ec61bcdcf993a0055d0ca1c7203cc0ea}
+      \strng{authornamehash}{ec61bcdcf993a0055d0ca1c7203cc0ea}
+      \strng{authorfullhash}{50d9d7e99535c733e994a615815dc50a}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{0001-0782}
-      \field{journaltitle}{Commun. ACM}
-      \field{month}{7}
-      \field{number}{7}
-      \field{title}{Space/Time Trade-Offs in Hash Coding with Allowable Errors}
-      \field{volume}{13}
-      \field{year}{1970}
-      \field{pages}{422\bibrangedash 426}
-      \range{pages}{5}
+      \field{abstract}{In this paper we consider the question of how much space is needed to represent a set. Given a finite universe U and some subset V (called the vocabulary), an exact membership tester is a procedure that for each element s in U determines if s is in V. An approximate membership tester is allowed to make mistakes: we require that the membership tester correctly accepts every element of V, but we allow it to also accept a small fraction of the elements of U - V.}
+      \field{booktitle}{Proceedings of the Tenth Annual ACM Symposium on Theory of Computing}
+      \field{isbn}{9781450374378}
+      \field{series}{STOC '78}
+      \field{title}{Exact and Approximate Membership Testers}
+      \field{year}{1978}
+      \field{pages}{59\bibrangedash 65}
+      \range{pages}{7}
       \verb{doi}
-      \verb 10.1145/362686.362692
+      \verb 10.1145/800133.804332
       \endverb
       \verb{urlraw}
-      \verb https://doi.org/10.1145/362686.362692
+      \verb https://doi.org/10.1145/800133.804332
       \endverb
       \verb{url}
-      \verb https://doi.org/10.1145/362686.362692
+      \verb https://doi.org/10.1145/800133.804332
       \endverb
-      \keyw{retrieval trade-offs,searching,scatter storage,hash coding,storage efficiency,storage layout,retrieval efficiency,hash addressing}
+    \endentry
+    \entry{graf2022}{article}{}
+      \name{author}{2}{}{%
+        {{hash=65fdc27fbd1934341890dfd5162be32f}{%
+           family={Graf},
+           familyi={G\bibinitperiod},
+           given={Thomas\bibnamedelima Mueller},
+           giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=1f6f9e460dc1dd070b39d99017deb2c5}{%
+           family={Lemire},
+           familyi={L\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery (ACM)}%
+      }
+      \strng{namehash}{293180f7fdd3dc19f4c00fe3660d7342}
+      \strng{fullhash}{293180f7fdd3dc19f4c00fe3660d7342}
+      \strng{bibnamehash}{293180f7fdd3dc19f4c00fe3660d7342}
+      \strng{authorbibnamehash}{293180f7fdd3dc19f4c00fe3660d7342}
+      \strng{authornamehash}{293180f7fdd3dc19f4c00fe3660d7342}
+      \strng{authorfullhash}{293180f7fdd3dc19f4c00fe3660d7342}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1084-6654}
+      \field{journaltitle}{ACM Journal of Experimental Algorithmics}
+      \field{month}{3}
+      \field{title}{Binary Fuse Filters: Fast and Smaller Than Xor Filters}
+      \field{volume}{27}
+      \field{year}{2022}
+      \field{pages}{1\bibrangedash 15}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1145/3510449
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1145/3510449
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1145/3510449
+      \endverb
     \endentry
     \entry{maggs2015}{article}{}
       \name{author}{2}{}{%

@@ -1,0 +1,48 @@
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                xlabel={Mean Edge Size},
+                ylabel={Peelability Threshold},
+                xmin=3, xmax=4,
+                ymin=0.88, ymax=0.94,
+                width=\textwidth,
+                legend to name=sharedlegend,
+                legend columns=3,
+                legend style={draw=none, column sep=4pt},
+            ]
+                \addplot[color=lightorange, mark=o, mark size=1pt, only marks, legend image post style={mark size=2pt, color=darkorange}] table [x=meanedge, y=threshold, col sep=comma] {data/csc592-bigdata-nu-1k.csv};
+                \addlegendentry{Non-Uniform}
+                \addplot[color=darkred, mark=*, mark size=1pt] table [x=meanedge, y=threshold, col sep=comma] {data/csc592-bigdata-nu-best.csv};
+                \addlegendentry{Best Non-Uniform Sharded}
+                \addplot[color=black!40, mark=*, mark size=1pt] table [x=meanedge, y=threshold, col sep=comma] {data/csc592-bigdata-shard.csv};
+                \addlegendentry{Uniform Sharded}
+            \end{axis}
+        \end{tikzpicture}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                xlabel={Mean Hashes/Accesses},
+                ylabel={Memory Overhead},
+                yticklabel={\pgfmathprintnumber{\tick}\%},
+                xmin=3, xmax=4,
+                ymin=6, ymax=14,
+                width=\textwidth
+            ]
+                \addplot[color=lightorange, mark=o, mark size=1pt, only marks] table [x=meanedge, y expr={100 * (1 / \thisrow{threshold} - 1)}, col sep=comma] {data/csc592-bigdata-nu-1k.csv};
+                \addplot[color=darkred, mark=*, mark size=1pt] table [x=meanedge, y expr={100 * (1 / \thisrow{threshold} - 1)}, col sep=comma] {data/csc592-bigdata-nu-best.csv};
+                \addplot[color=black!40, mark=*, mark size=1pt] table [x=meanedge, y expr={100 * (1 / \thisrow{threshold} - 1)}, col sep=comma] {data/csc592-bigdata-shard.csv};
+            \end{axis}
+        \end{tikzpicture}
+    \end{subfigure}
+    \ref{sharedlegend}
+    \caption{Empirical peelability thresholds and memory overheads for non-uniform fuse graphs with 1M edges and mean edge size between 3 and 4. Orange dots 
+    show 1K sampled families. Red shows the best non-uniform sharded families. Gray shows the sharded uniform baseline. Many non-uniform families outperform the
+    uniform baseline. Left: mean edge size vs. peelability threshold (higher is better). Right: theoretical query cost vs. memory overhead (lower is better).}
+    \label{fig:csc592_bigdata_nuhg_graph}
+\end{figure}
