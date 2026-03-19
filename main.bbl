@@ -19,6 +19,34 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{bloom1970}{article}{}
+      \name{author}{1}{}{%
+        {{hash=3124dcc7c1c1643c091687ec4b0dcd3e}{%
+           family={Bloom},
+           familyi={B\bibinitperiod},
+           given={Burton\bibnamedelima H.},
+           giveni={B\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{3124dcc7c1c1643c091687ec4b0dcd3e}
+      \strng{fullhash}{3124dcc7c1c1643c091687ec4b0dcd3e}
+      \strng{bibnamehash}{3124dcc7c1c1643c091687ec4b0dcd3e}
+      \strng{authorbibnamehash}{3124dcc7c1c1643c091687ec4b0dcd3e}
+      \strng{authornamehash}{3124dcc7c1c1643c091687ec4b0dcd3e}
+      \strng{authorfullhash}{3124dcc7c1c1643c091687ec4b0dcd3e}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Commun. ACM}
+      \field{title}{Space/Time Trade-Offs in Hash Coding with Allowable Errors}
+      \field{year}{1970}
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/362686.362692
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/362686.362692
+      \endverb
+    \endentry
     \entry{carter1978}{inproceedings}{}
       \name{author}{5}{}{%
         {{hash=70dbe6278823ea63300f2ef53add9f07}{%
@@ -67,6 +95,39 @@
       \verb https://doi.org/10.1145/800133.804332
       \endverb
     \endentry
+    \entry{dietzfelbinger2019}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=b3729237385542cc130552f38ee83186}{%
+           family={Dietzfelbinger},
+           familyi={D\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=17a9ed6e8bcb6bacb4bdade7da976216}{%
+           family={Walzer},
+           familyi={W\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{ac30e4bd330fef66a4170bf974485ffe}
+      \strng{fullhash}{ac30e4bd330fef66a4170bf974485ffe}
+      \strng{bibnamehash}{ac30e4bd330fef66a4170bf974485ffe}
+      \strng{authorbibnamehash}{ac30e4bd330fef66a4170bf974485ffe}
+      \strng{authornamehash}{ac30e4bd330fef66a4170bf974485ffe}
+      \strng{authorfullhash}{ac30e4bd330fef66a4170bf974485ffe}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{European Symposium on Algorithms (ESA)}
+      \field{title}{Dense Peelable Random Uniform Hypergraphs}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://doi.org/10.4230/LIPIcs.ESA.2019.38
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.4230/LIPIcs.ESA.2019.38
+      \endverb
+    \endentry
     \entry{graf2022}{article}{}
       \name{author}{2}{}{%
         {{hash=65fdc27fbd1934341890dfd5162be32f}{%
@@ -86,6 +147,7 @@
       \strng{authorbibnamehash}{293180f7fdd3dc19f4c00fe3660d7342}
       \strng{authornamehash}{293180f7fdd3dc19f4c00fe3660d7342}
       \strng{authorfullhash}{293180f7fdd3dc19f4c00fe3660d7342}
+      \field{extraname}{1}
       \field{sortinit}{G}
       \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
       \field{labelnamesource}{author}
@@ -98,6 +160,40 @@
       \endverb
       \verb{url}
       \verb http://dx.doi.org/10.1145/3510449
+      \endverb
+    \endentry
+    \entry{graf2020}{article}{}
+      \name{author}{2}{}{%
+        {{hash=65fdc27fbd1934341890dfd5162be32f}{%
+           family={Graf},
+           familyi={G\bibinitperiod},
+           given={Thomas\bibnamedelima Mueller},
+           giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=1f6f9e460dc1dd070b39d99017deb2c5}{%
+           family={Lemire},
+           familyi={L\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{293180f7fdd3dc19f4c00fe3660d7342}
+      \strng{fullhash}{293180f7fdd3dc19f4c00fe3660d7342}
+      \strng{bibnamehash}{293180f7fdd3dc19f4c00fe3660d7342}
+      \strng{authorbibnamehash}{293180f7fdd3dc19f4c00fe3660d7342}
+      \strng{authornamehash}{293180f7fdd3dc19f4c00fe3660d7342}
+      \strng{authorfullhash}{293180f7fdd3dc19f4c00fe3660d7342}
+      \field{extraname}{2}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Experimental Algorithmics (JEA)}
+      \field{title}{Xor Filters: Faster and Smaller Than Bloom and Cuckoo Filters}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1145/3376122
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1145/3376122
       \endverb
     \endentry
     \entry{maggs2015}{article}{}
@@ -131,6 +227,34 @@
       \endverb
       \verb{url}
       \verb https://doi.org/10.1145/2805789.2805800
+      \endverb
+    \endentry
+    \entry{walzer2021}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=17a9ed6e8bcb6bacb4bdade7da976216}{%
+           family={Walzer},
+           familyi={W\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{17a9ed6e8bcb6bacb4bdade7da976216}
+      \strng{fullhash}{17a9ed6e8bcb6bacb4bdade7da976216}
+      \strng{bibnamehash}{17a9ed6e8bcb6bacb4bdade7da976216}
+      \strng{authorbibnamehash}{17a9ed6e8bcb6bacb4bdade7da976216}
+      \strng{authornamehash}{17a9ed6e8bcb6bacb4bdade7da976216}
+      \strng{authorfullhash}{17a9ed6e8bcb6bacb4bdade7da976216}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Symposium on Discrete Algorithms (SODA)}
+      \field{title}{Peeling Close to the Orientability Threshold: Spatial Coupling in Hashing-Based Data Structures}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3711822
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3711822
       \endverb
     \endentry
   \enddatalist

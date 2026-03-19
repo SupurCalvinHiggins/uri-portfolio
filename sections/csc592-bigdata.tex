@@ -6,8 +6,9 @@ This project was completed for CSC 592: Algorithms for Big Data.
 
 Distributed systems often require fast and small set data structures. For example, content delivery networks avoid caching one-hit wonders by querying a visited
 set~\cite{maggs2015}. Supporting such exact membership queries on a large universe\footnote{Set of all keys.} $U$ requires $\Omega(\lg |U|)$ bits per key. For 
-large enough sets, this is impractical. By permitting false positive results with some probability $\epsilon$, the lower bound is reduced to $\lg \frac{1}{\epsilon}$ 
-bits per key~\cite{carter1978}. In other words, \textit{approximate} membership queries can be much more memory efficient than exact membership queries. \\
+large enough sets, this is impractical. By permitting false positive results with some probability $\epsilon$, the lower bound is reduced to 
+$\lg \frac{1}{\epsilon}$ bits per key~\cite{carter1978}. In other words, \textit{approximate} membership queries can be much more memory efficient than exact 
+membership queries~\cite{bloom1970, graf2020, graf2022}. \\
 
 \noindent
 A binary fuse filter~\cite{graf2022} is a recent static probabilistic data structure for approximate membership queries. Membership information is stored in an 
@@ -19,10 +20,15 @@ the set. Otherwise, the query \emph{definitely} is not in the set.
 
 \noindent
 To construct a binary fuse filter, choose each array entry such that, for each key, the bitwise-XOR of the three corresponding array entries is equal to
-the fingerprint. This requires solving a system of linear equations in $\mathbb{F}^{m}_2$. Let $h_1$, $h_2$ and $h_3$ be the hash functions, $f$ be the 
-fingerprint function, and $A$ be the array. Each key $k$ yields a linear equation $A[h_1(k)] \oplus A[h_2(k)] \oplus A[h_3(k)] = f(k)$ that must be satisfied 
-(see Figure~\ref{fig:csc592_bigdata_soe}). If some equation is not satisfied, the filter will incorrectly report the corresponding key is \emph{definitely} not 
-in the set. Since false negatives are not permitted, the choice of array entries must satisfy every key's equation.
+the fingerprint. This requires solving a system of linear equations with variables in $\mathbb{F}^{m}_2$ (i.e. $m$-bit vectors) where addition is performed 
+using bitwise-XOR. Let $h_1$, $h_2$ and $h_3$ be the hash functions, $f$ be the fingerprint function, and $A$ be the array. Each key $k$ yields a linear 
+equation
+\begin{align*}
+    A[h_1(k)] \oplus A[h_2(k)] \oplus A[h_3(k)] = f(k)
+\end{align*}
+that must be satisfied (see Figure~\ref{fig:csc592_bigdata_soe}). If some equation is not satisfied, the filter will incorrectly report the corresponding key is
+\emph{definitely} not in the set. Since approximate membership queries allow only false positives and not false negatives, the choice of array entries must 
+satisfy every equation.
 
 \input{figures/csc592-bigdata-soe.tex}
 
@@ -40,18 +46,21 @@ If the empty hypergraph is reached, the hypergraph is called 2-peelable. The sys
 \input{figures/csc592-bigdata-hg.tex}
 
 \noindent
-In the filter setting, edges represent keys and vertices represent array entries. Higher edge density means lower space usage, since there are more keys (edges)
-per array entry (vertex). Many families of random hypergraphs exhibit sharp phase transitions in peelability. When the edge density is below a critical value, 
+In the filter setting, edges represent keys and vertices represent array entries. Lower edge size means cheaper queries, since fewer array entries (vertices) 
+are accessed per key (edge). Higher edge density means lower space usage, since there are more keys (edges) per array entry (vertex). \\
+
+\noindent
+Many hypergraph families exhibit sharp phase transitions in peelability~\cite{dietzfelbinger2019, walzer2021}. When the edge density is below a critical value, 
 called the 2-peelability threshold, sampled hypergraphs are almost surely 2-peelable. When the density exceeds this threshold, they are almost surely not. The 
 threshold is therefore a direct measure of space efficiency. A higher threshold means more keys can be stored per array entry. \\
 
 \noindent
-Binary fuse filters induce the fuse graph family, which achieves the maximum 2-peelability threshold among 3-uniform hypergraph\footnote{In general, a 
-hypergraph is $m$-uniform if every edge contains exactly $m$ vertices.} families. This threshold occurs at an edge density of $0.918$, or roughly 
-$1.089 \lg \frac{1}{\epsilon}$ bits per key. No family of 3-uniform hypergraphs has higher 2-peelability threshold. More generally, a binary fuse filter with 
-$m \geq 3$ hash functions\footnote{Only binary fuse filters with three or four hash functions are practical. With four hash functions, the 2-peelability 
-threshold is already $0.977$, yielding about $1.023 \lg \frac{1}{\epsilon}$ bits per key or within $2.3\%$ of optimal.} saturates the 2-peelability threshold 
-for $m$-uniform hypergraphs. \\
+Binary fuse filters induce the fuse graph family, which achieves the supremum 2-peelability threshold among 3-uniform hypergraph\footnote{In general, a 
+hypergraph is $m$-uniform if every edge contains exactly $m$ vertices.} families~\cite{walzer2021}. This threshold occurs at an edge density of $0.918$, or 
+roughly $1.089 \lg \frac{1}{\epsilon}$ bits per key~\cite{walzer2021}. No family of 3-uniform hypergraphs has higher 2-peelability threshold. More generally, a 
+binary fuse filter with $m \geq 3$ hash functions\footnote{Only binary fuse filters with three or four hash functions are practical. With four hash functions, 
+the 2-peelability threshold is already $0.977$, yielding about $1.023 \lg \frac{1}{\epsilon}$ bits per key or within $2.3\%$ of optimal~\cite{walzer2021}.} 
+saturates the 2-peelability threshold for $m$-uniform hypergraphs~\cite{walzer2021}. \\
 
 \noindent
 However, this optimality result is confined to uniform hypergraphs. There may exist families of non-uniform hypergraphs with higher 2-peelability thresholds. If
@@ -67,20 +76,22 @@ degrading query latency and throughput. Therefore, we ask:
 \subsection{Summary}
 
 \subsubsection{Non-Uniform Hypergraphs}
+\label{sec:nuhg}
 
 We computed 2-peelability thresholds for 10K non-uniform fuse graph families with mean edge size between 3 and 4 (see 
 Figure~\ref{fig:csc592_bigdata_nuhg_graph}). As peelability is monotonic in edge density, we used binary search. At each candidate threshold, we sampled 
 three hypergraphs with 1M edges. If the majority were peelable, we considered the family peelable at that threshold. We implemented this algorithm in C++ and 
-computed thresholds in parallel on a multicore cluster. \\
+found thresholds in parallel on a compute cluster. \\
 
 \input{figures/csc592-bigdata-nuhg-graph.tex}
 
 \noindent
-While $m$-uniform graphs have integer mean edge sizes, they can be extended to any mean edge size via sharding. For example, splitting edges evenly between 
-edge-disjoint 3-uniform and 4-uniform subgraphs yields a mean edge size of 3.5. Many non-uniform families outperform this baseline, and therefore afford 
-smaller filters. Interestingly, some non-uniform families also outperform uniform families at integer mean edge sizes. Since peelability thresholds are defined 
-in the limit of large graphs, a non-uniform family can be more peelable than a uniform family with nearly the same mean edge size. For example, one family 
-achieves $\approx 1$\% memory savings over the uniform baseline at mean edge size $4$. \\
+While $m$-uniform graphs have integer mean edge sizes, they can be extended to any mean edge size via sharding\footnote{Sharding partitions a dataset into 
+disjoint subsets. For hypergraphs, each subset becomes an edge-disjoint subgraph. For filters, each subset is stored in a separate filter.}~\cite{graf2022}. For
+example, splitting edges evenly between edge-disjoint 3-uniform and 4-uniform subgraphs yields a mean edge size of 3.5. Many non-uniform families outperform 
+this baseline, and therefore afford smaller filters. Interestingly, some non-uniform families also outperform uniform families at integer mean edge sizes. Since 
+peelability thresholds are defined in the limit of large graphs, a non-uniform family can be more peelable in practice than a uniform family with nearly the 
+same mean edge size. For example, one family achieves $\approx 1$\% memory savings over the uniform baseline at mean edge size $4$. \\
 
 \noindent
 These data suggest two conjectures. Let $\mathcal{H}_d$ denote the set of fuse graph families with mean edge size $d$ and let $\tau(\mathcal{F})$ 
@@ -95,31 +106,53 @@ $\lfloor d \rfloor$-edges and a fraction $p$ of $\lceil d \rceil$-edges, where $
 \noindent
 We implemented and optimized a non-uniform binary fuse filter with 50\% 3-edges and 50\% 4-edges in C++ (i.e. each key hashes to either 3 or 4 array entries). 
 This edge distribution offered the greatest advantage over sharding uniform binary fuse filters. We considered three query algorithms: conditional branch, 
-branchless and phantom entry (see Table~\ref{tab:csc592_bigdata_impl_tab} for metrics and see Section~\ref{sec:csc592_bigdata_contains_impl} for pseudocode). \\
+branchless and phantom entry described below (see Table~\ref{tab:csc592_bigdata_impl_tab} for metrics and Section~\ref{sec:csc592_bigdata_contains_impl} for 
+pseudocode). \\
 
 \input{figures/csc592-bigdata-impl-tab}
 
 \noindent
-In the conditional branch algorithm, we compute the fingerprint and access the first three array entries, then compute their bitwise-XOR. If the key is a 
-4-edge, we also access and bitwise-XOR the fourth array entry. This branch is mispredicted for at least half of the queries. \\
+In all three algorithms, we report that the key \emph{might} be in the set if the XOR of the accessed array entries equals the fingerprint. The algorithms 
+differ only in how they handle variable edge size when computing the XOR. \\
 
 \noindent
-In the branchless algorithm, we compute the fingerprint and access all four array entries. If the key is a 3-edge, we zero the fourth value with a 
-bitwise-AND. Then, we compute the bitwise-XOR of all five values. For large filters, all four array accesses will miss the cache. \\ 
+In the conditional branch algorithm (see Figure~\ref{fig:csc592_bigdata_pc_cond}), we XOR the first three array entries. If the key is a 4-edge, we XOR in the 
+fourth entry. This branch mispredicts on at least half of all queries.  \\
 
 \noindent
-In the phantom entry algorithm, we compute the fingerprint and access all four array entries. If the key is a 3-edge, we zero the fourth hash with a bitwise-AND
-before accessing its entry. That is, the fourth array entry for all 3-edges is $A[0]$. We shift the original entries left once and set $A[0]$ to zero (see 
-Figure~\ref{fig:csc592_bigdata_nubff}). Unlike the branchless algorithm, the fourth array access for 3-edges will hit the cache since $A[0]$ is requested in 
-50\% of queries. \\
+In the branchless algorithm (see Figure~\ref{fig:csc592_bigdata_pc_bl}), we load all four array entries unconditionally. If the key is a 3-edge, we zero the 
+fourth value with a mask before XORing all four values. For large filters, all four loads will miss the cache. \\ 
+
+\noindent
+In the phantom entry algorithm (see Figure~\ref{fig:csc592_bigdata_pc_phant}), we load all four array entries unconditionally. However, if the key is a 3-edge, 
+we zero the fourth hash address before the load, redirecting it to $A[0]$. To support this, we shift all valid entries left by one index and set $A[0] = 0$ at
+construction time (see Figure~\ref{fig:csc592_bigdata_nubff}). Unlike the branchless algorithm, the fourth load for 3-edges hits the cache, since $A[0]$ is 
+accessed in 50\% of queries. \\
 
 \input{figures/csc592-bigdata-nubff.tex}
 
 \noindent
-Surprisingly, only the conditional branch algorithm had better query throughput than the 4-uniform binary fuse filter. We expected that nearly all cycles were
-spent stalled on loads, so a lower cache miss rate should improve throughput by generating useful outstanding misses. However, only $80\%$ of cycles 
-were spent stalled (all loads), not nearly 100\%. We hypothesize that either the ROB is too small to allow OoO address generation before retiring outstanding 
-misses, or lack of MSHRs stalls OoO address generation when loading the next key. This means hash latency is the primary bottleneck.
+Surprisingly, only the conditional branch algorithm achieved higher query throughput than the 4-uniform binary fuse filter, and even this fell short of an 
+acceptable time-space tradeoff. Since we expected nearly all cycles to be spent stalled on memory loads, reducing cache misses per query should have improved 
+throughput proportionally. In practice, however, only 80\% of cycles were stalled on loads, and there were no other stalls. \\
+
+\noindent
+We hypothesize that out-of-order (OoO) execution stalls before it can compute load addresses for the next key. As a result, when outstanding loads complete, 
+hashes for the next query have not yet been computed, and the subsequent loads are delayed by the full hash latency. This dependency also explains the 
+conditional branch algorithm's advantage: its lower hash latency reduces this delay. \\
+
+\noindent
+The root cause is likely one of two structural hazards: either a shortage of miss status holding registers (MSHRs) prevents prefetching the next key (and 
+therefore precomputing its hashes), or the reorder buffer (ROB) is too small to precompute enough hashes for future keys. Based on microarchitectural 
+parameters and the benchmark assembly, the first explanation is more likely.
+
+\subsubsection{Future Work}
+
+We see four promising directions for future work. First, batching may yield a non-uniform binary fuse filter with a competitive time-space tradeoff. Second, 
+interleaving the segments of a binary fuse filter could improve cache locality during queries. Third, introducing additional weak points into the fuse graph 
+would enable greater parallelism during filter construction. Currently, the fuse graph has only two weak points, one at each end, limiting peeling to two 
+threads. The recommended workaround is sharding, but this may sacrifice memory efficiency. Fourth, we aim to prove the conjectures stated in 
+Section~\ref{sec:nuhg}, for which the methods of \cite{dietzfelbinger2019} and \cite{walzer2021} may be useful.
 
 \subsection{Reflection}
 

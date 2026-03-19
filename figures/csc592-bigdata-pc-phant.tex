@@ -3,13 +3,11 @@
     \begin{algorithmic}
         \Function{Contains}{k}
             \State $f \gets$ \Call{Fingerprint}{k}
-            \State $f \gets f \oplus A[$\Call{Hash1}{$k$} + 1]
-            \State $f \gets f \oplus A[$\Call{Hash2}{$k$} + 1]
-            \State $f \gets f \oplus A[$\Call{Hash3}{$k$} + 1]
-            \State $f \gets f \oplus A$[-\Call{IsFourEdge}{$k$} $\mathbin{\&}$ (\Call{Hash4}{$k$} + 1)]
-            \State \Return $f == 0$ 
+            \State $f' \gets A$[\Call{Hash1}{$k$} + 1] $\oplus$ $A$[\Call{Hash2}{$k$} + 1] $\oplus$ $A$[\Call{Hash3}{$k$} + 1]
+            \State $f' \gets f' \oplus A$[-\Call{IsFourEdge}{$k$} $\mathbin{\&}$ (\Call{Hash4}{$k$} + 1)]
+            \State \Return $f == f'$ 
         \EndFunction
     \end{algorithmic}
     \caption{Phantom entry algorithm.}
-    \label{fig:csc592_bigdata_pc_cond}
+    \label{fig:csc592_bigdata_pc_phant}
 \end{algorithm}

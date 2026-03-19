@@ -72,7 +72,11 @@
     \caption{Non-uniform binary fuse filter with phantom entry, 14-entry array, 2-entry segments, and 3-bit fingerprints. Vertical bars mark segment boundaries.
     The phantom entry is colored gray. The filter contains keys $\mathcolorbox{lightorange}{x}$, $\mathcolorbox{lightred}{y}$, $\mathcolorbox{lightpink}{w}$ and 
     $\mathcolorbox{lightpurple}{z}$, with fingerprints $\mathcolorbox{lightorange}{100}$, $\mathcolorbox{lightred}{011}$, $\mathcolorbox{lightpink}{110}$ and 
-    $\mathcolorbox{lightpurple}{111}$, respectively. Entries hashed to by keys are marked with arrows and the keys' colors. Each key hashes to three or four 
-    consecutive segments. Dashed gray arrows indicate hashes to the phantom entry.}
+    $\mathcolorbox{lightpurple}{111}$, respectively. 
+    Each key hashes to three or four consecutive segments. Corresponding entries are marked by arrows and matching colors. Dashed gray arrows indicate hashes to
+    the phantom entry. For example, since the filter contains $\mathcolorbox{lightred}{y}$, the bitwise-XOR 
+    $\protect\gradientmathbox{lightorange}{lightred}{101} \oplus \protect\gradientmathbox{lightorange}{lightred}{000} \oplus \protect\gradientmathbox{lightred}{lightpink}{110} \oplus \mathcolorbox{lightgray}{000}$
+    is the fingerprint $\mathcolorbox{lightred}{011}$. See Figure~\ref{fig:csc592_bigdata_nusoe} and Figure~\ref{fig:csc592_bigdata_nuhg} for the induced 
+    system of equations and hypergraph.}
     \label{fig:csc592_bigdata_nubff}
 \end{figure}

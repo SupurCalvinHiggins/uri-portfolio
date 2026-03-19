@@ -3,13 +3,11 @@
     \begin{algorithmic}
         \Function{Contains}{k}
             \State $f \gets$ \Call{Fingerprint}{k}
-            \State $f \gets f \oplus A[$\Call{Hash1}{$k$}]
-            \State $f \gets f \oplus A[$\Call{Hash2}{$k$}]
-            \State $f \gets f \oplus A[$\Call{Hash3}{$k$}]
-            \State $f \gets f \oplus$ (-\Call{IsFourEdge}{$k$} $\mathbin{\&}$ $A$[\Call{Hash4}{$k$}])
-            \State \Return $f == 0$ 
+            \State $f' \gets A$[\Call{Hash1}{$k$}] $\oplus$ $A$[\Call{Hash2}{$k$}] $\oplus$ $A$[\Call{Hash3}{$k$}]
+            \State $f' \gets f'$ $\oplus$ (-\Call{IsFourEdge}{$k$} $\mathbin{\&}$ $A$[\Call{Hash4}{$k$}])
+            \State \Return $f == f'$ 
         \EndFunction
     \end{algorithmic}
     \caption{Branchless algorithm.}
-    \label{fig:csc592_bigdata_pc_cond}
+    \label{fig:csc592_bigdata_pc_bl}
 \end{algorithm}
