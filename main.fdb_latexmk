@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1773948152.54272 "main.bcf" "main.bbl" "main" 1773954422.42598 0
-  "main.bcf" 1773954422.36493 108678 981bde50341a2c4aa46e5cc047f285b9 "pdflatex"
+["biber main"] 1773948152.54272 "main.bcf" "main.bbl" "main" 1773957596.62664 0
+  "main.bcf" 1773957596.56324 108678 981bde50341a2c4aa46e5cc047f285b9 "pdflatex"
   "ref.bib" 1773947612.5931 1910 8cc8494d43c4878e4ad7939c5e2078fa ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1773954420.48954 "/home/calvin/Documents/uri/portfolio/main.tex" "main.pdf" "main" 1773954422.42621 0
+["pdflatex"] 1773957594.63541 "/home/calvin/Documents/uri/portfolio/main.tex" "main.pdf" "main" 1773957596.62687 0
   "/etc/texmf/web2c/texmf.cnf" 1765049274.95223 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/calvin/Documents/uri/portfolio/main.tex" 1773948438.83239 1379 0cfefb2e36c13f1f527a686f4ed34f26 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -249,12 +249,12 @@
   "figures/csc592-bigdata-pc-phant.tex" 1773941315.67287 550 bf2a3471b422896c726d6301581da733 ""
   "figures/csc592-bigdata-soe.tex" 1773937732.5011 1519 ba0afffb3d0ff3fb38defaf9c5d82ef1 ""
   "figures/title-seal.png" 1773160356.57419 51024 ddfa917eae249dee42f2d315f14b2ffa ""
-  "main.aux" 1773954422.36392 16317 f055aff138e9cc81771a1874aeeb9945 "pdflatex"
+  "main.aux" 1773957596.56124 16324 7ebec585122ae076f6884df9bd99c113 "pdflatex"
   "main.bbl" 1773948153.4732 10205 8d1d9f221e8ab68b56fed7c9d79fdada "biber main"
-  "main.run.xml" 1773954422.36629 2298 9255f4d2cb39a5ffeeda22d5a40b248a "pdflatex"
+  "main.run.xml" 1773957596.56458 2298 9255f4d2cb39a5ffeeda22d5a40b248a "pdflatex"
   "main.tex" 1773948438.83239 1379 0cfefb2e36c13f1f527a686f4ed34f26 ""
   "sections/csc519.tex" 1773161222.09608 387 1f12028561fba6a19f4b0266dfa4567c ""
-  "sections/csc592-bigdata.tex" 1773954420.31746 12205 96bb47b41beab38d684d3ca7f493bec0 ""
+  "sections/csc592-bigdata.tex" 1773957592.44223 13681 5a8c264d24735039818ca84f4a19fa4f ""
   "sections/csc592-mlsec.tex" 1773161250.84618 409 dbb74e96e57b41ba734dd9a89d44caae ""
   "sections/intro.tex" 1773255128.76236 1298 fda4eaa7c50e99a91110df14ea885bb2 ""
   "sections/title.tex" 1773857855.19495 717 1be8763d49af2d604849fd67f9a6d85f ""

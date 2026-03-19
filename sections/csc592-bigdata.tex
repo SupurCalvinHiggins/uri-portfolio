@@ -91,7 +91,8 @@ disjoint subsets. For hypergraphs, each subset becomes an edge-disjoint subgraph
 example, splitting edges evenly between edge-disjoint 3-uniform and 4-uniform subgraphs yields a mean edge size of 3.5. Many non-uniform families outperform 
 this baseline, and therefore afford smaller filters. Interestingly, some non-uniform families also outperform uniform families at integer mean edge sizes. Since 
 peelability thresholds are defined in the limit of large graphs, a non-uniform family can be more peelable in practice than a uniform family with nearly the 
-same mean edge size. For example, one family achieves $\approx 1$\% memory savings over the uniform baseline at mean edge size $4$. \\
+same mean edge size. It's also possible three samples per candidate is not enough to accurately determine the threshold. For example, one family achieves 
+$\approx 1$\% memory savings over the uniform baseline at mean edge size $4$. \\
 
 \noindent
 These data suggest two conjectures. Let $\mathcal{H}_d$ denote the set of fuse graph families with mean edge size $d$ and let $\tau(\mathcal{F})$ 
@@ -156,5 +157,21 @@ Section~\ref{sec:nuhg}, for which the methods of \cite{dietzfelbinger2019} and \
 
 \subsection{Reflection}
 
-TODO: A 250-word self reflection of what skills were developed or enhanced in completing those
-projects.
+This project strengthen my ability to enter a new subfield independently through a literature review. Reading many approximate membership query papers, from 
+theoretical analysis to engineered implementations, gave me enough grounding to pose original research questions. One area I want to develop further is posing
+robust questions, where even a negative result is informative. If non-uniform filter's microarchitectural bottleneck cannot be overcome, that facet is a total 
+loss. \\
+
+\noindent
+The most demanding aspect of this project was maintaining multiple representations of the same structure simultaneously: a filter is a data structure, a system
+of linear equations, and a hypergraph. Initially, I found it challenging to move fluidly between these views. Over time this became natural, and I applied it 
+most directly when using cluster resources to empirically explore non-uniform hypergraphs, and translate the result into both formal conjectures and a concrete
+implementation. \\
+
+\noindent
+The performance engineering work expanded my understanding of modern processor architecture. Attempting to make the non-uniform filter practical required 
+reasoning carefully about superscalar out-of-order execution and non-blocking caches, interpret hardware performance counters, and diagnose microarchitectural 
+bottlenecks. \\
+
+\noindent
+Finally, I want to thank Morgan, Tom, Vincent and Dan. Collaborating with them is definitely a highlight of my academic experience.
