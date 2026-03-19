@@ -47,12 +47,6 @@
            given={Mark},
            giveni={M\bibinitperiod}}}%
       }
-      \list{location}{1}{%
-        {San Diego, California, USA}%
-      }
-      \list{publisher}{1}{%
-        {Association for Computing Machinery}%
-      }
       \strng{namehash}{ec61bcdcf993a0055d0ca1c7203cc0ea}
       \strng{fullhash}{50d9d7e99535c733e994a615815dc50a}
       \strng{bibnamehash}{ec61bcdcf993a0055d0ca1c7203cc0ea}
@@ -63,17 +57,9 @@
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{In this paper we consider the question of how much space is needed to represent a set. Given a finite universe U and some subset V (called the vocabulary), an exact membership tester is a procedure that for each element s in U determines if s is in V. An approximate membership tester is allowed to make mistakes: we require that the membership tester correctly accepts every element of V, but we allow it to also accept a small fraction of the elements of U - V.}
-      \field{booktitle}{Proceedings of the Tenth Annual ACM Symposium on Theory of Computing}
-      \field{isbn}{9781450374378}
-      \field{series}{STOC '78}
+      \field{booktitle}{Symposium on Theory of Computing (STOC)}
       \field{title}{Exact and Approximate Membership Testers}
       \field{year}{1978}
-      \field{pages}{59\bibrangedash 65}
-      \range{pages}{7}
-      \verb{doi}
-      \verb 10.1145/800133.804332
-      \endverb
       \verb{urlraw}
       \verb https://doi.org/10.1145/800133.804332
       \endverb
@@ -94,9 +80,6 @@
            given={Daniel},
            giveni={D\bibinitperiod}}}%
       }
-      \list{publisher}{1}{%
-        {Association for Computing Machinery (ACM)}%
-      }
       \strng{namehash}{293180f7fdd3dc19f4c00fe3660d7342}
       \strng{fullhash}{293180f7fdd3dc19f4c00fe3660d7342}
       \strng{bibnamehash}{293180f7fdd3dc19f4c00fe3660d7342}
@@ -107,17 +90,9 @@
       \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{1084-6654}
-      \field{journaltitle}{ACM Journal of Experimental Algorithmics}
-      \field{month}{3}
+      \field{journaltitle}{Journal of Experimental Algorithmics (JEA)}
       \field{title}{Binary Fuse Filters: Fast and Smaller Than Xor Filters}
-      \field{volume}{27}
       \field{year}{2022}
-      \field{pages}{1\bibrangedash 15}
-      \range{pages}{15}
-      \verb{doi}
-      \verb 10.1145/3510449
-      \endverb
       \verb{urlraw}
       \verb http://dx.doi.org/10.1145/3510449
       \endverb
@@ -138,12 +113,6 @@
            given={Ramesh\bibnamedelima K.},
            giveni={R\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
       }
-      \list{location}{1}{%
-        {New York, NY, USA}%
-      }
-      \list{publisher}{1}{%
-        {Association for Computing Machinery}%
-      }
       \strng{namehash}{02337a0a4e9ca79cdc3abbe90a264dd2}
       \strng{fullhash}{02337a0a4e9ca79cdc3abbe90a264dd2}
       \strng{bibnamehash}{02337a0a4e9ca79cdc3abbe90a264dd2}
@@ -154,26 +123,15 @@
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{This paper "peeks under the covers" at the subsystems that provide the basic functionality of a leading content delivery network. Based on our experiences in building one of the largest distributed systems in the world, we illustrate how sophisticated algorithmic research has been adapted to balance the load between and within server clusters, manage the caches on servers, select paths through an overlay routing network, and elect leaders in various contexts. In each instance, we first explain the theory underlying the algorithms, then introduce practical considerations not captured by the theoretical models, and finally describe what is implemented in practice. Through these examples, we highlight the role of algorithmic research in the design of complex networked systems. The paper also illustrates the close synergy that exists between research and industry where research ideas cross over into products and product requirements drive future research.}
-      \field{issn}{0146-4833}
       \field{journaltitle}{SIGCOMM Comput. Commun. Rev.}
-      \field{month}{7}
-      \field{number}{3}
       \field{title}{Algorithmic Nuggets in Content Delivery}
-      \field{volume}{45}
       \field{year}{2015}
-      \field{pages}{52\bibrangedash 66}
-      \range{pages}{15}
-      \verb{doi}
-      \verb 10.1145/2805789.2805800
-      \endverb
       \verb{urlraw}
       \verb https://doi.org/10.1145/2805789.2805800
       \endverb
       \verb{url}
       \verb https://doi.org/10.1145/2805789.2805800
       \endverb
-      \keyw{bloom filter,stable marriage,leader election,algorithms,overlay routing,internet services,akamai,content delivery network,load balancing}
     \endentry
   \enddatalist
 \endrefsection

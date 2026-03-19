@@ -1,0 +1,14 @@
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lccc}
+        \toprule
+        Algorithm & Hashes & Branch Mispredictions & Cache Misses \\
+        \midrule
+        Conditional Branch & 3.5 & 0.5 & 3.5 \\
+        Branchless        & 4   & 0   & 4   \\
+        Phantom Entry     & 4   & 0   & 3.5 \\
+    \bottomrule
+    \end{tabular}
+    \caption{Metrics for non-uniform binary fuse filter query algorithms. Hashes, branch mispredictions, and cache misses are mean per query.}
+    \label{tab:csc592_bigdata_impl_tab}
+\end{table}

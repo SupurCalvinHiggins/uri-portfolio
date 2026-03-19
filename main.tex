@@ -8,8 +8,9 @@
 \usepackage{amssymb}
 \usepackage{xcolor}
 \usepackage{caption}
+\usepackage{algorithm}
 \usepackage{algpseudocode}
-\usepackage{algorithmicx}
+\usepackage{booktabs}
 \usepackage[backend=biber]{biblatex}
 
 \usetikzlibrary{arrows.meta, positioning, bending, fit, calc}
@@ -44,17 +45,22 @@ inner sep=2pt] (X) {$\displaystyle #3$};%
     labelsep=colon,
 }
 
-
 \addbibresource{ref.bib}
 
 \begin{document}
 
-\input{title.tex}
-\input{intro.tex}
-\input{csc592-bigdata.tex}
-\input{csc592-mlsec.tex}
-\input{csc519.tex}
+\input{sections/title.tex}
+\input{sections/intro.tex}
+\input{sections/csc592-bigdata.tex}
+\input{sections/csc592-mlsec.tex}
+\input{sections/csc519.tex}
 
-% \printbibliography
+\printbibliography
+
+\appendix
+
+\input{appendix/csc592-bigdata.tex}
+\input{appendix/csc592-mlsec.tex}
+\input{appendix/csc519.tex}
 
 \end{document}

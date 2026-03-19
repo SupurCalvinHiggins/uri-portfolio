@@ -4,7 +4,6 @@ This project was completed for CSC 592: Algorithms for Big Data.
 
 \subsection{Motivation}
 
-% DEFINE U, N
 Distributed systems often require fast and small set data structures. For example, content delivery networks avoid caching one-hit wonders by querying a visited
 set~\cite{maggs2015}. Supporting such exact membership queries on a large universe\footnote{Set of all keys.} $U$ requires $\Omega(\lg |U|)$ bits per key. For 
 large enough sets, this is impractical. By permitting false positive results with some probability $\epsilon$, the lower bound is reduced to $\lg \frac{1}{\epsilon}$ 
@@ -59,7 +58,6 @@ However, this optimality result is confined to uniform hypergraphs. There may ex
 such families also have a low average edge size (i.e. few hashes and accesses per query), filters based on them could potentially reduce memory overhead without
 degrading query latency and throughput. Therefore, we ask:
 
-% TODO: Add bold RQx
 \begin{enumerate}
     \item How can we systematically construct non-uniform hypergraph families with peelability thresholds comparable to or surpassing those of fuse graph 
     families?
@@ -68,7 +66,7 @@ degrading query latency and throughput. Therefore, we ask:
 
 \subsection{Summary}
 
-\subsubsection{RQ1}
+\subsubsection{Non-Uniform Hypergraphs}
 
 We computed 2-peelability thresholds for 10K non-uniform fuse graph families with mean edge size between 3 and 4 (see 
 Figure~\ref{fig:csc592_bigdata_nuhg_graph}). As peelability is monotonic in edge density, we used binary search. At each candidate threshold, we sampled 
@@ -92,123 +90,36 @@ sharding is suboptimal. We further conjecture that for $d \not \in \mathbb{Z}$, 
 $\lfloor d \rfloor$-edges and a fraction $p$ of $\lceil d \rceil$-edges, where $p = d - \lfloor d \rfloor$. For example, for $d = 3.5$, this family contains
 50\% 3-edges and 50\% 4-edges. Both conjectures remain open.
 
-\subsubsection{RQ2}
+\subsubsection{Non-Uniform Binary Fuse Filters}
 
 \noindent
-We implemented and optimized a binary fuse filter based on non-uniform hypergraph with 50\% 3-edges and 50\% 4-edges in C++, since this combination afforded the
-greatest gains over sharding uniform binary fuse filters. Each key is hashed to either three or four array locations. Naively,
-one might extract a bit from the hash and conditionally XOR a fourth array entry. However, since this bit comes from the hash, the branch is unpredicable and
-is taken with 50\% probability. The branch can be eliminated by always fetching the fourth array entry and then zeroing it with a multiply. However, this places
-additional pressure on the memory system. Instead of averaging 3.5 cache misses for large filters, this scheme averages 4. While this does not strongly impact 
-latency due to memory level parallelism, it harms throughput. Instead, the array location, rather than the array index is zeroed. the entries in the binary 
-fuse filter are shifted right one, and a zero is placed at index 0. This way, the phatom entry is always hot in the cache (hit in 50\% of queries). This yields
-a scheme with 3.5 average cache misses and no branch mispredictions. 
+We implemented and optimized a non-uniform binary fuse filter with 50\% 3-edges and 50\% 4-edges in C++ (i.e. each key hashes to either 3 or 4 array entries). 
+This edge distribution offered the greatest advantage over sharding uniform binary fuse filters. We considered three query algorithms: conditional branch, 
+branchless and phantom entry (see Table~\ref{tab:csc592_bigdata_impl_tab} for metrics and see Section~\ref{sec:csc592_bigdata_contains_impl} for pseudocode). \\
 
-% table
-% scheme | # hash | mispredict | # cache miss
-% cond   | 3.5    | 0.5        | 3.5
-% zero   | 4      | 0          | 4
-% phant  | 4      | 0          | 3.5
+\input{figures/csc592-bigdata-impl-tab}
 
-% Move to appendix
-\begin{figure}[H]
-    \centering
-    \begin{minipage}[t]{0.32\textwidth}
-        \centering\textbf{Conditional}
-        \tiny
-        \begin{algorithmic}
-            \Function{Contains}{k}
-                \State $f \gets$ \Call{Fingerprint}{k}
-                \State $e_1 \gets A[$\Call{Hash1}{k}]
-                \State $e_2 \gets A[$\Call{Hash2}{k}]
-                \State $e_3 \gets A[$\Call{Hash3}{k}]
-                \State $e_4 \gets 0$
-                \If{\Call{IsFourEdge}{k}}
-                    \State $e_4 \gets A[$\Call{Hash4}{k}]
-                \EndIf
-                \State $f' \gets e_1 \oplus e_2 \oplus e_3 \oplus e_4$
-                \State \Return $f == f'$ 
-            \EndFunction
-        \end{algorithmic}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.32\textwidth}
-        \centering\textbf{Conditional}
-        \tiny
-        \begin{algorithmic}
-            \Function{Contains}{k}
-                \State $f \gets$ \Call{Fingerprint}{k}
-                \State $e_1 \gets A[$\Call{Hash1}{k}]
-                \State $e_2 \gets A[$\Call{Hash2}{k}]
-                \State $e_3 \gets A[$\Call{Hash3}{k}]
-                \State $e_4 \gets A[$\Call{Hash3}{k}] * \Call{IsFourEdge}{k}
-                \State $f' \gets e_1 \oplus e_2 \oplus e_3 \oplus e_4$
-                \State \Return $f == f'$ 
-            \EndFunction
-        \end{algorithmic}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.32\textwidth}
-        \centering\textbf{Conditional}
-        \tiny
-        \begin{algorithmic}
-            \Function{Contains}{k}
-                \State $f \gets$ \Call{Fingerprint}{k}
-                \State $f \gets f \oplus A[$\Call{Hash1}{k}]
-                \State $f \gets f \oplus A[$\Call{Hash2}{k}]
-                \State $f \gets f \oplus A[$\Call{Hash3}{k}]
-                \If{\Call{IsFourEdge}{k}}
-                    \State $f \gets f \oplus A[$\Call{Hash4}{k}]
-                \EndIf
-                \State \Return $f == 0$ 
-            \EndFunction
-        \end{algorithmic}
-    \end{minipage}
-    \caption{Three query implementations for non-uniform binary fuse filters. The phantom scheme achieves 3.5 average cache misses with no branch mispredictions.}
-    \label{fig:schemes}
-\end{figure}
+\noindent
+In the conditional branch algorithm, we compute the fingerprint and access the first three array entries, then compute their bitwise-XOR. If the key is a 
+4-edge, we also access and bitwise-XOR the fourth array entry. This branch is mispredicted for at least half of the queries. \\
+
+\noindent
+In the branchless algorithm, we compute the fingerprint and access all four array entries. If the key is a 3-edge, we zero the fourth value with a 
+bitwise-AND. Then, we compute the bitwise-XOR of all five values. For large filters, all four array accesses will miss the cache. \\ 
+
+\noindent
+In the phantom entry algorithm, we compute the fingerprint and access all four array entries. If the key is a 3-edge, we zero the fourth hash with a bitwise-AND
+before accessing its entry. That is, the fourth array entry for all 3-edges is $A[0]$. We shift the original entries left once and set $A[0]$ to zero (see 
+Figure~\ref{fig:csc592_bigdata_nubff}). Unlike the branchless algorithm, the fourth array access for 3-edges will hit the cache since $A[0]$ is requested in 
+50\% of queries. \\
 
 \input{figures/csc592-bigdata-nubff.tex}
 
-\input{figures/csc592-bigdata-nusoe.tex}
-
-\input{figures/csc592-bigdata-nuhg.tex}
-
-
-% Inspired by random hyperparameter sweeps in deep learning, we computed em-
-% pirical peelablity thresholds for 10403 non-uniform fuse graph families (see Table
-% 1) with mean edge size between three and four. As probability of being pee-
-% lable is a monotonic function of the edge density, we binary searched for the
-% empirical thresholds. At each candidate threshold, three hypergraphs (1000000
-% edges, 8192 window size) were sampled from the family. If the majority of the
-% hypergraphs were peelable, the family was considered peelable at the threshold
-% value. Otherwise, the family was considered not peelable at the threshold value.
-
-% While k-uniform fuse graphs have integer mean edge sizes, they can be extended
-% to any mean edge size through sharding [8]. For example, edges can be evenly
-% split between a 3-uniform fuse subgraph and a 4-uniform fuse subgraph to form
-% a hypergraph with mean edge size of 3.5. We found that many non-uniform fuse
-% graph families have higher thresholds than sharded k-uniform fuse graphs.
-
-
-
-% we considered non-uniform
-% empirical peelability thresholds for 10403 non-uniform fuse graph families
-% mean edge size between 3 and 4
-
-% can interpolate via sharding to attain any threshold
-
-% non-uniform hypergraph families
-% pareto frontier
-% optimized implementation
-
-% limitations:
-% explore additional parameteratizations of hg families
-% need to prove conjecture
-% implementation did not perform well
-
-TODO: A 400–500-word summary of the technical contributions of the work, what was
-accomplished overall, and the limitations of their work.
+\noindent
+Surprisingly, only the conditional branch algorithm had better query throughput than the 4-uniform binary fuse filter. We expected that nearly all cycles were
+spent stalled on loads, so a lower cache miss rate should improve throughput by generating useful outstanding misses. However, only $80\%$ of cycles 
+were spent stalled (all loads), not nearly 100\%. We hypothesize that either the ROB is too small to allow OoO address generation before retiring outstanding 
+misses, or lack of MSHRs stalls OoO address generation when loading the next key. This means hash latency is the primary bottleneck.
 
 \subsection{Reflection}
 

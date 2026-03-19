@@ -1,0 +1,17 @@
+\begin{algorithm}[H]
+    \centering
+    \begin{algorithmic}
+        \Function{Contains}{k}
+            \State $f \gets$ \Call{Fingerprint}{k}
+            \State $f \gets f \oplus A[$\Call{Hash1}{$k$}]
+            \State $f \gets f \oplus A[$\Call{Hash2}{$k$}]
+            \State $f \gets f \oplus A[$\Call{Hash3}{$k$}]
+            \If{\Call{IsFourEdge}{$k$}}
+                \State $f \gets f \oplus A[$\Call{Hash4}{$k$}]
+            \EndIf
+            \State \Return $f == 0$ 
+        \EndFunction
+    \end{algorithmic}
+    \caption{Conditional branch algorithm.}
+    \label{fig:csc592_bigdata_pc_cond}
+\end{algorithm}
