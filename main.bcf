@@ -2376,6 +2376,8 @@
     <bcf:citekey order="10" intorder="1">graf2022</bcf:citekey>
     <bcf:citekey order="11" intorder="1">dietzfelbinger2019</bcf:citekey>
     <bcf:citekey order="12" intorder="1">walzer2021</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">dong2021</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">bloom1970</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

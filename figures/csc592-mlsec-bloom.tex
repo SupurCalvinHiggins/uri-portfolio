@@ -1,0 +1,64 @@
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[>=Stealth, arraynode/.style={draw, minimum width=7mm, minimum height=6mm, outer sep=0, inner sep=0}]
+
+        \node[arraynode, fill=lightyellow] (a1) {0};
+        \node[arraynode, fill=lightorange, right=0 of a1] (a2) {1};
+        \node[arraynode, fill=lightorange, right=0 of a2] (a3) {1};
+        \node[arraynode, fill=lightyellow, right=0 of a3] (a4) {0};
+        \node[arraynode, fill=lightyellow, right=0 of a4] (a5) {0};
+        \node[arraynode, right=0 of a5, path picture={
+        \shade[left color=lightorange, right color=lightred]
+                (path picture bounding box.south west)
+                rectangle (path picture bounding box.north east);
+        }] (a6) {1};
+        \node[arraynode, right=0 of a6, path picture={
+        \shade[left color=lightred, right color=lightpink]
+                (path picture bounding box.south west)
+                rectangle (path picture bounding box.north east);
+        }] (a7) {1};
+        \node[arraynode, fill=lightyellow, right=0 of a7] (a8) {0};
+        \node[arraynode, fill=lightyellow, right=0 of a8, path picture={
+        \shade[left color=lightred, right color=lightpink]
+                (path picture bounding box.south west)
+                rectangle (path picture bounding box.north east);
+        }] (a9) {1};
+        \node[arraynode, fill=lightyellow, right=0 of a9] (a10) {0};
+        \node[arraynode, fill=lightyellow, right=0 of a10, path picture={
+        \shade[left color=lightpink, right color=lightpurple]
+                (path picture bounding box.south west)
+                rectangle (path picture bounding box.north east);
+        }] (a11) {1};
+        \node[arraynode, fill=lightyellow, right=0 of a11] (a12) {0};
+        \node[arraynode, fill=lightpurple, right=0 of a12] (a13) {1};
+        \node[arraynode, fill=lightyellow, right=0 of a13] (a14) {0};
+        \node[arraynode, fill=lightyellow, right=0 of a14] (a15) {0};
+        \node[arraynode, fill=lightpurple, right=0 of a15] (a16) {1};
+
+        \node[circle, draw, above=12mm of a4, fill=lightorange] (x) {$x$};
+        \draw[->] (x) to (a2.north);
+        \draw[->] (x) to (a3.north);
+        \draw[->] (x) to (a6.north);
+        
+        \node[circle, draw, above=12mm of a7, fill=lightred] (y) {$y$};
+        \draw[->] (y) to (a6.north);
+        \draw[->] (y) to (a7.north);
+        \draw[->] (y) to (a9.north);
+
+        \node[circle, draw, above=12mm of a10, fill=lightpink] (w) {$w$};
+        \draw[->] (w) to (a7.north);
+        \draw[->] (w) to (a9.north);
+        \draw[->] (w) to (a11.north);
+        
+        \node[circle, draw, above=12mm of a13, fill=lightpurple] (z) {$z$};
+        \draw[->] (z) to (a11.north);
+        \draw[->] (z) to (a13.north);
+        \draw[->] (z) to (a16.north);
+        
+    \end{tikzpicture}
+    \caption{Bloom filter with 16-entry array and 3 hash functions. The filter contains keys $\mathcolorbox{lightorange}{x}$, $\mathcolorbox{lightred}{y}$, 
+    $\mathcolorbox{lightpink}{w}$ and $\mathcolorbox{lightpurple}{z}$. Corresponding entries are marked by arrows and matching colors. For example, since the 
+    filter contains $\mathcolorbox{lightorange}{x}$, the bitwise-AND 
+    $\mathcolorbox{lightorange}{1} \mathbin{\&} \mathcolorbox{lightorange}{1} \mathbin{\&} \protect\gradientmathbox{lightorange}{lightred}{1}$ is $\mathcolorbox{lightorange}{1}$.}
+    \label{fig:csc592_mlsec_bloom}
+\end{figure}

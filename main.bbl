@@ -128,6 +128,64 @@
       \verb https://doi.org/10.4230/LIPIcs.ESA.2019.38
       \endverb
     \endentry
+    \entry{dong2021}{article}{}
+      \name{author}{4}{}{%
+        {{hash=156eb3d646c479c2390f82065641b518}{%
+           family={Dong},
+           familyi={D\bibinitperiod},
+           given={Siying},
+           giveni={S\bibinitperiod}}}%
+        {{hash=d8008f82fffdece80684b38cea0dec4d}{%
+           family={Kryczka},
+           familyi={K\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a5c7807bda4da2795320505d5ffefe93}{%
+           family={Jin},
+           familyi={J\bibinitperiod},
+           given={Yanqin},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=0cc180f816815b76057e4e06ff75d112}{%
+           family={Stumm},
+           familyi={S\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{cf7f3423eb3af472ecebac4d6484300f}
+      \strng{fullhash}{bce436c3c6687d9d649384027e859cdb}
+      \strng{bibnamehash}{cf7f3423eb3af472ecebac4d6484300f}
+      \strng{authorbibnamehash}{cf7f3423eb3af472ecebac4d6484300f}
+      \strng{authornamehash}{cf7f3423eb3af472ecebac4d6484300f}
+      \strng{authorfullhash}{bce436c3c6687d9d649384027e859cdb}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This article is an eight-year retrospective on development priorities for RocksDB, a key-value store developed at Facebook that targets large-scale distributed systems and that is optimized for Solid State Drives (SSDs). We describe how the priorities evolved over time as a result of hardware trends and extensive experiences running RocksDB at scale in production at a number of organizations: from optimizing write amplification, to space amplification, to CPU utilization. We describe lessons from running large-scale applications, including that resource allocation needs to be managed across different RocksDB instances, that data formats need to remain backward- and forward-compatible to allow incremental software rollouts, and that appropriate support for database replication and backups are needed. Lessons from failure handling taught us that data corruption errors needed to be detected earlier and that data integrity protection mechanisms are needed at every layer of the system. We describe improvements to the key-value interface. We describe a number of efforts that in retrospect proved to be misguided. Finally, we describe a number of open problems that could benefit from future research.}
+      \field{issn}{1553-3077}
+      \field{journaltitle}{ACM Trans. Storage}
+      \field{month}{10}
+      \field{number}{4}
+      \field{title}{RocksDB: Evolution of Development Priorities in a Key-value Store Serving Large-scale Applications}
+      \field{volume}{17}
+      \field{year}{2021}
+      \verb{doi}
+      \verb 10.1145/3483840
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3483840
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3483840
+      \endverb
+      \keyw{Key-value stores,large-scale applications,RocksDB,SSD,compaction,databases}
+    \endentry
     \entry{graf2022}{article}{}
       \name{author}{2}{}{%
         {{hash=65fdc27fbd1934341890dfd5162be32f}{%

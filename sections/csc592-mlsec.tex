@@ -2,7 +2,68 @@
 
 This project was completed for CSC 592: Machine Learning Security.
 
-\subsection{Abstract}
+\subsection{Background}
+
+% AMQ filters, motivation for them + motivation for security
+Database systems often require fast and small set data structures. For example, RocksDB~\cite{dong2021} reduces IO operations by filtering queries before 
+reading from disk. As false positives do not impact correctness, they are permitted with bounded probability. Such approximate membership queries can be much
+faster and more memory efficient than exact membership queries. However, adversaries may degrade performance by generating false positives. \\
+
+\noindent
+A Bloom filter~\cite{bloom1970} is a probabilistic data structure for approximate membership queries. Membership information is stored in an array of bits. To
+query the filter, a key is hashed to several entries in the array. If all entries are set to 1 (i.e. the bitwise-AND of the entries is 1), then the query 
+\emph{might} be in the set. False positives occur with probability $\epsilon$. Otherwise, the query \emph{definitely} is not in the set.  
+
+% Bloom filter diagram
+\input{figures/csc592-mlsec-bloom.tex}
+
+% naor-eylon filters
+\noindent
+Secure Bloom Filters\footnote{Secure Bloom Filters are often (opaquely) called Naor-Eylon filters.} (SBFs)~\cite{} extend Bloom filters to provide strong
+security guarantees. They apply a pseudorandom permutation\footnote{Pseudorandom permutations are not known to exist but are strongly suspected to.} to keys 
+before querying the filter. If $\mathbf{P} \neq \mathbf{NP}$, there is no probabilistic polynomial time adversary that non-negligibly degrades the false 
+positive rate. 
+
+% learned bloom filter operation
+
+
+% learned bloom filter diagram
+\input{figures/csc592-mlsec-lbf.tex}
+
+% downtown bodgeda filter
+
+% downtown bodgeda filter diagram
+\input{figures/csc592-mlsec-dbf.tex}
+
+% research questions
+% optimal backup filter sizing algorithm
+% empirical attack on DBF
+
+Achieving optimal performance from LBFs requires tuning several parameters including a decision threshold $\tau$, and backup filter false positive rate(s) to 
+attain the desired false positive rate $\epsilon$. Parameter tuning also impacts the filter's memory footprint and, for DBFs, worse-case positive rate. Tuning 
+procedures for LBFs do not directly translate to DBFs, as they do not balance the tradeoff between expected and worst-case false positive rates. Therefore, I 
+ask:
+\begin{enumerate}
+    \item How can the decision threshold and backup filter false positive rates be chosen to minimize SLBF memory footprint given desired expected and maximum
+    false positive rates?
+    \item 
+\end{enumerate}
+
+\subsection{Summary}
+
+% RQ1:
+
+% description of tuning algorithm (math)
+
+% other part (dp)
+
+% RQ2:
+
+% dbf implementation
+
+% dataset
+
+% empirical attack + results
 
 TODO: A 400–500-word summary of the technical contributions of the work, what was
 accomplished overall, and the limitations of their work.
@@ -11,3 +72,9 @@ accomplished overall, and the limitations of their work.
 
 TODO: A 250-word self reflection of what skills were developed or enhanced in completing those
 projects.
+
+% attending talks
+
+% understanding theory papers
+
+% rapid ideation and development
