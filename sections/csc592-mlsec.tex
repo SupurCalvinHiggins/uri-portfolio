@@ -25,12 +25,18 @@ before querying the filter. If $\mathbf{P} \neq \mathbf{NP}$, there is no probab
 positive rate. 
 
 % learned bloom filter operation
-
+Learned Bloom filters~\cite{kraska2018} extend Bloom filters with a machine learning model. To query the filter, the machine learning model makes a prediction.
+If the model predicts the query is in the set, the filter outputs that the key is in the set. This has false positive rate equal to the model. Since the model
+also makes false negative predictions, a backup Bloom filter containing all false negatives is queried when the model output is negative. This has false 
+positive rate equal to the product of the model's true negative rate and the backup filter's false positive rate. 
 
 % learned bloom filter diagram
 \input{figures/csc592-mlsec-lbf.tex}
 
 % downtown bodgeda filter
+As strong attacks against machine learning models are known, the false positive rate of a learned Bloom filter can be arbitrarily degraded by an attacker. 
+Secure Learned Bloom Filters prevent this by replacing the backup Bloom filter with a secure Bloom filter and adding a second secure backup Bloom filter to 
+check queries predicted as positive against the set of true positives. 
 
 % downtown bodgeda filter diagram
 \input{figures/csc592-mlsec-dbf.tex}
@@ -46,16 +52,60 @@ ask:
 \begin{enumerate}
     \item How can the decision threshold and backup filter false positive rates be chosen to minimize SLBF memory footprint given desired expected and maximum
     false positive rates?
-    \item 
+    \item How well do SLBFs perform in practice with and without parameter tuning?
 \end{enumerate}
 
 \subsection{Summary}
 
+
+\subsubsection{Tuning Algorithm}
+
+We prove that given a fixed decision threshold and desired expected false positive rate $\epsilon$, the secure learned bloom filter size is minimized by taking 
+\begin{align*}
+   \mathrm{TP}_\mathrm{FPR} = \epsilon \frac{\mathrm{M}_\mathrm{TPR}}{\mathrm{M}_\mathrm{FPR}} \qquad \mathrm{FN}_\mathrm{FPR} = \epsilon \frac{\mathrm{M}_\mathrm{FNR}}{\mathrm{M}_\mathrm{TNR}}
+\end{align*}
+where $\mathrm{TP}_\mathrm{FPR}$ is the true positive filter false positive rate, $\mathrm{FN}_\mathrm{FPR}$ is the false negative filter false positive rate,
+and $\mathrm{M}_\mathrm{TPR}$, $\mathrm{M}_\mathrm{FPR}$, $\mathrm{M}_\mathrm{FNR}$ and $\mathrm{M}_\mathrm{TNR}$ are the model true positive, false positive,
+false negative, and true negative rates.
+
+We further prove that the optimal choice of decision threshold minimizes 
+\begin{align*}
+    -\text{M}_\text{TPR} \ln \left( \frac{\text{M}_\text{TPR}}{\text{M}_\text{FPR}} \right) 
+ - \text{M}_\text{FNR} \ln \left( \frac{\text{M}_\text{FNR}}{\text{M}_\text{TNR}}\right)
+\end{align*}
+and provide a $\Theta(n \lg n)$ dynamic programming algorithm to find the optimal threshold. To maintain worst case security guarantees, i.e., a maximum false 
+positive rate, we restrict the choice of $\tau$ such that 
+\begin{align*}
+    \max\left\{\epsilon\frac{\text{M}_\text{TPR}}{\text{M}_\text{FPR}}, \epsilon \frac{\text{M}_\text{FNR}}{\text{M}_\text{TNR}} \right\} \leq \epsilon_\text{max}
+\end{align*}
+That is, even when the model is forced to only predict positives or only negatives, the false positive rate remains bounded and known.
+
+
+Here is one sample procedure to optimize the cost function.
+\begin{enumerate}
+    \item Sort the learned model confidence scores $A$ on the training set from least to greatest.
+    \item For each index $i$,
+    \begin{enumerate}
+        \item Compute the number of elements with negative class in $A[:i]$ and with positive class in $A[i:]$ with a rolling sum. 
+        \item Compute the false/true negative/positive rates of the model given that $A[:i]$ is classified as negative and $A[i:]$ is classified as positive.
+        \item Verify that the optimal backup filter false positive rates are less than $\epsilon_\text{max}$.
+        \item Track the index with the lowest cost $i^*$.
+    \end{enumerate}
+    \item Output the average between $A[i^* - 1]$ and $A[i^*]$.
+\end{enumerate}
 % RQ1:
 
 % description of tuning algorithm (math)
 
 % other part (dp)
+
+\subsubsection{Tuned Performance}
+
+We construct a SBF and an SLBF on the TODO dataset. We find that for the same memory budget and maximum false positive rate, the SLBF reduces the expected false
+positive rate from 9.67\% to 4.59\%, or a 2.1x improvement. 
+
+We attack the SLBF with an adaptive black box attack and a targeted random attack. Neither attack is able to degrade the secure learned bloom filter false 
+positive rate worse than $\epsilon_\mathrm{max}$.
 
 % RQ2:
 

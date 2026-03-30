@@ -59,39 +59,44 @@
 \abx@aux@segm{0}{0}{dong2021}
 \abx@aux@cite{0}{bloom1970}
 \abx@aux@segm{0}{0}{bloom1970}
+\abx@aux@cite{0}{kraska2018}
+\abx@aux@segm{0}{0}{kraska2018}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Tuning Secure Learned Bloom Filters}{8}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Background}{8}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Bloom filter with 16-entry array and 3 hash functions. The filter contains keys $\colorbox {lightorange}{$\displaystyle x$}$, $\colorbox {lightred}{$\displaystyle y$}$, $\colorbox {lightpink}{$\displaystyle w$}$ and $\colorbox {lightpurple}{$\displaystyle z$}$. Corresponding entries are marked by arrows and matching colors. For example, since the filter contains $\colorbox {lightorange}{$\displaystyle x$}$, the bitwise-AND $\colorbox {lightorange}{$\displaystyle 1$} \mathbin {\&} \colorbox {lightorange}{$\displaystyle 1$} \mathbin {\&} \gradientmathbox {lightorange}{lightred}{1}$ is $\colorbox {lightorange}{$\displaystyle 1$}$.}}{8}{}\protected@file@percent }
 \newlabel{fig:csc592_mlsec_bloom}{{6}{8}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Summary}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Reflection}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4}Entropy-Aware Hashing}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Abstract}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Reflection}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {A}Non-Uniform Binary Fuse Filters}{11}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Non-Uniform Binary Fuse Filter Alternative Views}{11}{}\protected@file@percent }
-\newlabel{sec:csc592_bigdata_alt_views}{{A.1}{11}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces System of linear equations with variables in $\mathbb  {F}^3_2$ induced by Figure~\ref {fig:csc592_bigdata_nubff}. Each $A[i]$ is the $i$-th entry in the backing array $A$ (zero-indexed). The keys are $\colorbox {lightorange}{$\displaystyle x$}$, $\colorbox {lightred}{$\displaystyle y$}$, $\colorbox {lightpink}{$\displaystyle w$}$ and $\colorbox {lightpurple}{$\displaystyle z$}$ with fingerprints $\colorbox {lightorange}{$\displaystyle 100$}$, $\colorbox {lightred}{$\displaystyle 011$}$, $\colorbox {lightpink}{$\displaystyle 110$}$ and $\colorbox {lightpurple}{$\displaystyle 111$}$, respectively. Array entries and fingerprints are marked with corresponding key color(s). The phantom entry is colored gray. There is one equation for each key. }}{11}{}\protected@file@percent }
-\newlabel{fig:csc592_bigdata_nusoe}{{7}{11}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Hypergraph model of Figure~\ref {fig:csc592_bigdata_nusoe}. Each $A[i]$ is the $i$-th entry in the backing array $A$ (zero-indexed). Hyperedges correspond to keys $\colorbox {lightorange}{$\displaystyle x$}$, $\colorbox {lightred}{$\displaystyle y$}$, $\colorbox {lightpink}{$\displaystyle w$}$ and $\colorbox {lightpurple}{$\displaystyle z$}$, colored accordingly. Vertices of degree zero and phantom entry $A[0]$ not shown.}}{11}{}\protected@file@percent }
-\newlabel{fig:csc592_bigdata_nuhg}{{8}{11}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Non-Uniform Binary Fuse Filter Query Algorithms}{12}{}\protected@file@percent }
-\newlabel{sec:csc592_bigdata_contains_impl}{{A.2}{12}{}{}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Conditional branch algorithm.}}{12}{}\protected@file@percent }
-\newlabel{fig:csc592_bigdata_pc_cond}{{1}{12}{}{}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Branchless algorithm.}}{12}{}\protected@file@percent }
-\newlabel{fig:csc592_bigdata_pc_bl}{{2}{12}{}{}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces Phantom entry algorithm.}}{12}{}\protected@file@percent }
-\newlabel{fig:csc592_bigdata_pc_phant}{{3}{12}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {B}Tuning Secure Learned Bloom Filters}{12}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {C}Entropy-Aware Hashing}{12}{}\protected@file@percent }
-\abx@aux@read@bbl@mdfivesum{DEEED0FC57EE62C9DAACD6ED277018E7}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Tuning Algorithm}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Tuned Performance}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Reflection}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Entropy-Aware Hashing}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Abstract}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Reflection}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {A}Non-Uniform Binary Fuse Filters}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Non-Uniform Binary Fuse Filter Alternative Views}{12}{}\protected@file@percent }
+\newlabel{sec:csc592_bigdata_alt_views}{{A.1}{12}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces System of linear equations with variables in $\mathbb  {F}^3_2$ induced by Figure~\ref {fig:csc592_bigdata_nubff}. Each $A[i]$ is the $i$-th entry in the backing array $A$ (zero-indexed). The keys are $\colorbox {lightorange}{$\displaystyle x$}$, $\colorbox {lightred}{$\displaystyle y$}$, $\colorbox {lightpink}{$\displaystyle w$}$ and $\colorbox {lightpurple}{$\displaystyle z$}$ with fingerprints $\colorbox {lightorange}{$\displaystyle 100$}$, $\colorbox {lightred}{$\displaystyle 011$}$, $\colorbox {lightpink}{$\displaystyle 110$}$ and $\colorbox {lightpurple}{$\displaystyle 111$}$, respectively. Array entries and fingerprints are marked with corresponding key color(s). The phantom entry is colored gray. There is one equation for each key. }}{12}{}\protected@file@percent }
+\newlabel{fig:csc592_bigdata_nusoe}{{7}{12}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Hypergraph model of Figure~\ref {fig:csc592_bigdata_nusoe}. Each $A[i]$ is the $i$-th entry in the backing array $A$ (zero-indexed). Hyperedges correspond to keys $\colorbox {lightorange}{$\displaystyle x$}$, $\colorbox {lightred}{$\displaystyle y$}$, $\colorbox {lightpink}{$\displaystyle w$}$ and $\colorbox {lightpurple}{$\displaystyle z$}$, colored accordingly. Vertices of degree zero and phantom entry $A[0]$ not shown.}}{12}{}\protected@file@percent }
+\newlabel{fig:csc592_bigdata_nuhg}{{8}{12}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Non-Uniform Binary Fuse Filter Query Algorithms}{13}{}\protected@file@percent }
+\newlabel{sec:csc592_bigdata_contains_impl}{{A.2}{13}{}{}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Conditional branch algorithm.}}{13}{}\protected@file@percent }
+\newlabel{fig:csc592_bigdata_pc_cond}{{1}{13}{}{}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Branchless algorithm.}}{13}{}\protected@file@percent }
+\newlabel{fig:csc592_bigdata_pc_bl}{{2}{13}{}{}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces Phantom entry algorithm.}}{13}{}\protected@file@percent }
+\newlabel{fig:csc592_bigdata_pc_phant}{{3}{13}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Tuning Secure Learned Bloom Filters}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {C}Entropy-Aware Hashing}{13}{}\protected@file@percent }
+\abx@aux@read@bbl@mdfivesum{7F789E1847836DBCD7A7E19929CAA7EB}
 \abx@aux@defaultrefcontext{0}{bloom1970}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{carter1978}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{dietzfelbinger2019}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{dong2021}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{graf2022}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{graf2020}{nty/global//global/global}
+\abx@aux@defaultrefcontext{0}{kraska2018}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{maggs2015}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{walzer2021}{nty/global//global/global}
-\gdef \@abspage@last{13}
+\gdef \@abspage@last{14}
