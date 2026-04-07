@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1774876640.30486 "main.bcf" "main.bbl" "main" 1775583652.75123 0
-  "main.bcf" 1775583652.68676 108873 d2d0d714919ed2326df72b0a488a7447 "pdflatex"
+["biber main"] 1774876640.30486 "main.bcf" "main.bbl" "main" 1775600116.43553 0
+  "main.bcf" 1775600116.3666 108873 d2d0d714919ed2326df72b0a488a7447 "pdflatex"
   "ref.bib" 1774876160.99653 5553 4d88c0d99b3edc749950501396a3cff3 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1775583650.71303 "/home/calvin/Documents/uri/portfolio/main.tex" "main.pdf" "main" 1775583652.75146 0
+["pdflatex"] 1775600113.99494 "/home/calvin/Documents/uri/portfolio/main.tex" "main.pdf" "main" 1775600116.43583 0
   "/etc/texmf/web2c/texmf.cnf" 1765049274.95223 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/calvin/Documents/uri/portfolio/main.tex" 1773948438.83239 1379 0cfefb2e36c13f1f527a686f4ed34f26 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -259,14 +259,14 @@
   "figures/csc592-mlsec-dbf.tex" 1774803750.62752 0 d41d8cd98f00b204e9800998ecf8427e ""
   "figures/csc592-mlsec-lbf.tex" 1774803681.64771 0 d41d8cd98f00b204e9800998ecf8427e ""
   "figures/title-seal.png" 1773160356.57419 51024 ddfa917eae249dee42f2d315f14b2ffa ""
-  "main.aux" 1775583652.68476 17761 3bd9078802d98cf10e878b30defb63e7 "pdflatex"
+  "main.aux" 1775600116.3656 17761 3bd9078802d98cf10e878b30defb63e7 "pdflatex"
   "main.bbl" 1774876641.28004 17025 7f789e1847836dbcd7a7e19929caa7eb "biber main"
-  "main.run.xml" 1775583652.68808 2298 9255f4d2cb39a5ffeeda22d5a40b248a "pdflatex"
+  "main.run.xml" 1775600116.36821 2298 9255f4d2cb39a5ffeeda22d5a40b248a "pdflatex"
   "main.tex" 1773948438.83239 1379 0cfefb2e36c13f1f527a686f4ed34f26 ""
   "sections/csc519.tex" 1773161222.09608 387 1f12028561fba6a19f4b0266dfa4567c ""
   "sections/csc592-bigdata.tex" 1773957592.44223 13681 5a8c264d24735039818ca84f4a19fa4f ""
   "sections/csc592-mlsec.tex" 1774878637.27675 7127 24ecef20afc3b1799d2e8188d5aff7b2 ""
-  "sections/intro.tex" 1775583650.55275 8605 8ffe9e7fb70ec3752ab6d6194932d5ad ""
+  "sections/intro.tex" 1775600113.72878 2747 eb984997ef9326ed3a4ed9945666047f ""
   "sections/title.tex" 1773857855.19495 717 1be8763d49af2d604849fd67f9a6d85f ""
   (generated)
   "main.aux"

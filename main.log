@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.12.6)  7 APR 2026 13:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.12.6)  7 APR 2026 18:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -771,34 +771,33 @@ Package pdftex.def Info: figures/title-seal.png  used on input line 15.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./figures/title-seal.png>]) (./sections/intro.tex
-Underfull \hbox (badness 10000) in paragraph at lines 22--26
+Underfull \hbox (badness 10000) in paragraph at lines 3--7
+
+ []
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 9.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 9.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Underfull \hbox (badness 10000) in paragraph at lines 8--13
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 27--32
+Underfull \hbox (badness 10000) in paragraph at lines 14--19
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--39
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 40--45
+Underfull \hbox (badness 10000) in paragraph at lines 20--25
 
  []
 
 ) (./sections/csc592-bigdata.tex [1]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 8.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 8.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
 Underfull \hbox (badness 10000) in paragraph at lines 7--12
 
  []
@@ -936,15 +935,15 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 34933 strings out of 474222
- 842799 string characters out of 5748733
+ 34934 strings out of 474222
+ 842817 string characters out of 5748733
  2262189 words of memory out of 5000000
- 56610 multiletter control sequences out of 15000+600000
+ 56611 multiletter control sequences out of 15000+600000
  569593 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,17n,93p,5423b,2144s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (15 pages, 515279 bytes).
+Output written on main.pdf (15 pages, 516341 bytes).
 PDF statistics:
  186 PDF objects out of 1000 (max. 8388607)
  114 compressed objects within 2 object streams
