@@ -9,24 +9,39 @@
 % stronger throughline: why these projects
 % show, don't tell
 
-% TODO: Additionally, the student will add a single overall introduction (300-words or more) that motivates
-% why they selected those three projects as exemplary of their accomplishments in the program.
-
 
 % Graduate school is research training. My published work is evidence that the training took, but partial evidence, since it was done with an advisor in areas where I already had relevant coursework. The projects in this portfolio are fuller evidence. They are my most technically demanding work, they were done without guidance, and together they span the full range of what I think computer science research requires: careful theory, efficient implementation, and the experimental loop between them. I selected these three because no single project demonstrates all of that; together they do.
 % Each addresses a distinct problem in performance engineering of hash-based data structures and hash functions. The first explores whether hybridizing binary fuse filters can yield theoretically and practically relevant space-time tradeoffs. The second introduces an optimal parameter tuning algorithm for secure learned Bloom filters, minimizing expected false positive rate subject to a memory budget, resolving the major open direction left by the original paper. The third extends entropy-aware hash function specialization to new cost models and more efficient implementations. Each required building fluency in an area I had not worked in before, without coursework or an advisor to shortcut that process.
 % The range across these projects is intentional. In the binary fuse filter work, large-scale empirical searches revealed that a linear blend of three and four hash functions traced a new Pareto frontier, a result that led directly to a conjecture in graph theory. The Bloom filter work required developing and solving an optimization problem from scratch. The hash function work required both theoretical analysis and low-level implementation. Each project also left open problems I continue to pursue, which is perhaps the best evidence that the work was real.
 % They are the clearest evidence that I have become a computer scientist.
 
-The projects in this portfolio are my greatest accomplishments from my graduate studies. Unlike my published research, which developed within an established 
+
+% TODO: Additionally, the student will add a single overall introduction (300-words or more) that motivates
+% why they selected those three projects as exemplary of their accomplishments in the program.
+
+The projects in this portfolio are my greatest accomplishments from my masters' studies. Unlike my published research, which developed within an established 
 advising relationship and with relevant coursework as a foundation, this work grew out of entirely self-directed study. I acquired the necessary background, 
-conducted literature reviews, then defined and pursued research questions independently. These three projects are the culmination of that process. \\
+conducted literature reviews, then defined and pursued research questions independently. These three projects are the culmination of that process. Each 
+addresses a distinct problem in performance engineering of hash-based data structures and hash functions. \\ 
 
 \noindent
-Each addresses a distinct problem in performance engineering of hash-based data structures and hash functions. The first explores whether hybridizing binary 
-fuse filters can yield theoretically and practically relevant space-time tradeoffs. The second introduces an optimal parameter tuning algorithm for secure 
-learned Bloom filters, minimizing expected false positive rate subject to a maximum false positive rate and memory budget. The third extends entropy-aware hash 
-function specialization to new cost models and more efficient implementations. \\
+The first generalizes binary fuse filters, a recent approximate set membership structure, to support non-integer arity, the number of hash functions per query, 
+natively. Binary fuse filters offer only a discrete tradeoff: increasing arity reduces memory overhead but increases query time. The standard approach to 
+achieve a continuous tradeoff is to partition data between disjoint filters of different arity. Native non-integer arity make this tradeoff principled within a 
+single construction and modestly reduces memory overhead over the partitioning approach. \\
+
+\noindent
+The second introduces the first optimal parameter tuning algorithm for secure learned Bloom filters, a recent approximate set membership structure that combines
+a learned model with two secure filters. Since standard tuning algorithms do not apply, the recommended approach is simply to allocate memory evenly between the
+two filters. This is a poor default: it cannot target an expected false positive rate, nor bound the worst-case rate, and can waste memory when either 
+constraint is defined. I give the first exact tuning algorithm to minimize memory footprint subject to expected and maximum false positive rate constraints,
+while maintaining security guarantees. \\
+
+\noindent
+The third extends entropy-aware hash function specialization, a technique that learns which bytes of a key carry the most information and hashes only those. 
+Existing work assumes uniform key frequency and a generic hash table model, and does not generate efficient x64 implementations. I generalize the approach with 
+new cost models that account for non-uniform key frequency and the specific structure of the target data structure, and add code generation targeting x64. This 
+reduces both hash latency and hash table query latency. \\
 
 \noindent
 Together these projects move between theory and efficient implementation, driven by an experimental approach: data suggested new theory, and that theory 
