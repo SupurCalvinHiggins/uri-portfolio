@@ -19,6 +19,64 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{almashaqbeh2026}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=bbd9bb0981bdc6a8d1cf2e56db6e6a6c}{%
+           family={Almashaqbeh},
+           familyi={A\bibinitperiod},
+           given={Ghada},
+           giveni={G\bibinitperiod}}}%
+        {{hash=809d61c04dee85c70281375cae108ab4}{%
+           family={Bishop},
+           familyi={B\bibinitperiod},
+           given={Allison},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6cf20fc7eaf822ba2d5fa541522a1955}{%
+           family={Tirmazi},
+           familyi={T\bibinitperiod},
+           given={Hayder},
+           giveni={H\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=e014995686aaf6609d3d9f2d91fc7484}{%
+           family={Hanaoka},
+           familyi={H\bibinitperiod},
+           given={Goichiro},
+           giveni={G\bibinitperiod}}}%
+        {{hash=933b52106a6745075f2fd273d943c021}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Bo-Yin},
+           giveni={B\bibinithyphendelim Y\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Nature Singapore}%
+      }
+      \strng{namehash}{20d8db9eab2811f94093c9b0df7a10f1}
+      \strng{fullhash}{20d8db9eab2811f94093c9b0df7a10f1}
+      \strng{bibnamehash}{20d8db9eab2811f94093c9b0df7a10f1}
+      \strng{authorbibnamehash}{20d8db9eab2811f94093c9b0df7a10f1}
+      \strng{authornamehash}{20d8db9eab2811f94093c9b0df7a10f1}
+      \strng{authorfullhash}{20d8db9eab2811f94093c9b0df7a10f1}
+      \strng{editorbibnamehash}{97f645c2aeb45405a4ceb2f538dc2a7b}
+      \strng{editornamehash}{97f645c2aeb45405a4ceb2f538dc2a7b}
+      \strng{editorfullhash}{97f645c2aeb45405a4ceb2f538dc2a7b}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in Cryptology -- ASIACRYPT 2025}
+      \field{note}{Artifact available at \url{https://artifacts.iacr.org/asiacrypt/2025/a1}}
+      \field{series}{LNCS}
+      \field{title}{Adversary Resilient Learned Bloom Filters}
+      \field{volume}{16246}
+      \field{year}{2026}
+      \field{pages}{171\bibrangedash 202}
+      \range{pages}{32}
+      \verb{doi}
+      \verb 10.1007/978-981-95-5096-8_6
+      \endverb
+    \endentry
     \entry{bloom1970}{article}{}
       \name{author}{1}{}{%
         {{hash=3124dcc7c1c1643c091687ec4b0dcd3e}{%
