@@ -1,0 +1,442 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{almashaqbeh2026}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=bbd9bb0981bdc6a8d1cf2e56db6e6a6c}{%
+           family={Almashaqbeh},
+           familyi={A\bibinitperiod},
+           given={Ghada},
+           giveni={G\bibinitperiod}}}%
+        {{hash=809d61c04dee85c70281375cae108ab4}{%
+           family={Bishop},
+           familyi={B\bibinitperiod},
+           given={Allison},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6cf20fc7eaf822ba2d5fa541522a1955}{%
+           family={Tirmazi},
+           familyi={T\bibinitperiod},
+           given={Hayder},
+           giveni={H\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=e014995686aaf6609d3d9f2d91fc7484}{%
+           family={Hanaoka},
+           familyi={H\bibinitperiod},
+           given={Goichiro},
+           giveni={G\bibinitperiod}}}%
+        {{hash=933b52106a6745075f2fd273d943c021}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Bo-Yin},
+           giveni={B\bibinithyphendelim Y\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Nature Singapore}%
+      }
+      \strng{namehash}{20d8db9eab2811f94093c9b0df7a10f1}
+      \strng{fullhash}{20d8db9eab2811f94093c9b0df7a10f1}
+      \strng{bibnamehash}{20d8db9eab2811f94093c9b0df7a10f1}
+      \strng{authorbibnamehash}{20d8db9eab2811f94093c9b0df7a10f1}
+      \strng{authornamehash}{20d8db9eab2811f94093c9b0df7a10f1}
+      \strng{authorfullhash}{20d8db9eab2811f94093c9b0df7a10f1}
+      \strng{editorbibnamehash}{97f645c2aeb45405a4ceb2f538dc2a7b}
+      \strng{editornamehash}{97f645c2aeb45405a4ceb2f538dc2a7b}
+      \strng{editorfullhash}{97f645c2aeb45405a4ceb2f538dc2a7b}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in Cryptology -- ASIACRYPT 2025}
+      \field{note}{Artifact available at \url{https://artifacts.iacr.org/asiacrypt/2025/a1}}
+      \field{series}{LNCS}
+      \field{title}{Adversary Resilient Learned Bloom Filters}
+      \field{volume}{16246}
+      \field{year}{2026}
+      \field{pages}{171\bibrangedash 202}
+      \range{pages}{32}
+      \verb{doi}
+      \verb 10.1007/978-981-95-5096-8_6
+      \endverb
+    \endentry
+    \entry{bloom1970}{article}{}
+      \name{author}{1}{}{%
+        {{hash=3124dcc7c1c1643c091687ec4b0dcd3e}{%
+           family={Bloom},
+           familyi={B\bibinitperiod},
+           given={Burton\bibnamedelima H.},
+           giveni={B\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{3124dcc7c1c1643c091687ec4b0dcd3e}
+      \strng{fullhash}{3124dcc7c1c1643c091687ec4b0dcd3e}
+      \strng{bibnamehash}{3124dcc7c1c1643c091687ec4b0dcd3e}
+      \strng{authorbibnamehash}{3124dcc7c1c1643c091687ec4b0dcd3e}
+      \strng{authornamehash}{3124dcc7c1c1643c091687ec4b0dcd3e}
+      \strng{authorfullhash}{3124dcc7c1c1643c091687ec4b0dcd3e}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Commun. ACM}
+      \field{title}{Space/Time Trade-Offs in Hash Coding with Allowable Errors}
+      \field{year}{1970}
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/362686.362692
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/362686.362692
+      \endverb
+    \endentry
+    \entry{carter1978}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=70dbe6278823ea63300f2ef53add9f07}{%
+           family={Carter},
+           familyi={C\bibinitperiod},
+           given={Larry},
+           giveni={L\bibinitperiod}}}%
+        {{hash=643084f11e3e7451a92f1929467de8d9}{%
+           family={Floyd},
+           familyi={F\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=69fc3648695bdb0cfbba6903ec76dae2}{%
+           family={Gill},
+           familyi={G\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=76fe5aa89489a62e63c07ee4d63976be}{%
+           family={Markowsky},
+           familyi={M\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+        {{hash=1a43e075cd5e2a7b5277d03fa18dc017}{%
+           family={Wegman},
+           familyi={W\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{ec61bcdcf993a0055d0ca1c7203cc0ea}
+      \strng{fullhash}{50d9d7e99535c733e994a615815dc50a}
+      \strng{bibnamehash}{ec61bcdcf993a0055d0ca1c7203cc0ea}
+      \strng{authorbibnamehash}{ec61bcdcf993a0055d0ca1c7203cc0ea}
+      \strng{authornamehash}{ec61bcdcf993a0055d0ca1c7203cc0ea}
+      \strng{authorfullhash}{50d9d7e99535c733e994a615815dc50a}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Symposium on Theory of Computing (STOC)}
+      \field{title}{Exact and Approximate Membership Testers}
+      \field{year}{1978}
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/800133.804332
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/800133.804332
+      \endverb
+    \endentry
+    \entry{dietzfelbinger2019}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=b3729237385542cc130552f38ee83186}{%
+           family={Dietzfelbinger},
+           familyi={D\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=17a9ed6e8bcb6bacb4bdade7da976216}{%
+           family={Walzer},
+           familyi={W\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{ac30e4bd330fef66a4170bf974485ffe}
+      \strng{fullhash}{ac30e4bd330fef66a4170bf974485ffe}
+      \strng{bibnamehash}{ac30e4bd330fef66a4170bf974485ffe}
+      \strng{authorbibnamehash}{ac30e4bd330fef66a4170bf974485ffe}
+      \strng{authornamehash}{ac30e4bd330fef66a4170bf974485ffe}
+      \strng{authorfullhash}{ac30e4bd330fef66a4170bf974485ffe}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{European Symposium on Algorithms (ESA)}
+      \field{title}{Dense Peelable Random Uniform Hypergraphs}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://doi.org/10.4230/LIPIcs.ESA.2019.38
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.4230/LIPIcs.ESA.2019.38
+      \endverb
+    \endentry
+    \entry{dong2021}{article}{}
+      \name{author}{4}{}{%
+        {{hash=156eb3d646c479c2390f82065641b518}{%
+           family={Dong},
+           familyi={D\bibinitperiod},
+           given={Siying},
+           giveni={S\bibinitperiod}}}%
+        {{hash=d8008f82fffdece80684b38cea0dec4d}{%
+           family={Kryczka},
+           familyi={K\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a5c7807bda4da2795320505d5ffefe93}{%
+           family={Jin},
+           familyi={J\bibinitperiod},
+           given={Yanqin},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=0cc180f816815b76057e4e06ff75d112}{%
+           family={Stumm},
+           familyi={S\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{cf7f3423eb3af472ecebac4d6484300f}
+      \strng{fullhash}{bce436c3c6687d9d649384027e859cdb}
+      \strng{bibnamehash}{cf7f3423eb3af472ecebac4d6484300f}
+      \strng{authorbibnamehash}{cf7f3423eb3af472ecebac4d6484300f}
+      \strng{authornamehash}{cf7f3423eb3af472ecebac4d6484300f}
+      \strng{authorfullhash}{bce436c3c6687d9d649384027e859cdb}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This article is an eight-year retrospective on development priorities for RocksDB, a key-value store developed at Facebook that targets large-scale distributed systems and that is optimized for Solid State Drives (SSDs). We describe how the priorities evolved over time as a result of hardware trends and extensive experiences running RocksDB at scale in production at a number of organizations: from optimizing write amplification, to space amplification, to CPU utilization. We describe lessons from running large-scale applications, including that resource allocation needs to be managed across different RocksDB instances, that data formats need to remain backward- and forward-compatible to allow incremental software rollouts, and that appropriate support for database replication and backups are needed. Lessons from failure handling taught us that data corruption errors needed to be detected earlier and that data integrity protection mechanisms are needed at every layer of the system. We describe improvements to the key-value interface. We describe a number of efforts that in retrospect proved to be misguided. Finally, we describe a number of open problems that could benefit from future research.}
+      \field{issn}{1553-3077}
+      \field{journaltitle}{ACM Trans. Storage}
+      \field{month}{10}
+      \field{number}{4}
+      \field{title}{RocksDB: Evolution of Development Priorities in a Key-value Store Serving Large-scale Applications}
+      \field{volume}{17}
+      \field{year}{2021}
+      \verb{doi}
+      \verb 10.1145/3483840
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3483840
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3483840
+      \endverb
+      \keyw{Key-value stores,large-scale applications,RocksDB,SSD,compaction,databases}
+    \endentry
+    \entry{graf2022}{article}{}
+      \name{author}{2}{}{%
+        {{hash=65fdc27fbd1934341890dfd5162be32f}{%
+           family={Graf},
+           familyi={G\bibinitperiod},
+           given={Thomas\bibnamedelima Mueller},
+           giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=1f6f9e460dc1dd070b39d99017deb2c5}{%
+           family={Lemire},
+           familyi={L\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{293180f7fdd3dc19f4c00fe3660d7342}
+      \strng{fullhash}{293180f7fdd3dc19f4c00fe3660d7342}
+      \strng{bibnamehash}{293180f7fdd3dc19f4c00fe3660d7342}
+      \strng{authorbibnamehash}{293180f7fdd3dc19f4c00fe3660d7342}
+      \strng{authornamehash}{293180f7fdd3dc19f4c00fe3660d7342}
+      \strng{authorfullhash}{293180f7fdd3dc19f4c00fe3660d7342}
+      \field{extraname}{1}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Experimental Algorithmics (JEA)}
+      \field{title}{Binary Fuse Filters: Fast and Smaller Than Xor Filters}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1145/3510449
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1145/3510449
+      \endverb
+    \endentry
+    \entry{graf2020}{article}{}
+      \name{author}{2}{}{%
+        {{hash=65fdc27fbd1934341890dfd5162be32f}{%
+           family={Graf},
+           familyi={G\bibinitperiod},
+           given={Thomas\bibnamedelima Mueller},
+           giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=1f6f9e460dc1dd070b39d99017deb2c5}{%
+           family={Lemire},
+           familyi={L\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{293180f7fdd3dc19f4c00fe3660d7342}
+      \strng{fullhash}{293180f7fdd3dc19f4c00fe3660d7342}
+      \strng{bibnamehash}{293180f7fdd3dc19f4c00fe3660d7342}
+      \strng{authorbibnamehash}{293180f7fdd3dc19f4c00fe3660d7342}
+      \strng{authornamehash}{293180f7fdd3dc19f4c00fe3660d7342}
+      \strng{authorfullhash}{293180f7fdd3dc19f4c00fe3660d7342}
+      \field{extraname}{2}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Experimental Algorithmics (JEA)}
+      \field{title}{Xor Filters: Faster and Smaller Than Bloom and Cuckoo Filters}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1145/3376122
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1145/3376122
+      \endverb
+    \endentry
+    \entry{kraska2018}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=06236ad5a15ffd4505a97a20555a384b}{%
+           family={Kraska},
+           familyi={K\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod}}}%
+        {{hash=af12cc8ca94c1e303f4ae44f22264508}{%
+           family={Beutel},
+           familyi={B\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod}}}%
+        {{hash=594b2be737e055817db9ad276b6bf05a}{%
+           family={Chi},
+           familyi={C\bibinitperiod},
+           given={Ed\bibnamedelima H.},
+           giveni={E\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=4aecfb0cc2e1e3b7899129fa2a94e2b8}{%
+           family={Dean},
+           familyi={D\bibinitperiod},
+           given={Jeffrey},
+           giveni={J\bibinitperiod}}}%
+        {{hash=3fbf8f431994ec626b8f15908523b01d}{%
+           family={Polyzotis},
+           familyi={P\bibinitperiod},
+           given={Neoklis},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Houston, TX, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{16ecbb1eab59edd84311cf3d5fca6427}
+      \strng{fullhash}{14493fc154f55cdf218cd5625fc94b51}
+      \strng{bibnamehash}{16ecbb1eab59edd84311cf3d5fca6427}
+      \strng{authorbibnamehash}{16ecbb1eab59edd84311cf3d5fca6427}
+      \strng{authornamehash}{16ecbb1eab59edd84311cf3d5fca6427}
+      \strng{authorfullhash}{14493fc154f55cdf218cd5625fc94b51}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Indexes are models: a btree-Index can be seen as a model to map a key to the position of a record within a sorted array, a Hash-Index as a model to map a key to a position of a record within an unsorted array, and a BitMap-Index as a model to indicate if a data record exists or not. In this exploratory research paper, we start from this premise and posit that all existing index structures can be replaced with other types of models, including deep-learning models, which we term em learned indexes. We theoretically analyze under which conditions learned indexes outperform traditional index structures and describe the main challenges in designing learned index structures. Our initial results show that our learned indexes can have significant advantages over traditional indexes. More importantly, we believe that the idea of replacing core components of a data management system through learned models has far reaching implications for future systems designs and that this work provides just a glimpse of what might be possible.}
+      \field{booktitle}{Proceedings of the 2018 International Conference on Management of Data}
+      \field{isbn}{9781450347037}
+      \field{series}{SIGMOD '18}
+      \field{title}{The Case for Learned Index Structures}
+      \field{year}{2018}
+      \field{pages}{489\bibrangedash 504}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1145/3183713.3196909
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3183713.3196909
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3183713.3196909
+      \endverb
+      \keyw{neural net,mixture of experts,linear regression,learned index structure,learned index,learned data structures,index structures,hash-map,cdf,bloom-filter,b-tree}
+    \endentry
+    \entry{maggs2015}{article}{}
+      \name{author}{2}{}{%
+        {{hash=282503e008a7beeb468fa43547beebb2}{%
+           family={Maggs},
+           familyi={M\bibinitperiod},
+           given={Bruce\bibnamedelima M.},
+           giveni={B\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=afc4a934616206758d29034a8e1319eb}{%
+           family={Sitaraman},
+           familyi={S\bibinitperiod},
+           given={Ramesh\bibnamedelima K.},
+           giveni={R\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{02337a0a4e9ca79cdc3abbe90a264dd2}
+      \strng{fullhash}{02337a0a4e9ca79cdc3abbe90a264dd2}
+      \strng{bibnamehash}{02337a0a4e9ca79cdc3abbe90a264dd2}
+      \strng{authorbibnamehash}{02337a0a4e9ca79cdc3abbe90a264dd2}
+      \strng{authornamehash}{02337a0a4e9ca79cdc3abbe90a264dd2}
+      \strng{authorfullhash}{02337a0a4e9ca79cdc3abbe90a264dd2}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{SIGCOMM Comput. Commun. Rev.}
+      \field{title}{Algorithmic Nuggets in Content Delivery}
+      \field{year}{2015}
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/2805789.2805800
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/2805789.2805800
+      \endverb
+    \endentry
+    \entry{walzer2021}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=17a9ed6e8bcb6bacb4bdade7da976216}{%
+           family={Walzer},
+           familyi={W\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{17a9ed6e8bcb6bacb4bdade7da976216}
+      \strng{fullhash}{17a9ed6e8bcb6bacb4bdade7da976216}
+      \strng{bibnamehash}{17a9ed6e8bcb6bacb4bdade7da976216}
+      \strng{authorbibnamehash}{17a9ed6e8bcb6bacb4bdade7da976216}
+      \strng{authornamehash}{17a9ed6e8bcb6bacb4bdade7da976216}
+      \strng{authorfullhash}{17a9ed6e8bcb6bacb4bdade7da976216}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Symposium on Discrete Algorithms (SODA)}
+      \field{title}{Peeling Close to the Orientability Threshold: Spatial Coupling in Hashing-Based Data Structures}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3711822
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3711822
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

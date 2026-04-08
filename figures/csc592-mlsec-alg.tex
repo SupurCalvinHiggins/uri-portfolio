@@ -1,0 +1,34 @@
+\begin{algorithm}[H]
+\begin{algorithmic}
+
+\Function{FindThreshold}{$\hat{Y}$, $Y$, $\epsilon$, $\epsilon_\text{max}$}
+    \State Sort confidence scores $\hat{Y}$ in ascending order and reindex labels $Y$
+    \State \Comment{$n$ is set size, $P$ is positive count, $N$ is negative count}
+    \State $n \gets |Y|$,\quad $P \gets \sum_i Y_i$,\quad $N \gets n - P$
+    \State \Comment{$\tau^*$ and $C^*$ are optimal threshold and cost.}
+    \State $\tau^* \gets \varnothing$,\quad $C^* \gets \infty$ 
+    \State \Comment{$\text{TP}_i$ and $\text{FP}_i$ are true and false positive counts}
+    \State $\mathrm{TP}_i \gets P$,\quad $\mathrm{FP}_i \gets N$ 
+    \State \Comment{On iteration $i$, $\hat{Y}_j$ for $1 \leq j \leq i$ are negative and rest are positive}
+    \For{$i = 0$ \textbf{to} $n$}
+        \State \Comment{Find threshold to set $\hat{Y}_j$ for $1 \leq j \leq i$ negative and rest positive}
+        \State $\tau_i \gets \begin{cases} 0 & i = 0 \\ 1 & i = n \\ \left(\hat{Y}_i + \hat{Y}_{i+1}\right)/2 & \text{otherwise} \end{cases}$  
+        \State \Comment{$\text{FN}_i$ and $\text{TN}_i$ are false and true negative counts}
+        \State $\mathrm{FN}_i \gets P - \mathrm{TP}_i$,\quad $\mathrm{TN}_i \gets N - \mathrm{FP}_i$
+        \State \Comment{Find maximum false positive rate $\epsilon_i$ for optimal with threshold $\tau_i$}
+        \State $\mathrm{M}_{\mathrm{TPR}} \gets \mathrm{TP}_i/P$,\quad $\mathrm{M}_{\mathrm{FPR}} \gets \mathrm{FP}_i/N$
+        \State $\mathrm{M}_{\mathrm{FNR}} \gets \mathrm{FN}_i/P$,\quad $\mathrm{M}_{\mathrm{TNR}} \gets \mathrm{TN}_i/N$
+        \State $\epsilon_i \gets \begin{cases} \infty & \mathrm{M}_{\mathrm{FPR}} = 0 \text{ or } \mathrm{M}_{\mathrm{TNR}} = 0 \\ \max\!\left\{\epsilon\,\dfrac{\mathrm{M}_{\mathrm{TPR}}}{\mathrm{M}_{\mathrm{FPR}}},\; \epsilon\,\dfrac{\mathrm{M}_{\mathrm{FNR}}}{\mathrm{M}_{\mathrm{TNR}}}\right\} & \text{otherwise} \end{cases}$
+        \State \Comment{Maintain optimal threshold and cost}
+        \If{$\epsilon_i \leq \epsilon_{\max}$ \textbf{ and } $C(\tau_i) < C^*$}
+            \State $\tau^* \gets \tau_i$,\quad $C^* \gets C(\tau_i)$
+        \EndIf
+        \State \Comment{Maintain true and false positive counts}
+        \State $\mathrm{TP}_i \gets \mathrm{TP}_i - Y_i$,\quad $\mathrm{FP}_i \gets \mathrm{FP}_i - (1 - Y_i)$
+    \EndFor
+    \State \Return $\tau^*$
+\EndFunction
+\caption{Optimal threshold selection}
+\label{fig:csc592_mlsec_alg}
+\end{algorithmic}
+\end{algorithm}

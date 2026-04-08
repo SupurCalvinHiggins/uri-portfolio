@@ -91,47 +91,27 @@ To maintain worst-case security guarantees (i.e. bounded maximum false positive 
     \max\left\{\epsilon\frac{\text{M}_\text{TPR}}{\text{M}_\text{FPR}}, \epsilon \frac{\text{M}_\text{FNR}}{\text{M}_\text{TNR}} \right\} \leq \epsilon_\text{max}
 \end{align*}
 so the false positive rate remains bounded even if the adversary forces all-positive or all-negative predictions. The optimal $\tau$ can be found in 
-$\Theta(n \lg n)$ time. \\
+$\Theta(n \lg n)$ time (see Algorithm~\ref{fig:csc592_mlsec_alg}). \\
 
-
-Here is one sample procedure to optimize the cost function.
-\begin{enumerate}
-    \item Sort the learned model confidence scores $A$ on the training set from least to greatest.
-    \item For each index $i$,
-    \begin{enumerate}
-        \item Compute the number of elements with negative class in $A[:i]$ and with positive class in $A[i:]$ with a rolling sum. 
-        \item Compute the false/true negative/positive rates of the model given that $A[:i]$ is classified as negative and $A[i:]$ is classified as positive.
-        \item Verify that the optimal backup filter false positive rates are less than $\epsilon_\text{max}$.
-        \item Track the index with the lowest cost $i^*$.
-    \end{enumerate}
-    \item Output the average between $A[i^* - 1]$ and $A[i^*]$.
-\end{enumerate}
-% RQ1:
-
-% description of tuning algorithm (math)
-
-% other part (dp)
+\input{figures/csc592-mlsec-alg.tex}
 
 \subsubsection{Tuned Performance}
 
-We construct a SBF and an SLBF on the TODO dataset. We find that for the same memory budget and maximum false positive rate, the SLBF reduces the expected false
-positive rate from 9.67\% to 4.59\%, or a 2.1x improvement. 
+We construct a secure Bloom filter and a secure learned Bloom filter from a dataset of malicious and benign 
+URLs\footnote{\url{https://www.kaggle.com/datasets/sid321axn/malicious-urls-dataset}}. For the same memory budget and maximum false positive rate, the tuned 
+secure learned Bloom filter reduces the expected false positive rate by half relative to the secure Bloom filter (9.7\% vs. 4.6\%). We verify our implementation
+using several adaptive adversarial attacks, and find none increase the false positive rate above $\epsilon_\mathrm{max}$. 
 
-We attack the SLBF with an adaptive black box attack and a targeted random attack. Neither attack is able to degrade the secure learned bloom filter false 
-positive rate worse than $\epsilon_\mathrm{max}$.
+\subsubsection{Future Work}
 
-% RQ2:
-
-% dbf implementation
-
-% dataset
-
-% empirical attack + results
-
-TODO: A 400–500-word summary of the technical contributions of the work, what was
-accomplished overall, and the limitations of their work.
+We see three promising directions for future work. First, we should compare the tuned secure learned Bloom filter against an untuned secure learned Bloom 
+filter, not just a secure Bloom filter. Second, no efficient implementation of the secure learned Bloom filter exists, so its real-world relevance remains 
+unknown. Third, our tuning algorithm should adapt to different constraint configurations: for example, minimizing expected false positive rate subject to both 
+a memory budget and a maximum false positive rate.  
 
 \subsection{Reflection}
+
+
 
 TODO: A 250-word self reflection of what skills were developed or enhanced in completing those
 projects.
