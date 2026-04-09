@@ -312,6 +312,122 @@
       \verb http://dx.doi.org/10.1145/3376122
       \endverb
     \endentry
+    \entry{hentschel2022}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=8c2dd8bc1236fb9aa1b21fd748a7fd15}{%
+           family={Hentschel},
+           familyi={H\bibinitperiod},
+           given={Brian},
+           giveni={B\bibinitperiod}}}%
+        {{hash=7a90f53693303e83aafeaeb495ed747d}{%
+           family={Sirin},
+           familyi={S\bibinitperiod},
+           given={Utku},
+           giveni={U\bibinitperiod}}}%
+        {{hash=a0528fbf86972d447525db3b37c0677e}{%
+           family={Idreos},
+           familyi={I\bibinitperiod},
+           given={Stratos},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Philadelphia, PA, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{60319b7a60ab0353ee865bfc78cdb89b}
+      \strng{fullhash}{60319b7a60ab0353ee865bfc78cdb89b}
+      \strng{bibnamehash}{60319b7a60ab0353ee865bfc78cdb89b}
+      \strng{authorbibnamehash}{60319b7a60ab0353ee865bfc78cdb89b}
+      \strng{authornamehash}{60319b7a60ab0353ee865bfc78cdb89b}
+      \strng{authorfullhash}{60319b7a60ab0353ee865bfc78cdb89b}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Hashing is a widely used technique for creating uniformly random numbers from arbitrary data. This is required in a large range of core data-driven operations including indexing, partitioning, filters, and sketches. As such, hashing is a core component in numerous systems including relational data systems, key-value stores, compilers, and networks. Due to both the computational and data heavy nature of hashing, it is a core systems bottleneck. For example, a typical database query in the standard TPC-H benchmark may spend 50\% of its total cost in hash tables. Similarly, Google spends at least 2\% of its total computational cost on C++ hash tables, resulting in a massive yearly cost footprint just from one hashing operation.We propose a new hashing method, called Entropy-Learned Hashing, which reduces the computational cost of hashing by up to an order of magnitude. We look at hashing from a pseudorandomness point of view and the key question we ask is ''how much randomness is needed?'' We show that state-of-the-art hash functions do too much work to perform their core task: extracting randomness from a data source to create random outputs. Entropy-Learned Hashing 1) models and estimates the randomness (entropy) of the input data, and then 2) creates data-specific hash functions that use only the parts of the data that are needed to differentiate the outputs. The resulting hash functions dramatically reduce the amount of computation needed while we prove their output is similarly uniform to that of traditional hash functions. We test Entropy-Learned Hashing across diverse and core hashing operations such as hash tables, Bloom filters, and partitioning and we demonstrate an increase in throughput in the order of 3.7x, 4.0x, and 14x respectively compared to the best in-class hash functions and implementations used at scale by Google and Meta. In this paper we propose a new method, called Entropy-Learned Hashing, which reduces the computational cost of hashing by up to an order of magnitude. The key question we ask is "how much randomness is needed?'': We look at hashing from a pseudorandom point of view, wherein hashing is viewed as extracting randomness from a data source to create random outputs and we show that state-of-the-art hash functions do too much work. Entropy-Learned Hashing 1) models and estimates the randomness (entropy) of the input data, and then 2) creates data-specific hash functions that use only the parts of the data that are needed to differentiate the outputs. Thus the resulting hash functions can minimize the amount of computation needed while we prove that they act similarly to traditional hash functions in terms of the uniformity of their outputs. We test Entropy-Learned Hashing across diverse and core hashing operations such as hash tables, Bloom filters, and partitioning and we observe an increase in throughput in the order of 3.7X, 4.0X, and 14X respectively compared to the best in-class hash functions and implementations used at scale by Google and Meta.}
+      \field{booktitle}{Proceedings of the 2022 International Conference on Management of Data}
+      \field{isbn}{9781450392495}
+      \field{series}{SIGMOD '22}
+      \field{title}{Entropy-Learned Hashing: Constant Time Hashing with Controllable Uniformity}
+      \field{year}{2022}
+      \field{pages}{1640\bibrangedash 1654}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1145/3514221.3517894
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3514221.3517894
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3514221.3517894
+      \endverb
+      \keyw{bloom filters,hash tables,hashing,systems}
+    \endentry
+    \entry{hoffmann2025}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=52b8e5438d1f548aac0a01bb5cfb3bd3}{%
+           family={Hoffmann},
+           familyi={H\bibinitperiod},
+           given={Renato\bibnamedelima B.},
+           giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=2bd04222abd19ac9e58621488f6d3bbe}{%
+           family={Faé},
+           familyi={F\bibinitperiod},
+           given={Leonardo\bibnamedelima G.},
+           giveni={L\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=ce56d20d71cc752935677e2e9ddcb1e4}{%
+           family={Griebler},
+           familyi={G\bibinitperiod},
+           given={Dalvan},
+           giveni={D\bibinitperiod}}}%
+        {{hash=85b58fe4ba46137c1665e4956d4103c8}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Xinliang\bibnamedelima David},
+           giveni={X\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=16e0fff650d57f1f0c45c881ba4f928c}{%
+           family={Quintão\bibnamedelima Pereira},
+           familyi={Q\bibinitperiod\bibinitdelim P\bibinitperiod},
+           given={Fernando\bibnamedelima Magno},
+           giveni={F\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Las Vegas, NV, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{20cf3f92f1d7d2e91bec97c40ce8cee8}
+      \strng{fullhash}{25a0cff16894bf9dd8477ce62e3e7c4c}
+      \strng{bibnamehash}{20cf3f92f1d7d2e91bec97c40ce8cee8}
+      \strng{authorbibnamehash}{20cf3f92f1d7d2e91bec97c40ce8cee8}
+      \strng{authornamehash}{20cf3f92f1d7d2e91bec97c40ce8cee8}
+      \strng{authorfullhash}{25a0cff16894bf9dd8477ce62e3e7c4c}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper introduces a technique for synthesizing hash functions specialized to particular byte formats. This code generation method leverages three prevalent patterns: (i) fixed-length keys, (ii) keys with common subsequences, and (iii) keys ranging on predetermined sequences of bytes. Code generation involves two algorithms: one identifies relevant regular expressions within key examples, and the other generates specialized hash functions based on these expressions. Comparative analysis demonstrates that the synthetic functions outperform the general-purpose hashes in the C++ Standard Template Library and the Google Abseil Library when keys are given in ascending, normal or uniform distribution. In applications where low-mixing hashes are acceptable, the synthetic functions achieve speedups ranging from 2\% to 11\% on full benchmarks, and speedups of almost 50x once only hashing speed is considered.}
+      \field{booktitle}{Proceedings of the 23rd ACM/IEEE International Symposium on Code Generation and Optimization}
+      \field{isbn}{9798400712753}
+      \field{series}{CGO '25}
+      \field{title}{Automatic Synthesis of Specialized Hash Functions}
+      \field{year}{2025}
+      \field{pages}{317\bibrangedash 330}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1145/3696443.3708940
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3696443.3708940
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3696443.3708940
+      \endverb
+      \keyw{Hash,Specialization,Synthesis}
+    \endentry
     \entry{kraska2018}{inproceedings}{}
       \name{author}{5}{}{%
         {{hash=06236ad5a15ffd4505a97a20555a384b}{%
@@ -375,6 +491,37 @@
       \endverb
       \keyw{neural net,mixture of experts,linear regression,learned index structure,learned index,learned data structures,index structures,hash-map,cdf,bloom-filter,b-tree}
     \endentry
+    \entry{kurose2025}{book}{}
+      \name{author}{2}{}{%
+        {{hash=940597b1d3215b2b17b93101036fbb5e}{%
+           family={Kurose},
+           familyi={K\bibinitperiod},
+           given={James\bibnamedelima F.},
+           giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=c2e119f22d4ef9df7cfb63c82975b459}{%
+           family={Ross},
+           familyi={R\bibinitperiod},
+           given={Keith\bibnamedelima W.},
+           giveni={K\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Pearson}%
+      }
+      \strng{namehash}{79b9c386af384b822481cee1fccbb76a}
+      \strng{fullhash}{79b9c386af384b822481cee1fccbb76a}
+      \strng{bibnamehash}{79b9c386af384b822481cee1fccbb76a}
+      \strng{authorbibnamehash}{79b9c386af384b822481cee1fccbb76a}
+      \strng{authornamehash}{79b9c386af384b822481cee1fccbb76a}
+      \strng{authorfullhash}{79b9c386af384b822481cee1fccbb76a}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{9th}
+      \field{isbn}{9780135429334}
+      \field{title}{Computer Networking: A Top-Down Approach}
+      \field{year}{2025}
+    \endentry
     \entry{maggs2015}{article}{}
       \name{author}{2}{}{%
         {{hash=282503e008a7beeb468fa43547beebb2}{%
@@ -407,6 +554,44 @@
       \verb{url}
       \verb https://doi.org/10.1145/2805789.2805800
       \endverb
+    \endentry
+    \entry{mitzenmacher2008}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=4dbcb1c7060726deee27d97b4bf31321}{%
+           family={Mitzenmacher},
+           familyi={M\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=c915d3380da8c4288e9634bbee5ba983}{%
+           family={Vadhan},
+           familyi={V\bibinitperiod},
+           given={Salil},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {San Francisco, California}%
+      }
+      \list{publisher}{2}{%
+        {Society for Industrial}%
+        {Applied Mathematics}%
+      }
+      \strng{namehash}{95336a00a9a54cf3fa2ce38f7f993e06}
+      \strng{fullhash}{95336a00a9a54cf3fa2ce38f7f993e06}
+      \strng{bibnamehash}{95336a00a9a54cf3fa2ce38f7f993e06}
+      \strng{authorbibnamehash}{95336a00a9a54cf3fa2ce38f7f993e06}
+      \strng{authornamehash}{95336a00a9a54cf3fa2ce38f7f993e06}
+      \strng{authorfullhash}{95336a00a9a54cf3fa2ce38f7f993e06}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Hashing is fundamental to many algorithms and data structures widely used in practice. For theoretical analysis of hashing, there have been two main approaches. First, one can assume that the hash function is truly random, mapping each data item independently and uniformly to the range. This idealized model is unrealistic because a truly random hash function requires an exponential number of bits to describe. Alternatively, one can provide rigorous bounds on performance when explicit families of hash functions are used, such as 2-universal or O(1)-wise independent families. For such families, performance guarantees are often noticeably weaker than for ideal hashing.In practice, however, it is commonly observed that simple hash functions, including 2-universal hash functions, perform as predicted by the idealized analysis for truly random hash functions. In this paper, we try to explain this phenomenon. We demonstrate that the strong performance of universal hash functions in practice can arise naturally from a combination of the randomness of the hash function and the data. Specifially, following the large body of literature on random sources and randomness extraction, we model the data as coming from a "block source," whereby each new data item has some "entropy" given the previous ones. As long as the (Renyi) entropy per data item is sufficiently large, it turns out that the performance when choosing a hash function from a 2-universal family is essentially the same as for a truly random hash function. We describe results for several sample applications, including linear probing, balanced allocations, and Bloom filters.}
+      \field{booktitle}{Proceedings of the Nineteenth Annual ACM-SIAM Symposium on Discrete Algorithms}
+      \field{series}{SODA '08}
+      \field{title}{Why simple hash functions work: exploiting the entropy in a data stream}
+      \field{year}{2008}
+      \field{pages}{746\bibrangedash 755}
+      \range{pages}{10}
     \endentry
     \entry{walzer2021}{inproceedings}{}
       \name{author}{1}{}{%

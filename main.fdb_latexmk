@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1775677583.79185 "main.bcf" "main.bbl" "main" 1775684244.78636 0
-  "main.bcf" 1775684244.72093 109015 0016ca5edc343088669c21f602878c8e "pdflatex"
-  "ref.bib" 1775667594.42626 6311 13476749b8e1e975f722f518a41ab175 ""
+["biber main"] 1775752803.4265 "main.bcf" "main.bbl" "main" 1775754163.48109 0
+  "main.bcf" 1775754163.38968 109290 5d2486da2ccf5d7357fd651c080d13f9 "pdflatex"
+  "ref.bib" 1775750334.32689 14145 8897a62c8a5dbf94d72d0a68109eb749 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1775684242.66699 "/home/calvin/Documents/uri/portfolio/main.tex" "main.pdf" "main" 1775684244.7866 0
+["pdflatex"] 1775754161.09211 "/home/calvin/Documents/uri/portfolio/main.tex" "main.pdf" "main" 1775754163.48153 0
   "/etc/texmf/web2c/texmf.cnf" 1765049274.95223 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/calvin/Documents/uri/portfolio/main.tex" 1775679286.66786 1455 e1898850a8b564e0f5826072558cb206 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -238,7 +238,7 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1765049883.29297 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1765049976 8213470 1c0e5a16d7a148296b44a97a09615d8c ""
-  "appendix/csc519.tex" 1773857978.84346 32 8b7e4061d9f439ef7980ec72a912a6c6 ""
+  "appendix/csc519.tex" 1775752145.24767 34 836d60682a37dcb3384e85471d05db03 ""
   "appendix/csc592-bigdata.tex" 1773859803.27885 459 27e4bc34090143444abe0083add29b66 ""
   "appendix/csc592-mlsec.tex" 1775684240.35491 48 eb776b604de8cfe7d82144bda00fd101 ""
   "data/csc592-bigdata-nu-1k.csv" 1773767001.63831 18019 6ede4280f350702eb1b96f1a2537e4cc ""
@@ -260,11 +260,11 @@
   "figures/csc592-mlsec-dbf.tex" 1774803750.62752 0 d41d8cd98f00b204e9800998ecf8427e ""
   "figures/csc592-mlsec-lbf.tex" 1774803681.64771 0 d41d8cd98f00b204e9800998ecf8427e ""
   "figures/title-seal.png" 1773160356.57419 51024 ddfa917eae249dee42f2d315f14b2ffa ""
-  "main.aux" 1775684244.71993 18144 88ca6dc540307ba294d5d298f222426d "pdflatex"
-  "main.bbl" 1775677584.28764 19331 6b4adf7e683e95404b42087673dcbbd5 "biber main"
-  "main.run.xml" 1775684244.72262 2298 9255f4d2cb39a5ffeeda22d5a40b248a "pdflatex"
+  "main.aux" 1775754163.38768 18920 662913937f6d495b6a481904527edeff "pdflatex"
+  "main.bbl" 1775752804.44931 32282 d817f84b60fa04585200c66ed75de07a "biber main"
+  "main.run.xml" 1775754163.39056 2298 9255f4d2cb39a5ffeeda22d5a40b248a "pdflatex"
   "main.tex" 1775679286.66786 1455 e1898850a8b564e0f5826072558cb206 ""
-  "sections/csc519.tex" 1773161222.09608 387 1f12028561fba6a19f4b0266dfa4567c ""
+  "sections/csc519.tex" 1775754160.84074 6483 492c02c78633094d5d8ee3e98c8b7b4a ""
   "sections/csc592-bigdata.tex" 1775681484.5649 13683 8f328bc119abee985176917ff378b225 ""
   "sections/csc592-mlsec.tex" 1775684151.27434 9355 80f460a2b1c0eaed17bda26ed0ca0387 ""
   "sections/intro.tex" 1775600113.72878 2747 eb984997ef9326ed3a4ed9945666047f ""
