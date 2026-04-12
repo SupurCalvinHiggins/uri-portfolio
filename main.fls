@@ -421,6 +421,9 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
 INPUT ./sections/csc519.tex
 INPUT ./sections/csc519.tex
 INPUT sections/csc519.tex
+INPUT ./sections/acks.tex
+INPUT ./sections/acks.tex
+INPUT sections/acks.tex
 INPUT ./appendix/csc592-bigdata.tex
 INPUT ./appendix/csc592-bigdata.tex
 INPUT appendix/csc592-bigdata.tex

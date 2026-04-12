@@ -1,14 +1,14 @@
 # Fdb version 4
-["biber main"] 1776025757.15797 "main.bcf" "main.bbl" "main" 1776025763.74025 0
-  "main.bcf" 1776025763.62696 109290 e3062551e98ec285715feabeb70cbc63 "pdflatex"
+["biber main"] 1776025757.15797 "main.bcf" "main.bbl" "main" 1776026568.10251 0
+  "main.bcf" 1776026567.99051 109290 e3062551e98ec285715feabeb70cbc63 "pdflatex"
   "ref.bib" 1776025756.91737 4146 aeb1d7a7313f6d9067ba056505f2c82f ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1776025761.1483 "/home/calvin/Documents/uri/portfolio/main.tex" "main.pdf" "main" 1776025763.74068 0
+["pdflatex"] 1776026565.63804 "/home/calvin/Documents/uri/portfolio/main.tex" "main.pdf" "main" 1776026568.10294 0
   "/etc/texmf/web2c/texmf.cnf" 1765049274.95223 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/calvin/Documents/uri/portfolio/main.tex" 1776010419.67873 1473 a63d4b18e841a42cfc79807bde9e2749 ""
+  "/home/calvin/Documents/uri/portfolio/main.tex" 1776026562.63026 1499 799649f2de3d4f34a4f91446d9131adc ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -262,13 +262,14 @@
   "figures/csc592-mlsec-dbf.tex" 1776022687.60836 1785 5505689de41a697bc6178b29aaaddb00 ""
   "figures/csc592-mlsec-lbf.tex" 1776022676.85105 1398 5af1778840dc2a5b58147ddff00dc735 ""
   "figures/title-seal.png" 1773160356.57419 51024 ddfa917eae249dee42f2d315f14b2ffa ""
-  "main.aux" 1776025763.62496 19881 f50f9b7f0f599ee0c17fac17538b728e "pdflatex"
+  "main.aux" 1776026567.98851 19986 3b0945e91a885616f7b5433b6c949276 "pdflatex"
   "main.bbl" 1776025758.11709 21329 51ff824da0053c876e0d525b536719e9 "biber main"
-  "main.run.xml" 1776025763.62829 2298 9255f4d2cb39a5ffeeda22d5a40b248a "pdflatex"
-  "main.tex" 1776010419.67873 1473 a63d4b18e841a42cfc79807bde9e2749 ""
-  "sections/csc519.tex" 1776025590.5859 6950 e906d1fdb121d9de1ef41afa8aa7ae74 ""
-  "sections/csc592-bigdata.tex" 1776003194.63292 13818 95e79e1d0c3dc0480b67ac29eb10dac7 ""
-  "sections/csc592-mlsec.tex" 1776018199.5922 9438 2d35912c09231f66d2258f82316e2cf7 ""
+  "main.run.xml" 1776026567.99204 2298 9255f4d2cb39a5ffeeda22d5a40b248a "pdflatex"
+  "main.tex" 1776026562.63026 1499 799649f2de3d4f34a4f91446d9131adc ""
+  "sections/acks.tex" 1776026544.93532 440 ab88f0a35ee1883e31d514d1d71dd3c7 ""
+  "sections/csc519.tex" 1776026167.50213 7026 063fbb3fc81dea1da5ecdc8c2fd5405d ""
+  "sections/csc592-bigdata.tex" 1776026208.25938 13672 8c793505f15acdeb659d215dbc24d1e4 ""
+  "sections/csc592-mlsec.tex" 1776025967.06264 9439 784455095b4ab89add55d9182e852d18 ""
   "sections/intro.tex" 1775600113.72878 2747 eb984997ef9326ed3a4ed9945666047f ""
   "sections/title.tex" 1773857855.19495 717 1be8763d49af2d604849fd67f9a6d85f ""
   (generated)

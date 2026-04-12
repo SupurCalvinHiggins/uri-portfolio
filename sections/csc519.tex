@@ -28,7 +28,7 @@ frequencies and the probe behavior of the target data structure. This potentiall
 data structure dependent query costs. Therefore, we ask:
 \begin{enumerate}
     \item How can hash functions be automatically specialized to the input distribution, target data structure and underlying hardware architecture 
-    architecture simultaneously?
+    simultaneously?
 \end{enumerate}
 
 \subsection{Summary}
@@ -58,7 +58,7 @@ the fastest. We instantiate this framework by specializing for \texttt{std::unor
 
 \noindent
 The fastest configuration uses unaligned double-word selection, unweighted collision cost, and a single AES round as the mixing function. This reduces hash 
-latency from 12.1ns (\texttt{std::hash}) to 4.5ns, and \texttt{std::unordered\_set} query latency from 32.9ns to 14.7ns, roughly a 2$7times$ end-to-end speedup, 
+latency from 12.1ns (\texttt{std::hash}) to 4.5ns, and \texttt{std::unordered\_set} query latency from 32.9ns to 14.7ns, roughly a 2$\times$ end-to-end speedup, 
 with no impact on build time. Notably, specialization to key frequency distribution and data structure probe behavior did not provide a speedup: 
 architecture-level specialization via unaligned double-word reads and AES-NI instructions did. 
 
@@ -95,7 +95,7 @@ Learning to reason directly from architecture documentation was a meaningful shi
 The second is the theory of approximation algorithms. I attempted to prove that finding the maximum-entropy byte subset is \textbf{NP-Hard} and bound its 
 best approximation factor via an approximation-preserving reduction. I also tried to show that the greedy algorithm achieves an optimal approximation ratio. I 
 did not succeed at either. Regardless, the experience was valuable: I worked through standard reduction techniques carefully enough to understand where I 
-failed, and learned about approximation while trying.
+failed, and learned about approximation while trying. I hope to continue to build my theoretical toolkit, and eventually resolve this problem.
 
 
 % TODO: A 250-word self reflection of what skills were developed or enhanced in completing those
