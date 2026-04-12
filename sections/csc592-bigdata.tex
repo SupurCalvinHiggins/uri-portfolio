@@ -145,7 +145,8 @@ conditional branch algorithm's advantage: its lower hash latency reduces this de
 \noindent
 The root cause is likely one of two structural hazards: either a shortage of miss status holding registers (MSHRs) prevents prefetching the next key (and 
 therefore precomputing its hashes), or the reorder buffer (ROB) is too small to precompute enough hashes for future keys. Based on microarchitectural 
-parameters and the benchmark assembly, the first explanation is more likely.
+parameters and the benchmark assembly, the RoB should be sufficiently large so the first explanation is more likely. This indicates that the benchmarking 
+harness, not non-uniformity, is the primary bottleneck. 
 
 \subsubsection{Future Work}
 

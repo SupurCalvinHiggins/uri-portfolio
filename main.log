@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.12.6)  9 APR 2026 13:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.12.6)  12 APR 2026 16:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -680,7 +680,11 @@ File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfarrowlength=\dimen294
 \pgfarrowwidth=\dimen295
 \pgfarrowlinewidth=\dimen296
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybending.code.tex
 File: tikzlibrarybending.code.tex 2023-01-15 v3.1.10 (3.1.10)
@@ -705,7 +709,11 @@ File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
 \@quotelevel=\count446
 \@quotereset=\count447
- (./main.aux)
+ (./main.aux
+
+LaTeX Warning: Label `fig:csc592_mlsec_lbf' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
@@ -890,17 +898,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 140--144
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 160--164
+Underfull \hbox (badness 10000) in paragraph at lines 161--165
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 165--170
+Underfull \hbox (badness 10000) in paragraph at lines 166--171
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--175
+Underfull \hbox (badness 10000) in paragraph at lines 172--176
 
  []
 
@@ -915,42 +923,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--16
  []
 
 [8] (./figures/csc592-mlsec-bloom.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 19--25
+Underfull \hbox (badness 10000) in paragraph at lines 19--26
 
  []
 
 (./figures/csc592-mlsec-lbf.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 30--38
+Underfull \hbox (badness 10000) in paragraph at lines 31--39
 
  []
 
-(./figures/csc592-mlsec-dbf.tex) [9]
-Underfull \hbox (badness 10000) in paragraph at lines 61--65
+[9] (./figures/csc592-mlsec-dbf.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 62--66
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 70--74
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 79--82
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 71--75
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--95
-
- []
-
-(./figures/csc592-mlsec-alg.tex [10]) [11]
-Underfull \hbox (badness 10000) in paragraph at lines 117--121
+Underfull \hbox (badness 10000) in paragraph at lines 80--83
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--126
+Underfull \hbox (badness 10000) in paragraph at lines 93--96
+
+ []
+
+(./figures/csc592-mlsec-alg.tex) [11] [12]
+Underfull \hbox (badness 10000) in paragraph at lines 118--122
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--127
 
  []
 
@@ -959,29 +967,54 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--12
 
  []
 
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 34--37
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--50
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 56--62
-
- []
-
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 94--97
+Underfull \hbox (badness 10000) in paragraph at lines 19--24
 
  []
 
-) [14]
-Overfull \hbox (10.70578pt too wide) in paragraph at lines 62--62
-\OT1/cmr/m/n/10 Re-silient Learned Bloom Fil-ters''. In: \OT1/cmr/m/it/10 Ad-vances in Cryp-tol-ogy -- ASI-ACRYPT
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--47
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--53
+
+ []
+
+
+Overfull \hbox (9.40926pt too wide) in paragraph at lines 54--58
+\OT1/cmr/m/n/10 the fastest. We in-stan-ti-ate this frame-work by spe-cial-iz-ing for \OT1/cmtt/m/n/10 std::unordered[]set
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--58
+
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 67--70
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--75
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--93
+
+ []
+
+[15]) [16]
+Overfull \hbox (13.99467pt too wide) in paragraph at lines 62--62
+\OT1/cmr/m/n/10 Re-silient Learned Bloom Fil-ters''. In: \OT1/cmr/m/it/10 Ad-vances in Cryp-tol-ogy (ASI-ACRYPT)\OT1/cmr/m/n/10 .
  []
 
 
@@ -989,28 +1022,32 @@ Overfull \hbox (3.90012pt too wide) in paragraph at lines 62--62
 \OT1/cmr/m/n/10 Smaller Than Xor Fil-ters''. In: \OT1/cmr/m/it/10 Jour-nal of Ex-per-i-men-tal Al-go-rith-mics (JEA)
  []
 
-[15] [16] (./appendix/csc592-bigdata.tex (./figures/csc592-bigdata-nusoe.tex) (./figures/csc592-bigdata-nuhg.tex) (./figures/csc592-bigdata-pc-cond.tex) [17] (./figures/csc592-bigdata-pc-bl.tex) (./figures/csc592-bigdata-pc-phant.tex)) (./appendix/csc592-mlsec.tex) (./appendix/csc519.tex) [18] (./main.aux)
+[17] [18] (./appendix/csc592-bigdata.tex (./figures/csc592-bigdata-nusoe.tex) (./figures/csc592-bigdata-nuhg.tex) (./figures/csc592-bigdata-pc-cond.tex) [19] (./figures/csc592-bigdata-pc-bl.tex) (./figures/csc592-bigdata-pc-phant.tex)) (./appendix/csc592-mlsec.tex) (./appendix/csc519.tex) [20] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 34963 strings out of 474222
- 843836 string characters out of 5748733
- 2273658 words of memory out of 5000000
- 56639 multiletter control sequences out of 15000+600000
+ 35517 strings out of 474222
+ 856996 string characters out of 5748733
+ 2284630 words of memory out of 5000000
+ 57186 multiletter control sequences out of 15000+600000
  569712 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,17n,93p,5423b,2144s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (19 pages, 533749 bytes).
+Output written on main.pdf (21 pages, 538125 bytes).
 PDF statistics:
- 199 PDF objects out of 1000 (max. 8388607)
- 123 compressed objects within 2 object streams
+ 205 PDF objects out of 1000 (max. 8388607)
+ 127 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

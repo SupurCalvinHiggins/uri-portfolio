@@ -37,42 +37,19 @@
            given={Hayder},
            giveni={H\bibinitperiod}}}%
       }
-      \name{editor}{2}{}{%
-        {{hash=e014995686aaf6609d3d9f2d91fc7484}{%
-           family={Hanaoka},
-           familyi={H\bibinitperiod},
-           given={Goichiro},
-           giveni={G\bibinitperiod}}}%
-        {{hash=933b52106a6745075f2fd273d943c021}{%
-           family={Yang},
-           familyi={Y\bibinitperiod},
-           given={Bo-Yin},
-           giveni={B\bibinithyphendelim Y\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Springer Nature Singapore}%
-      }
       \strng{namehash}{20d8db9eab2811f94093c9b0df7a10f1}
       \strng{fullhash}{20d8db9eab2811f94093c9b0df7a10f1}
       \strng{bibnamehash}{20d8db9eab2811f94093c9b0df7a10f1}
       \strng{authorbibnamehash}{20d8db9eab2811f94093c9b0df7a10f1}
       \strng{authornamehash}{20d8db9eab2811f94093c9b0df7a10f1}
       \strng{authorfullhash}{20d8db9eab2811f94093c9b0df7a10f1}
-      \strng{editorbibnamehash}{97f645c2aeb45405a4ceb2f538dc2a7b}
-      \strng{editornamehash}{97f645c2aeb45405a4ceb2f538dc2a7b}
-      \strng{editorfullhash}{97f645c2aeb45405a4ceb2f538dc2a7b}
       \field{sortinit}{A}
       \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{booktitle}{Advances in Cryptology -- ASIACRYPT 2025}
-      \field{note}{Artifact available at \url{https://artifacts.iacr.org/asiacrypt/2025/a1}}
-      \field{series}{LNCS}
+      \field{booktitle}{Advances in Cryptology (ASIACRYPT)}
       \field{title}{Adversary Resilient Learned Bloom Filters}
-      \field{volume}{16246}
       \field{year}{2026}
-      \field{pages}{171\bibrangedash 202}
-      \range{pages}{32}
       \verb{doi}
       \verb 10.1007/978-981-95-5096-8_6
       \endverb
@@ -209,12 +186,6 @@
            given={Michael},
            giveni={M\bibinitperiod}}}%
       }
-      \list{location}{1}{%
-        {New York, NY, USA}%
-      }
-      \list{publisher}{1}{%
-        {Association for Computing Machinery}%
-      }
       \strng{namehash}{cf7f3423eb3af472ecebac4d6484300f}
       \strng{fullhash}{bce436c3c6687d9d649384027e859cdb}
       \strng{bibnamehash}{cf7f3423eb3af472ecebac4d6484300f}
@@ -225,24 +196,15 @@
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{This article is an eight-year retrospective on development priorities for RocksDB, a key-value store developed at Facebook that targets large-scale distributed systems and that is optimized for Solid State Drives (SSDs). We describe how the priorities evolved over time as a result of hardware trends and extensive experiences running RocksDB at scale in production at a number of organizations: from optimizing write amplification, to space amplification, to CPU utilization. We describe lessons from running large-scale applications, including that resource allocation needs to be managed across different RocksDB instances, that data formats need to remain backward- and forward-compatible to allow incremental software rollouts, and that appropriate support for database replication and backups are needed. Lessons from failure handling taught us that data corruption errors needed to be detected earlier and that data integrity protection mechanisms are needed at every layer of the system. We describe improvements to the key-value interface. We describe a number of efforts that in retrospect proved to be misguided. Finally, we describe a number of open problems that could benefit from future research.}
-      \field{issn}{1553-3077}
-      \field{journaltitle}{ACM Trans. Storage}
-      \field{month}{10}
-      \field{number}{4}
+      \field{journaltitle}{ACM Transactions Storage}
       \field{title}{RocksDB: Evolution of Development Priorities in a Key-value Store Serving Large-scale Applications}
-      \field{volume}{17}
       \field{year}{2021}
-      \verb{doi}
-      \verb 10.1145/3483840
-      \endverb
       \verb{urlraw}
       \verb https://doi.org/10.1145/3483840
       \endverb
       \verb{url}
       \verb https://doi.org/10.1145/3483840
       \endverb
-      \keyw{Key-value stores,large-scale applications,RocksDB,SSD,compaction,databases}
     \endentry
     \entry{graf2022}{article}{}
       \name{author}{2}{}{%
@@ -330,12 +292,6 @@
            given={Stratos},
            giveni={S\bibinitperiod}}}%
       }
-      \list{location}{1}{%
-        {Philadelphia, PA, USA}%
-      }
-      \list{publisher}{1}{%
-        {Association for Computing Machinery}%
-      }
       \strng{namehash}{60319b7a60ab0353ee865bfc78cdb89b}
       \strng{fullhash}{60319b7a60ab0353ee865bfc78cdb89b}
       \strng{bibnamehash}{60319b7a60ab0353ee865bfc78cdb89b}
@@ -346,24 +302,15 @@
       \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Hashing is a widely used technique for creating uniformly random numbers from arbitrary data. This is required in a large range of core data-driven operations including indexing, partitioning, filters, and sketches. As such, hashing is a core component in numerous systems including relational data systems, key-value stores, compilers, and networks. Due to both the computational and data heavy nature of hashing, it is a core systems bottleneck. For example, a typical database query in the standard TPC-H benchmark may spend 50\% of its total cost in hash tables. Similarly, Google spends at least 2\% of its total computational cost on C++ hash tables, resulting in a massive yearly cost footprint just from one hashing operation.We propose a new hashing method, called Entropy-Learned Hashing, which reduces the computational cost of hashing by up to an order of magnitude. We look at hashing from a pseudorandomness point of view and the key question we ask is ''how much randomness is needed?'' We show that state-of-the-art hash functions do too much work to perform their core task: extracting randomness from a data source to create random outputs. Entropy-Learned Hashing 1) models and estimates the randomness (entropy) of the input data, and then 2) creates data-specific hash functions that use only the parts of the data that are needed to differentiate the outputs. The resulting hash functions dramatically reduce the amount of computation needed while we prove their output is similarly uniform to that of traditional hash functions. We test Entropy-Learned Hashing across diverse and core hashing operations such as hash tables, Bloom filters, and partitioning and we demonstrate an increase in throughput in the order of 3.7x, 4.0x, and 14x respectively compared to the best in-class hash functions and implementations used at scale by Google and Meta. In this paper we propose a new method, called Entropy-Learned Hashing, which reduces the computational cost of hashing by up to an order of magnitude. The key question we ask is "how much randomness is needed?'': We look at hashing from a pseudorandom point of view, wherein hashing is viewed as extracting randomness from a data source to create random outputs and we show that state-of-the-art hash functions do too much work. Entropy-Learned Hashing 1) models and estimates the randomness (entropy) of the input data, and then 2) creates data-specific hash functions that use only the parts of the data that are needed to differentiate the outputs. Thus the resulting hash functions can minimize the amount of computation needed while we prove that they act similarly to traditional hash functions in terms of the uniformity of their outputs. We test Entropy-Learned Hashing across diverse and core hashing operations such as hash tables, Bloom filters, and partitioning and we observe an increase in throughput in the order of 3.7X, 4.0X, and 14X respectively compared to the best in-class hash functions and implementations used at scale by Google and Meta.}
-      \field{booktitle}{Proceedings of the 2022 International Conference on Management of Data}
-      \field{isbn}{9781450392495}
-      \field{series}{SIGMOD '22}
+      \field{booktitle}{International Conference on Management of Data (SIGMOD)}
       \field{title}{Entropy-Learned Hashing: Constant Time Hashing with Controllable Uniformity}
       \field{year}{2022}
-      \field{pages}{1640\bibrangedash 1654}
-      \range{pages}{15}
-      \verb{doi}
-      \verb 10.1145/3514221.3517894
-      \endverb
       \verb{urlraw}
       \verb https://doi.org/10.1145/3514221.3517894
       \endverb
       \verb{url}
       \verb https://doi.org/10.1145/3514221.3517894
       \endverb
-      \keyw{bloom filters,hash tables,hashing,systems}
     \endentry
     \entry{hoffmann2025}{inproceedings}{}
       \name{author}{5}{}{%
@@ -393,12 +340,6 @@
            given={Fernando\bibnamedelima Magno},
            giveni={F\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
       }
-      \list{location}{1}{%
-        {Las Vegas, NV, USA}%
-      }
-      \list{publisher}{1}{%
-        {Association for Computing Machinery}%
-      }
       \strng{namehash}{20cf3f92f1d7d2e91bec97c40ce8cee8}
       \strng{fullhash}{25a0cff16894bf9dd8477ce62e3e7c4c}
       \strng{bibnamehash}{20cf3f92f1d7d2e91bec97c40ce8cee8}
@@ -409,24 +350,15 @@
       \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{This paper introduces a technique for synthesizing hash functions specialized to particular byte formats. This code generation method leverages three prevalent patterns: (i) fixed-length keys, (ii) keys with common subsequences, and (iii) keys ranging on predetermined sequences of bytes. Code generation involves two algorithms: one identifies relevant regular expressions within key examples, and the other generates specialized hash functions based on these expressions. Comparative analysis demonstrates that the synthetic functions outperform the general-purpose hashes in the C++ Standard Template Library and the Google Abseil Library when keys are given in ascending, normal or uniform distribution. In applications where low-mixing hashes are acceptable, the synthetic functions achieve speedups ranging from 2\% to 11\% on full benchmarks, and speedups of almost 50x once only hashing speed is considered.}
-      \field{booktitle}{Proceedings of the 23rd ACM/IEEE International Symposium on Code Generation and Optimization}
-      \field{isbn}{9798400712753}
-      \field{series}{CGO '25}
+      \field{booktitle}{International Symposium on Code Generation and Optimization (CGO)}
       \field{title}{Automatic Synthesis of Specialized Hash Functions}
       \field{year}{2025}
-      \field{pages}{317\bibrangedash 330}
-      \range{pages}{14}
-      \verb{doi}
-      \verb 10.1145/3696443.3708940
-      \endverb
       \verb{urlraw}
       \verb https://doi.org/10.1145/3696443.3708940
       \endverb
       \verb{url}
       \verb https://doi.org/10.1145/3696443.3708940
       \endverb
-      \keyw{Hash,Specialization,Synthesis}
     \endentry
     \entry{kraska2018}{inproceedings}{}
       \name{author}{5}{}{%
@@ -456,12 +388,6 @@
            given={Neoklis},
            giveni={N\bibinitperiod}}}%
       }
-      \list{location}{1}{%
-        {Houston, TX, USA}%
-      }
-      \list{publisher}{1}{%
-        {Association for Computing Machinery}%
-      }
       \strng{namehash}{16ecbb1eab59edd84311cf3d5fca6427}
       \strng{fullhash}{14493fc154f55cdf218cd5625fc94b51}
       \strng{bibnamehash}{16ecbb1eab59edd84311cf3d5fca6427}
@@ -472,24 +398,15 @@
       \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Indexes are models: a btree-Index can be seen as a model to map a key to the position of a record within a sorted array, a Hash-Index as a model to map a key to a position of a record within an unsorted array, and a BitMap-Index as a model to indicate if a data record exists or not. In this exploratory research paper, we start from this premise and posit that all existing index structures can be replaced with other types of models, including deep-learning models, which we term em learned indexes. We theoretically analyze under which conditions learned indexes outperform traditional index structures and describe the main challenges in designing learned index structures. Our initial results show that our learned indexes can have significant advantages over traditional indexes. More importantly, we believe that the idea of replacing core components of a data management system through learned models has far reaching implications for future systems designs and that this work provides just a glimpse of what might be possible.}
-      \field{booktitle}{Proceedings of the 2018 International Conference on Management of Data}
-      \field{isbn}{9781450347037}
-      \field{series}{SIGMOD '18}
+      \field{booktitle}{International Conference on Management of Data (SIGMOD)}
       \field{title}{The Case for Learned Index Structures}
       \field{year}{2018}
-      \field{pages}{489\bibrangedash 504}
-      \range{pages}{16}
-      \verb{doi}
-      \verb 10.1145/3183713.3196909
-      \endverb
       \verb{urlraw}
       \verb https://doi.org/10.1145/3183713.3196909
       \endverb
       \verb{url}
       \verb https://doi.org/10.1145/3183713.3196909
       \endverb
-      \keyw{neural net,mixture of experts,linear regression,learned index structure,learned index,learned data structures,index structures,hash-map,cdf,bloom-filter,b-tree}
     \endentry
     \entry{kurose2025}{book}{}
       \name{author}{2}{}{%
@@ -568,13 +485,6 @@
            given={Salil},
            giveni={S\bibinitperiod}}}%
       }
-      \list{location}{1}{%
-        {San Francisco, California}%
-      }
-      \list{publisher}{2}{%
-        {Society for Industrial}%
-        {Applied Mathematics}%
-      }
       \strng{namehash}{95336a00a9a54cf3fa2ce38f7f993e06}
       \strng{fullhash}{95336a00a9a54cf3fa2ce38f7f993e06}
       \strng{bibnamehash}{95336a00a9a54cf3fa2ce38f7f993e06}
@@ -585,13 +495,9 @@
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Hashing is fundamental to many algorithms and data structures widely used in practice. For theoretical analysis of hashing, there have been two main approaches. First, one can assume that the hash function is truly random, mapping each data item independently and uniformly to the range. This idealized model is unrealistic because a truly random hash function requires an exponential number of bits to describe. Alternatively, one can provide rigorous bounds on performance when explicit families of hash functions are used, such as 2-universal or O(1)-wise independent families. For such families, performance guarantees are often noticeably weaker than for ideal hashing.In practice, however, it is commonly observed that simple hash functions, including 2-universal hash functions, perform as predicted by the idealized analysis for truly random hash functions. In this paper, we try to explain this phenomenon. We demonstrate that the strong performance of universal hash functions in practice can arise naturally from a combination of the randomness of the hash function and the data. Specifially, following the large body of literature on random sources and randomness extraction, we model the data as coming from a "block source," whereby each new data item has some "entropy" given the previous ones. As long as the (Renyi) entropy per data item is sufficiently large, it turns out that the performance when choosing a hash function from a 2-universal family is essentially the same as for a truly random hash function. We describe results for several sample applications, including linear probing, balanced allocations, and Bloom filters.}
-      \field{booktitle}{Proceedings of the Nineteenth Annual ACM-SIAM Symposium on Discrete Algorithms}
-      \field{series}{SODA '08}
+      \field{booktitle}{Symposium on Discrete Algorithms (SODA)}
       \field{title}{Why simple hash functions work: exploiting the entropy in a data stream}
       \field{year}{2008}
-      \field{pages}{746\bibrangedash 755}
-      \range{pages}{10}
     \endentry
     \entry{walzer2021}{inproceedings}{}
       \name{author}{1}{}{%

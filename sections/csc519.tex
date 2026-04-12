@@ -7,8 +7,8 @@ This project was completed for CSC 519: Computer Networks.
 % relevance of hash functions
 % limitations of current hash functions (general)
 Hashing is ubiquitous in computing. For example, routing table lookups, intrusion detection systems, load distribution, software defined networking, network 
-address translation and application-layer caches rely on hashing~\cite{kurose2025}. Hashing is already highly optimized, so improving per-byte throughput is 
-difficult. However, by specializing hash functions to particular applications, increasing throughput might be possible. For example, hashing fewer bytes. \\
+address translation and application-layer caches rely on fast hashing~\cite{kurose2025}. Because hashing is already highly optimized for per-byte throughput, 
+performance gains increasingly come from specialization, where hash functions are tailored to specific workloads. \\
 
 
 % entropy learned hashing, sede
@@ -17,68 +17,65 @@ difficult. However, by specializing hash functions to particular applications, i
 % - ELH + sede do not use some information: dist of keys, data structure
 % incorporate this
 \noindent
-In fact, \cite{mitzenmacher2008} showed that hash functions work by extracting entropy from the input data. Several works, including entropy learned 
-hashing~\cite{hentschel2022} and \texttt{Sede}~\cite{hoffmann2025} exploit this by learning the position of high entropy bytes and only hashing them. However, 
-their specialization is incomplete: they do not incorporate non-uniform key frequencies or the target data structure into the cost model. Therefore, we ask:
+Recent works pursue this by exploiting the entropy structure of input data. Entropy learned hashing~\cite{hentschel2022} and \texttt{Sede}~\cite{hoffmann2025} 
+automatically identify and hash only the high-entropy bytes of keys, reducing unnecessary computation. This approach is theoretically grounded: Mitzenmacher and 
+Vadhan~\cite{mitzenmacher2008} showed that standard hash functions operate by extracting entropy from inputs, so hashing low-entropy bytes wastes work without 
+improving hash quality. \\
+
+\noindent
+However, both methods specialize incompletely. They treat all keys as equally likely and optimize purely for collision count, ignoring non-uniform key access 
+frequencies and the probe behavior of the target data structure. This potentially misses performance gains for workloads with skewed key distributions and
+data structure dependent query costs. Therefore, we ask:
 \begin{enumerate}
-    \item How can hash functions be automatically specialized to a target distribution, data structure and architecture?
+    \item How can hash functions be automatically specialized to the input distribution, target data structure and underlying hardware architecture 
+    architecture simultaneously?
 \end{enumerate}
 
 \subsection{Summary}
 
 \subsubsection{Entropy-Aware Hashing}
 
-% overview
-% - illustrate framework by optimizing
-% - std unordered set on x64, URL key dataset
-We define two degrees of freedom: hash function form and cost model. To specialize a hash function, we sweep hash function forms. For each form, we greedily 
-select data chunks to hash, minimizing the cost of the specialized function. We select between specialized forms by benchmarking. We illustrate the framework by 
-specializing a hash function for \texttt{std::unordered\_set} containing a dataset of URLs on the \texttt{x64} architecture. \\
-
-% hash function forms:
-% - hash function
-% - alignment
-% - data size
-% datatype: byte, word, or double-word
-% which hash functions: MurmurHash3, Thomas Wang's, Stafford's, XXHash, AES round, GXHash
-% alignment: none or datatype aligned
-\noindent
-Unlike entropy learned hashing which selected single bytes, we allow our hash function forms to select either single bytes, words, or double-words. Selecting at 
-higher granularity means lower entropy bytes might be selected, but may permit more efficient implementations. We also provide an option to force alignment to 
-this data type size. Some architecture may have penalties for accessing unaligned data. Finally, the hash function form includes the mixing function selected 
-from MurmurHash3, Thomas Wang's, Stafford's, XXHash, GXHash and AES round. \\
-
-% cost models:
-% - unweighted collision cost
-% - weighted collision cost
-% - maximum weighted probe cost
-% - minimum weighted probe cost
-\noindent
-Entropy learned hashing selected a subset of bytes to minimize the unweighted collision cost (the expected number of collisions in the resulting hash table). 
-We consider three additional cost models. The weighted collision cost considers the distribution of keys: collisions between high frequency keys are more 
-expensive than low frequency keys. The maximum weighted probe cost is the expected number of probes in the worst possible resulting hash table. Likewise, the 
-minimum weight probe cost is the expected number of probes in the best possible resulting hash table. Best and worst are defined with respect to the chain 
-orders. \\
+We propose entropy-aware hashing, a framework that automatically specializes a hash function for a given dataset, data structure, and architecture. The 
+framework has two configurable components: the hash function form which determines how data can be read and mixed, and the cost model, which defines what it 
+means for a hash function to be good for a particular workload. \\
 
 \noindent
-We find that selecting unaligned double-words with unweighted collision cost and applying a single round of AES yields the fastest hash function and hashset
-queries. Hash latency is reduced from 12.1ns for \texttt{std::hash} to 4.5ns. Query latency is reduced from 32.9ns for \texttt{std::hash} to 14.7ns. Build time
-is not impacted. In general, we find that specializing to the data distribution and data structure does not provide a strong benefit, but specialization to the
-architecture with unaligned double-words and AES instructions yields a significant speedup. 
+To select which bytes of a key to hash, we extend entropy learned hashing's byte level selection to also support word and double-word granularity. Coarser 
+granularity may include some lower-entropy bytes, but enables more efficient instruction selection, including SIMD and AES-NI instructions that operate on wider
+data. We also expose alignment as a configurable option, since some architecture penalize unaligned memory accesses. The mixing function is drawn from: 
+MurmurHash3, Thomas Wang's hash, Stafford's hash, XXHash, GXHash, and a single AES round. \\
 
-% findings: 2x speedup, DS/dist specialization do not provide strong benefit
-% double-word, unweighted collision cost, unaligned, single round AES
-% hash latency: 12.1 (std::hash) -> 4.5 ns
-% query latency: 32.9 (std::hash) -> 14.7 ns
-% no change in build time
+\noindent
+We evaluate four cost models. The unweighted collision cost (used by prior work) counts expected collisions uniformly across all keys. The weighted collision 
+cost accounts for non-uniform access frequencies: collisions between frequently accessed keys are penalized more heavily. The maximum weighted probe cost and 
+minimum weighted probe cost measure the expected probe count under the worst- and best-case chain orderings respectively, modeling the cost of collision 
+resolution in separate chaining hash tables. \\ 
+
+\noindent
+To specialize, we iterate over hash function forms and greedily select data chunks to hash under the chosen cost model, then benchmark all candidates and select
+the fastest. We instantiate this framework by specializing for \texttt{std::unordered\_set} (a separate chaining hash table) on a URL key dataset on the 
+\texttt{x64} architecture. \\
+
+\noindent
+The fastest configuration uses unaligned double-word selection, unweighted collision cost, and a single AES round as the mixing function. This reduces hash 
+latency from 12.1ns (\texttt{std::hash}) to 4.5ns, and \texttt{std::unordered\_set} query latency from 32.9ns to 14.7ns, roughly a 2$7times$ end-to-end speedup, 
+with no impact on build time. Notably, specialization to key frequency distribution and data structure probe behavior did not provide a speedup: 
+architecture-level specialization via unaligned double-word reads and AES-NI instructions did. 
 
 \subsubsection{Future Work}
 
-We see five promising directions for future work. First, additional cost models, hash function forms, datasets, data structures, and architectures should be 
-evaluated. Second, entropy-aware hashing should adapt to evolving data distributions automatically. This will require learning the position of high entropy 
-regions online. Third, entropy-aware hashing should handle varying-length keys. This could be framed as a multiple sequence alignment problem. Fourth, the cost
-model could be automatically learned from the dataset, data structure and architecture with deep learning. Fifth, the hardness of entropy maximization and the 
-greedy heuristic should be formally analyzed. There might be better optimizers than greedy.
+We see several promising directions for future work. The most fundamental is theoretical: the hardness of optimal byte subset selection for entropy 
+maximization is uncharacterized, and the greedy heuristic lacks formal approximation guarantees. Establishing these would clarify whether better optimization 
+algorithms are worth pursing. \\
+
+\noindent
+On the systems side, the framework currently assumes fixed-length keys and a static distribution. Extending to variable length keys is nontrivial. One promising
+formulation treats alignment of high-entropy regions across keys as a multiple sequence alignment problem. Adapting to shifting distributions would require 
+online entropy estimation to track high-entropy byte positions as the workload evolves. \\
+
+\noindent
+Finally, the cost model is currently hand-designed, and requires benchmarking. A learned cost model, trained from measurements across datasets, data structures,
+and architectures, could automatically capture interactions that are difficult to model analytically, enabling better specialization. 
 
 % prove hardness, greedy is approximation
 % dynamicly learn entropy
@@ -90,16 +87,15 @@ greedy heuristic should be formally analyzed. There might be better optimizers t
 
 \subsection{Reflection}
 
-% SIMD/instrisics
-This project strengthened my ability to optimize software with SIMD instructions. This was my first experience implementing efficient algorithms with SIMD 
-instructions. I learned to read the \texttt{x64} instruction set manual and optimization manual. I identified that a single round of AES would be a highly
-efficient mixing function. \\
+This project developed two distinct technical competencies. The first is low-level performance optimization. To identify efficient mixing primitives, I read 
+Intel's \texttt{x64} instruction and optimization reference manuals. This led me to the AES-NI extension which includes a single cycle AES round instruction. 
+Learning to reason directly from architecture documentation was a meaningful shift in my optimization approach. \\
 
-% approximation, hardness
 \noindent
-This project also developed my knowledge of theoretical computer science. I attempted to prove that selecting finding the subset with maximum entropy was 
-\textbf{NP-Hard}, and that the greedy heuristic was an optimal approximation algorithm. Although I did not succeed, I learned a lot about approximation 
-algorithms.  
+The second is the theory of approximation algorithms. I attempted to prove that finding the maximum-entropy byte subset is \textbf{NP-Hard} and bound its 
+best approximation factor via an approximation-preserving reduction. I also tried to show that the greedy algorithm achieves an optimal approximation ratio. I 
+did not succeed at either. Regardless, the experience was valuable: I worked through standard reduction techniques carefully enough to understand where I 
+failed, and learned about approximation while trying.
 
 
 % TODO: A 250-word self reflection of what skills were developed or enhanced in completing those

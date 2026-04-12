@@ -2382,9 +2382,9 @@
     <bcf:citekey order="16" intorder="1">almashaqbeh2026</bcf:citekey>
     <bcf:citekey order="17" intorder="1">almashaqbeh2026</bcf:citekey>
     <bcf:citekey order="18" intorder="1">kurose2025</bcf:citekey>
-    <bcf:citekey order="19" intorder="1">mitzenmacher2008</bcf:citekey>
-    <bcf:citekey order="20" intorder="1">hentschel2022</bcf:citekey>
-    <bcf:citekey order="21" intorder="1">hoffmann2025</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">hentschel2022</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">hoffmann2025</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">mitzenmacher2008</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

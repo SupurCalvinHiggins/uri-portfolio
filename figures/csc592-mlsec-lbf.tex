@@ -1,0 +1,34 @@
+\begin{figure}[H]
+    \centering
+\begin{tikzpicture}[>=Stealth, arraynode/.style={draw, minimum width=7mm, minimum height=6mm, outer sep=0, inner sep=0}]
+
+\node[circle, draw, fill=lightorange] (x) {$x$};
+
+\node[diamond, draw, right=8mm of x, aspect=2, fill=lightyellow, align=center] (Mx)
+    {Learned Model\\$M(x) > \tau$?};
+
+\node[rectangle, draw, below=8mm of Mx, fill=green!15, align=center] (Mxtrue)
+    {$x \in S$};
+
+\node[rectangle, draw, right=8mm of Mx, fill=lightyellow, align=center] (fn)
+    {False Negative\\Backup Bloom Filter};
+
+\node[rectangle, draw, right=8mm of fn, fill=red!20, align=center] (fnfalse)
+    {$x \notin S$};
+
+\node[rectangle, draw, fill=green!15, align=center] (fntrue) at (fn |- Mxtrue)
+    {$x \in S$};
+
+% Edges
+\draw[->] (x) -- (Mx);
+\draw[->] (Mx) -- node[right, font=\scriptsize] {Yes} (Mxtrue);
+\draw[->] (Mx) -- node[above, font=\scriptsize] {No}  (fn);
+\draw[->] (fn) -- node[above, font=\scriptsize] {No}  (fnfalse);
+\draw[->] (fn) -- node[right, font=\scriptsize] {Yes} (fntrue);
+
+\end{tikzpicture}
+\caption{Learned Bloom filter. Learned model $M$ is queried with key $x$. If $M$ predicts membership with score greater than $\tau$, output that $x$ is
+in the set. Otherwise, output the result of querying a Bloom filter containing the false negatives of $M$. False positives are possible but not false 
+negatives.}
+\label{fig:csc592_mlsec_lbf}
+\end{figure}

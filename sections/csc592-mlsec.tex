@@ -17,11 +17,12 @@ query the filter, a key is hashed to several entries in the array (see Figure~\r
 \input{figures/csc592-mlsec-bloom.tex}
 
 \noindent
-Learned Bloom filters~\cite{kraska2018} extend Bloom filters with a machine learning model that predicts set membership. For many practical datasets, the model
-compresses membership information more efficiently than a Bloom filter, reducing memory consumption. On a positive prediction, the key may or may not be in the 
-set, so false positives occur at the model's false positive rate. On a negative prediction, the key may still be in the set due to model false negatives, so a 
-backup Bloom filter storing all false negatives is queried. False positives then occur at the product of the model's true negative rate 
-and the backup filter's false positive rate. The overall false positive rate is the sum of these two terms. \\
+Learned Bloom filters~\cite{kraska2018} extend Bloom filters with a machine learning model that predicts set membership (see Figure~\ref{fig:csc592_mlsec_lbf}). 
+For many practical datasets, the model compresses membership information more efficiently than a Bloom filter, reducing memory consumption. Queries are first 
+checked with the model. On a positive prediction, the key may or may not be in the set, so false positives occur at the model's false positive rate. On a 
+negative prediction, the key may still be in the set due to model false negatives, so a backup Bloom filter storing all false negatives is queried. False 
+positives then occur at the product of the model's true negative rate and the backup filter's false positive rate. The overall false positive rate is the sum of
+these two terms. \\
 
 % learned bloom filter diagram
 \input{figures/csc592-mlsec-lbf.tex}

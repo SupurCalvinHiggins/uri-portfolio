@@ -55,55 +55,27 @@
 }
 
 @article{dong2021,
-  author     = {Dong, Siying and Kryczka, Andrew and Jin, Yanqin and Stumm, Michael},
-  title      = {RocksDB: Evolution of Development Priorities in a Key-value Store Serving Large-scale Applications},
-  year       = {2021},
-  issue_date = {November 2021},
-  publisher  = {Association for Computing Machinery},
-  address    = {New York, NY, USA},
-  volume     = {17},
-  number     = {4},
-  issn       = {1553-3077},
-  url        = {https://doi.org/10.1145/3483840},
-  doi        = {10.1145/3483840},
-  abstract   = {This article is an eight-year retrospective on development priorities for RocksDB, a key-value store developed at Facebook that targets large-scale distributed systems and that is optimized for Solid State Drives (SSDs). We describe how the priorities evolved over time as a result of hardware trends and extensive experiences running RocksDB at scale in production at a number of organizations: from optimizing write amplification, to space amplification, to CPU utilization. We describe lessons from running large-scale applications, including that resource allocation needs to be managed across different RocksDB instances, that data formats need to remain backward- and forward-compatible to allow incremental software rollouts, and that appropriate support for database replication and backups are needed. Lessons from failure handling taught us that data corruption errors needed to be detected earlier and that data integrity protection mechanisms are needed at every layer of the system. We describe improvements to the key-value interface. We describe a number of efforts that in retrospect proved to be misguided. Finally, we describe a number of open problems that could benefit from future research.},
-  journal    = {ACM Trans. Storage},
-  month      = oct,
-  articleno  = {26},
-  numpages   = {32},
-  keywords   = {Key-value stores, large-scale applications, RocksDB, SSD, compaction, databases}
+  author  = {Dong, Siying and Kryczka, Andrew and Jin, Yanqin and Stumm, Michael},
+  title   = {RocksDB: Evolution of Development Priorities in a Key-value Store Serving Large-scale Applications},
+  year    = {2021},
+  url     = {https://doi.org/10.1145/3483840},
+  journal = {ACM Transactions Storage}
 }
 
 @inproceedings{kraska2018,
   author    = {Kraska, Tim and Beutel, Alex and Chi, Ed H. and Dean, Jeffrey and Polyzotis, Neoklis},
   title     = {The Case for Learned Index Structures},
   year      = {2018},
-  isbn      = {9781450347037},
-  publisher = {Association for Computing Machinery},
-  address   = {New York, NY, USA},
   url       = {https://doi.org/10.1145/3183713.3196909},
-  doi       = {10.1145/3183713.3196909},
-  abstract  = {Indexes are models: a btree-Index can be seen as a model to map a key to the position of a record within a sorted array, a Hash-Index as a model to map a key to a position of a record within an unsorted array, and a BitMap-Index as a model to indicate if a data record exists or not. In this exploratory research paper, we start from this premise and posit that all existing index structures can be replaced with other types of models, including deep-learning models, which we term em learned indexes. We theoretically analyze under which conditions learned indexes outperform traditional index structures and describe the main challenges in designing learned index structures. Our initial results show that our learned indexes can have significant advantages over traditional indexes. More importantly, we believe that the idea of replacing core components of a data management system through learned models has far reaching implications for future systems designs and that this work provides just a glimpse of what might be possible.},
-  booktitle = {Proceedings of the 2018 International Conference on Management of Data},
-  pages     = {489–504},
-  numpages  = {16},
-  keywords  = {neural net, mixture of experts, linear regression, learned index structure, learned index, learned data structures, index structures, hash-map, cdf, bloom-filter, b-tree},
-  location  = {Houston, TX, USA},
-  series    = {SIGMOD '18}
+  booktitle = {International Conference on Management of Data (SIGMOD)}
 }
 
 @inproceedings{almashaqbeh2026,
   author    = {Almashaqbeh, Ghada and Bishop, Allison and Tirmazi, Hayder},
   title     = {Adversary Resilient Learned Bloom Filters},
-  series    = {LNCS},
-  volume    = {16246},
-  publisher = {Springer Nature Singapore},
   doi       = {10.1007/978-981-95-5096-8_6},
-  booktitle = {Advances in Cryptology -- ASIACRYPT 2025},
-  editor    = {Hanaoka, Goichiro and Yang, Bo-Yin},
-  pages     = {171--202},
-  year      = {2026},
-  note      = {Artifact available at \url{https://artifacts.iacr.org/asiacrypt/2025/a1}}
+  booktitle = {Advances in Cryptology (ASIACRYPT)},
+  year      = {2026}
 }
 
 
@@ -111,18 +83,8 @@
   author    = {Hoffmann, Renato B. and Fa\'{e}, Leonardo G. and Griebler, Dalvan and Li, Xinliang David and Quint\~{a}o Pereira, Fernando Magno},
   title     = {Automatic Synthesis of Specialized Hash Functions},
   year      = {2025},
-  isbn      = {9798400712753},
-  publisher = {Association for Computing Machinery},
-  address   = {New York, NY, USA},
   url       = {https://doi.org/10.1145/3696443.3708940},
-  doi       = {10.1145/3696443.3708940},
-  abstract  = {This paper introduces a technique for synthesizing hash functions specialized to particular byte formats. This code generation method leverages three prevalent patterns: (i) fixed-length keys, (ii) keys with common subsequences, and (iii) keys ranging on predetermined sequences of bytes. Code generation involves two algorithms: one identifies relevant regular expressions within key examples, and the other generates specialized hash functions based on these expressions. Comparative analysis demonstrates that the synthetic functions outperform the general-purpose hashes in the C++ Standard Template Library and the Google Abseil Library when keys are given in ascending, normal or uniform distribution. In applications where low-mixing hashes are acceptable, the synthetic functions achieve speedups ranging from 2\% to 11\% on full benchmarks, and speedups of almost 50x once only hashing speed is considered.},
-  booktitle = {Proceedings of the 23rd ACM/IEEE International Symposium on Code Generation and Optimization},
-  pages     = {317–330},
-  numpages  = {14},
-  keywords  = {Hash, Specialization, Synthesis},
-  location  = {Las Vegas, NV, USA},
-  series    = {CGO '25}
+  booktitle = {International Symposium on Code Generation and Optimization (CGO)}
 }
 
 
@@ -130,32 +92,15 @@
   author    = {Hentschel, Brian and Sirin, Utku and Idreos, Stratos},
   title     = {Entropy-Learned Hashing: Constant Time Hashing with Controllable Uniformity},
   year      = {2022},
-  isbn      = {9781450392495},
-  publisher = {Association for Computing Machinery},
-  address   = {New York, NY, USA},
   url       = {https://doi.org/10.1145/3514221.3517894},
-  doi       = {10.1145/3514221.3517894},
-  abstract  = {Hashing is a widely used technique for creating uniformly random numbers from arbitrary data. This is required in a large range of core data-driven operations including indexing, partitioning, filters, and sketches. As such, hashing is a core component in numerous systems including relational data systems, key-value stores, compilers, and networks. Due to both the computational and data heavy nature of hashing, it is a core systems bottleneck. For example, a typical database query in the standard TPC-H benchmark may spend 50\% of its total cost in hash tables. Similarly, Google spends at least 2\% of its total computational cost on C++ hash tables, resulting in a massive yearly cost footprint just from one hashing operation.We propose a new hashing method, called Entropy-Learned Hashing, which reduces the computational cost of hashing by up to an order of magnitude. We look at hashing from a pseudorandomness point of view and the key question we ask is ''how much randomness is needed?'' We show that state-of-the-art hash functions do too much work to perform their core task: extracting randomness from a data source to create random outputs. Entropy-Learned Hashing 1) models and estimates the randomness (entropy) of the input data, and then 2) creates data-specific hash functions that use only the parts of the data that are needed to differentiate the outputs. The resulting hash functions dramatically reduce the amount of computation needed while we prove their output is similarly uniform to that of traditional hash functions. We test Entropy-Learned Hashing across diverse and core hashing operations such as hash tables, Bloom filters, and partitioning and we demonstrate an increase in throughput in the order of 3.7x, 4.0x, and 14x respectively compared to the best in-class hash functions and implementations used at scale by Google and Meta. In this paper we propose a new method, called Entropy-Learned Hashing, which reduces the computational cost of hashing by up to an order of magnitude. The key question we ask is "how much randomness is needed?'': We look at hashing from a pseudorandom point of view, wherein hashing is viewed as extracting randomness from a data source to create random outputs and we show that state-of-the-art hash functions do too much work. Entropy-Learned Hashing 1) models and estimates the randomness (entropy) of the input data, and then 2) creates data-specific hash functions that use only the parts of the data that are needed to differentiate the outputs. Thus the resulting hash functions can minimize the amount of computation needed while we prove that they act similarly to traditional hash functions in terms of the uniformity of their outputs. We test Entropy-Learned Hashing across diverse and core hashing operations such as hash tables, Bloom filters, and partitioning and we observe an increase in throughput in the order of 3.7X, 4.0X, and 14X respectively compared to the best in-class hash functions and implementations used at scale by Google and Meta.},
-  booktitle = {Proceedings of the 2022 International Conference on Management of Data},
-  pages     = {1640–1654},
-  numpages  = {15},
-  keywords  = {bloom filters, hash tables, hashing, systems},
-  location  = {Philadelphia, PA, USA},
-  series    = {SIGMOD '22}
+  booktitle = {International Conference on Management of Data (SIGMOD)}
 }
 
 @inproceedings{mitzenmacher2008,
   author    = {Mitzenmacher, Michael and Vadhan, Salil},
   title     = {Why simple hash functions work: exploiting the entropy in a data stream},
   year      = {2008},
-  publisher = {Society for Industrial and Applied Mathematics},
-  address   = {USA},
-  abstract  = {Hashing is fundamental to many algorithms and data structures widely used in practice. For theoretical analysis of hashing, there have been two main approaches. First, one can assume that the hash function is truly random, mapping each data item independently and uniformly to the range. This idealized model is unrealistic because a truly random hash function requires an exponential number of bits to describe. Alternatively, one can provide rigorous bounds on performance when explicit families of hash functions are used, such as 2-universal or O(1)-wise independent families. For such families, performance guarantees are often noticeably weaker than for ideal hashing.In practice, however, it is commonly observed that simple hash functions, including 2-universal hash functions, perform as predicted by the idealized analysis for truly random hash functions. In this paper, we try to explain this phenomenon. We demonstrate that the strong performance of universal hash functions in practice can arise naturally from a combination of the randomness of the hash function and the data. Specifially, following the large body of literature on random sources and randomness extraction, we model the data as coming from a "block source," whereby each new data item has some "entropy" given the previous ones. As long as the (Renyi) entropy per data item is sufficiently large, it turns out that the performance when choosing a hash function from a 2-universal family is essentially the same as for a truly random hash function. We describe results for several sample applications, including linear probing, balanced allocations, and Bloom filters.},
-  booktitle = {Proceedings of the Nineteenth Annual ACM-SIAM Symposium on Discrete Algorithms},
-  pages     = {746–755},
-  numpages  = {10},
-  location  = {San Francisco, California},
-  series    = {SODA '08}
+  booktitle = {Symposium on Discrete Algorithms (SODA)}
 }
 
 @book{kurose2025,

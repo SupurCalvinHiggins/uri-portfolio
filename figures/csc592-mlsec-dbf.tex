@@ -1,0 +1,37 @@
+\begin{figure}[H]
+    \centering
+\begin{tikzpicture}[>=Stealth, arraynode/.style={draw, minimum width=7mm, minimum height=6mm, outer sep=0, inner sep=0}]
+
+\node[circle, draw, fill=lightorange] (x) {$x$};
+\node[diamond, draw, right=8mm of x, aspect=2, fill=lightyellow, align=center] (Mx)
+    {Learned Model\\$M(x) > \tau$?};
+
+\node[rectangle, draw, below=8mm of Mx, fill=lightyellow, align=center] (tp)
+    {True Positive\\Backup Bloom Filter};
+\node[rectangle, draw, right=8mm of tp, fill=red!20, align=center] (tpfalse)
+    {$x \notin S$};
+\node[rectangle, draw, below=8mm of tp, fill=green!15, align=center] (tptrue)
+    {$x \in S$};
+
+\node[rectangle, draw, right=8mm of Mx, fill=lightyellow, align=center] (fn)
+    {False Negative\\Backup Bloom Filter};
+\node[rectangle, draw, right=8mm of fn, fill=red!20, align=center] (fnfalse)
+    {$x \notin S$};
+\node[rectangle, draw, below=8mm of fn, fill=green!15, align=center] (fntrue)
+    {$x \in S$};
+
+% Edges
+\draw[->] (x)  -- (Mx);
+\draw[->] (Mx) -- node[right, font=\scriptsize] {Yes} (tp);
+\draw[->] (Mx) -- node[above, font=\scriptsize] {No}  (fn);
+\draw[->] (tp) -- node[above, font=\scriptsize] {No}  (tpfalse);
+\draw[->] (tp) -- node[right, font=\scriptsize] {Yes} (tptrue);
+\draw[->] (fn) -- node[above, font=\scriptsize] {No}  (fnfalse);
+\draw[->] (fn) -- node[right, font=\scriptsize] {Yes} (fntrue);
+
+\end{tikzpicture}
+\caption{Learned Bloom filter. Learned model $M$ is queried with key $x$. If $M$ predicts membership with score greater than $\tau$, output the result of 
+querying a Bloom filter containing true positives of $M$. Otherwise, output the result of querying a Bloom filter containing the false negatives of $M$. False 
+positives are possible but not false negatives.}
+\label{fig:csc592_mlsec_lbf}
+\end{figure}
