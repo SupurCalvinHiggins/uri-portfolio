@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1776025757.15797 "main.bcf" "main.bbl" "main" 1776043866.68524 0
-  "main.bcf" 1776043866.60942 109290 e3062551e98ec285715feabeb70cbc63 "pdflatex"
+["biber main"] 1776025757.15797 "main.bcf" "main.bbl" "main" 1776045041.5168 0
+  "main.bcf" 1776045041.39795 109290 e3062551e98ec285715feabeb70cbc63 "pdflatex"
   "ref.bib" 1776025756.91737 4146 aeb1d7a7313f6d9067ba056505f2c82f ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1776043864.30127 "/home/calvin/Documents/uri/portfolio/main.tex" "main.pdf" "main" 1776043866.68552 0
+["pdflatex"] 1776045038.83115 "/home/calvin/Documents/uri/portfolio/main.tex" "main.pdf" "main" 1776045041.51721 0
   "/etc/texmf/web2c/texmf.cnf" 1765049274.95223 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/calvin/Documents/uri/portfolio/main.tex" 1776026562.63026 1499 799649f2de3d4f34a4f91446d9131adc ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -262,11 +262,11 @@
   "figures/csc592-mlsec-dbf.tex" 1776022687.60836 1785 5505689de41a697bc6178b29aaaddb00 ""
   "figures/csc592-mlsec-lbf.tex" 1776022676.85105 1398 5af1778840dc2a5b58147ddff00dc735 ""
   "figures/title-seal.png" 1773160356.57419 51024 ddfa917eae249dee42f2d315f14b2ffa ""
-  "main.aux" 1776043866.60879 19986 3b0945e91a885616f7b5433b6c949276 "pdflatex"
+  "main.aux" 1776045041.39695 19986 3b0945e91a885616f7b5433b6c949276 "pdflatex"
   "main.bbl" 1776025758.11709 21329 51ff824da0053c876e0d525b536719e9 "biber main"
-  "main.run.xml" 1776043866.61118 2298 9255f4d2cb39a5ffeeda22d5a40b248a "pdflatex"
+  "main.run.xml" 1776045041.39949 2298 9255f4d2cb39a5ffeeda22d5a40b248a "pdflatex"
   "main.tex" 1776026562.63026 1499 799649f2de3d4f34a4f91446d9131adc ""
-  "sections/acks.tex" 1776043864.03204 515 b5cfa57c415a30e159575e5daa058ce1 ""
+  "sections/acks.tex" 1776045038.54996 515 b5cfa57c415a30e159575e5daa058ce1 ""
   "sections/csc519.tex" 1776043487.55968 7027 e38241d2019973f7bbc568cbbc53fe7a ""
   "sections/csc592-bigdata.tex" 1776043167.997 13678 a1d86e9b61f44c35d3af301f0acea342 ""
   "sections/csc592-mlsec.tex" 1776043411.14843 9465 3f6ade5826b22f4432f87467202d119e ""
