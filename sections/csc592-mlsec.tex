@@ -76,7 +76,7 @@ $\text{FN}$ denote backup filter false positive rates. \\
 \noindent
 Given a fixed decision threshold, we prove the total size is minimized subject to expected false positive rate $\epsilon$ by taking 
 \begin{align*}
-   \mathrm{TP}_\mathrm{FPR} = \epsilon \frac{\mathrm{M}_\mathrm{TPR}}{\mathrm{M}_\mathrm{FPR}} \qquad \mathrm{FN}_\mathrm{FPR} = \epsilon \frac{\mathrm{M}_\mathrm{FNR}}{\mathrm{M}_\mathrm{TNR}}
+   \mathrm{TP}_\mathrm{FPR} = \frac{\mathrm{M}_\mathrm{TPR}}{\mathrm{M}_\mathrm{FPR}} \cdot \epsilon \qquad \mathrm{FN}_\mathrm{FPR} = \frac{\mathrm{M}_\mathrm{FNR}}{\mathrm{M}_\mathrm{TNR}} \cdot \epsilon
 \end{align*}
 where $\mathrm{M}$ is the model, $\mathrm{TP}$ is the true positive filter, and $\mathrm{FN}$ is the false negative filter. Subscripts denote false positive,
 false negative, true positive, and true negative rates. \\
@@ -89,7 +89,7 @@ Then, we show that the optimal choice of decision threshold minimizes
 \end{align*}
 To maintain worst-case security guarantees (i.e. bounded maximum false positive rate), we restrict the choice of $\tau$ such that 
 \begin{align*}
-    \max\left\{\epsilon\frac{\text{M}_\text{TPR}}{\text{M}_\text{FPR}}, \epsilon \frac{\text{M}_\text{FNR}}{\text{M}_\text{TNR}} \right\} \leq \epsilon_\text{max}
+    \max\left\{\frac{\text{M}_\text{TPR}}{\text{M}_\text{FPR}} \cdot \epsilon, \frac{\text{M}_\text{FNR}}{\text{M}_\text{TNR}} \cdot \epsilon  \right\} \leq \epsilon_\text{max}
 \end{align*}
 so the false positive rate remains bounded even if the adversary forces all-positive or all-negative predictions. The optimal $\tau$ can be found in 
 $\Theta(n \lg n)$ time (see Algorithm~\ref{fig:csc592_mlsec_alg}). \\
